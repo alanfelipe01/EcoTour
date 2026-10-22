@@ -66,4 +66,15 @@ const materiais = [
     fonte: "https://sema.rs.gov.br/logistica-reversa",
     revisadoEm: "2026-10-22"
   },
+   {
+    id: "restos-comida",
+    nome: "Restos de comida",
+    termosBusca: ["comida", "resto de comida", "sobra de alimento", "resíduo orgânico"],
+    categoria: "Orgânicos",
+    orientacao: "Separe os restos de comida das embalagens e dos materiais recicláveis.",
+    cuidados: "Não coloque alimentos nos coletores de recicláveis. A finalidade do coletor marrom do P-01 ainda precisa ser confirmada.",
+    pontosConfirmados: [],
+    fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-compostagem",
+    revisadoEm: "2026-10-22"
+  }
 ];
