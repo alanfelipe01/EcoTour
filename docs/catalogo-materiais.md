@@ -3,6 +3,22 @@
 Campus UNINASSAU Aguanambi
 Revisão das orientações: 22/10/2026
 
+## Por que estes materiais foram escolhidos
+
+A seleção combina o levantamento dos pontos internos (ECO-03) e as dúvidas registradas no Forms (ECO-02). O relatório `EcoTour-Relatorio-Pesquisa-Campus.pdf` analisou 52 respostas recebidas em 19 e 20/10/2026. Na pergunta sobre materiais que geram dúvidas, era possível marcar mais de uma opção; as contagens abaixo usam 52 como base e não devem ser somadas como se fossem pessoas distintas.
+
+| Material no catálogo | Relação com a pesquisa e o levantamento |
+|---|---|
+| Eletrônicos | Marcados como dúvida em 29 de 52 respostas (55,8%). Nenhum ponto interno foi confirmado. |
+| Lata de alumínio | Representa a categoria **metal**, marcada em 16 respostas (30,8%); há coletores com identificação escrita “metal”, ainda a conferir. |
+| Restos de comida | Marcados em 13 respostas (25,0%). O coletor marrom do P-01 foi observado, mas sua finalidade não foi confirmada. |
+| Folha de papel limpa | Exemplo específico de **papel e papelão**, marcados em 8 respostas (15,4%); há coletores identificados como “papel”. |
+| Garrafa PET | Exemplo específico de **plástico**, marcado em 5 respostas (9,6%); há coletores identificados como “plástico”. |
+| Garrafa de vidro inteira | Incluída pelo levantamento de coletores identificados como “vidro”. A pesquisa não mediu dúvidas sobre vidro como opção separada. |
+| Medicamento vencido | Incluído pelo descartômetro P-07 identificado no levantamento. A pesquisa não mediu dúvidas sobre medicamentos como opção separada. |
+
+Pilhas e baterias foram a dúvida mais marcada (32 de 52, 61,5%), mas ainda não integram estes sete itens: o inventário não registra destino interno confirmado, e a orientação precisa ser preparada como entrada própria antes de incluí-las no guia. As escolhas acima orientam esta versão do catálogo; as 52 respostas descrevem apenas quem respondeu e não representam necessariamente todo o campus.
+
 ## 1. Folha de papel limpa
 - ID: folha-papel
 - Termos de busca: papel, folha, folha A4, papel de escritório
