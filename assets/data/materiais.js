@@ -55,4 +55,15 @@ const materiais = [
     fonte: "https://sinir.gov.br/perfis/logistica-reversa/logistica-reversa/medicamentos-seus-residuos-e-embalagens/",
     revisadoEm: "2026-10-22"
   },
+    {
+    id: "eletronicos",
+    nome: "Eletrônicos",
+    termosBusca: ["eletrônico", "lixo eletrônico", "celular", "carregador", "fone de ouvido"],
+    categoria: "Eletroeletrônicos",
+    orientacao: "Guarde o equipamento para entrega em um ponto de recebimento de eletroeletrônicos.",
+    cuidados: "Não coloque nos coletores comuns. Pilhas, baterias e lâmpadas exigem orientação específica.",
+    pontosConfirmados: [],
+    fonte: "https://sema.rs.gov.br/logistica-reversa",
+    revisadoEm: "2026-10-22"
+  },
 ];
