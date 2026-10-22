@@ -44,4 +44,15 @@ const materiais = [
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
     revisadoEm: "2026-10-22"
   },
+    {
+    id: "medicamento-vencido",
+    nome: "Medicamento vencido",
+    termosBusca: ["medicamento", "remédio", "remédio vencido", "comprimido"],
+    categoria: "Medicamentos",
+    orientacao: "Separe o medicamento vencido para entrega em um ponto que receba esse resíduo.",
+    cuidados: "Não descarte no lixo comum, pia ou vaso sanitário. O descartômetro do campus não aceita agulhas, seringas ou perfurocortantes.",
+    pontosConfirmados: [],
+    fonte: "https://sinir.gov.br/perfis/logistica-reversa/logistica-reversa/medicamentos-seus-residuos-e-embalagens/",
+    revisadoEm: "2026-10-22"
+  },
 ];
