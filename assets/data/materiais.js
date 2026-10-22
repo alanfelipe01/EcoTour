@@ -21,5 +21,16 @@ const materiais = [
     pontosConfirmados: [],
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
     revisadoEm: "2026-10-22"
+  },
+   {
+    id: "lata-aluminio",
+    nome: "Lata de alumínio",
+    termosBusca: ["lata", "latinha", "alumínio", "lata de refrigerante"],
+    categoria: "Metal",
+    orientacao: "Esvazie a lata e retire os resíduos de bebida antes do descarte.",
+    cuidados: "Se necessário, enxágue a embalagem. Não misture com restos de comida.",
+    pontosConfirmados: [],
+    fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
+    revisadoEm: "2026-10-22"
   }, 
 ];
