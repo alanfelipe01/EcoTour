@@ -11,4 +11,15 @@ const materiais = [
     pontosConfirmados: [],
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
     revisadoEm: "2026-10-22"},
-  ];
+ {
+    id: "garrafa-pet",
+    nome: "Garrafa PET",
+    termosBusca: ["pet", "garrafa plástica", "garrafa de água", "garrafa de refrigerante"],
+    categoria: "Plástico",
+    orientacao: "Esvazie a garrafa e retire os resíduos de bebida antes do descarte.",
+    cuidados: "Se estiver suja, enxágue para não contaminar outros recicláveis. Esta entrada não inclui embalagens de produtos químicos.",
+    pontosConfirmados: [],
+    fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
+    revisadoEm: "2026-10-22"
+  }, 
+];
