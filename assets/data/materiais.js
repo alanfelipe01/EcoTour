@@ -33,4 +33,15 @@ const materiais = [
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
     revisadoEm: "2026-10-22"
   }, 
+   {
+    id: "garrafa-vidro",
+    nome: "Garrafa de vidro inteira",
+    termosBusca: ["vidro", "garrafa de vidro", "garrafa de bebida"],
+    categoria: "Vidro",
+    orientacao: "Esvazie a garrafa e retire os resíduos antes do descarte.",
+    cuidados: "Não inclua vidro quebrado, lâmpadas, espelhos ou cerâmica nesta entrada.",
+    pontosConfirmados: [],
+    fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
+    revisadoEm: "2026-10-22"
+  },
 ];
