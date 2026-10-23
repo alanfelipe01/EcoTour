@@ -2,168 +2,105 @@
 
 **Informação para descartar melhor no campus.**
 
-Guia digital de descarte de resíduos em desenvolvimento para a comunidade da **UNINASSAU Aguanambi, em Fortaleza–CE**, no **Hackathon UNINASSAU 2026 — Desafio Sustentabilidade**.
+Guia digital de descarte de resíduos para a comunidade da **UNINASSAU Aguanambi (Fortaleza–CE)**, desenvolvido no **Hackathon UNINASSAU 2026 — Desafio Sustentabilidade**. Ele responde três perguntas: **qual material tenho, como preparo e onde descarto dentro do campus?**
 
-O EcoTour conecta três perguntas do dia a dia: **qual material tenho, como devo prepará-lo e onde posso descartá-lo dentro do campus?**
+> **Em desenvolvimento · atualizado em 23/10/2026.** Pesquisa, inventário, catálogo e design das telas estão prontos. As páginas ainda não foram implementadas.
 
-> **Em desenvolvimento.** A pesquisa, o inventário inicial e o catálogo já foram organizados. A interface e o fluxo de consulta ainda serão implementados. Este README descreve o estado dos arquivos da branch `main` em **22/10/2026**.
+## Problema e pesquisa
 
-## Por que o EcoTour existe
+Encontrar uma lixeira não significa saber o que ela recebe. Para entender as dúvidas do campus, analisamos **52 respostas** a um formulário aplicado em 19 e 20/10/2026:
 
-Encontrar uma lixeira não significa saber o que ela recebe. Dúvidas sobre separação, identificação dos coletores e destino de materiais específicos podem dificultar o descarte correto.
-
-O projeto busca reunir orientações e informações de localização em uma consulta simples para estudantes, funcionários e visitantes. A proposta parte de uma pesquisa com o público e de um levantamento presencial dos pontos de descarte do campus.
-
-### O que a pesquisa mostrou
-
-Foram analisadas **52 respostas**, coletadas em **19 e 20 de outubro de 2026**.
-
-| Achado | Respostas | Percentual |
+| Achado | Respostas | % |
 |---|---:|---:|
-| Apontaram falta de informação sobre o destino dos materiais | 25 | 48,1% |
-| Indicaram dúvidas sobre pilhas e baterias | 32 | 61,5% |
-| Indicaram dúvidas sobre eletrônicos | 29 | 55,8% |
-| Selecionaram mapa dos pontos como recurso útil | 35 | 67,3% |
-| Selecionaram instruções de separação como recurso útil | 27 | 51,9% |
-| Responderam que usariam o guia digital | 30 | 57,7% |
+| Dúvidas sobre pilhas e baterias | 32 | 61,5% |
+| Dúvidas sobre eletrônicos | 29 | 55,8% |
+| Mapa dos pontos seria útil | 35 | 67,3% |
+| Usariam o guia digital | 30 | 57,7% |
 
-Fonte: *EcoTour — Relatório de Pesquisa do Campus*, elaborado em 21/10/2026. Os percentuais usam 52 respostas como base. As perguntas sobre dificuldades, materiais e recursos permitiam múltiplas escolhas. Os resultados descrevem a amostra recebida e não representam necessariamente toda a comunidade do campus.
+As perguntas aceitavam múltiplas respostas, e os resultados descrevem só quem respondeu. Fonte: *EcoTour — Relatório de Pesquisa do Campus* (21/10/2026).
 
-Esses achados orientam a prioridade do projeto: explicar o descarte e facilitar a identificação dos locais. O interesse em um mapa será considerado na evolução da interface; a primeira versão deve permitir a consulta completa por lista e referências de localização.
+## Como o guia vai funcionar
 
-## A experiência proposta
+O fluxo e o padrão visual foram definidos na ECO-05 (*EcoTour-ECO-05-Telas-e-Padrao-Visual.pdf*, 23/10/2026).
 
-1. **Consultar um material:** procurar pelo nome ou selecionar um item do catálogo.
-2. **Entender o descarte:** ler uma orientação curta, os cuidados necessários e a fonte consultada.
-3. **Encontrar um destino compatível:** visualizar somente os pontos internos confirmados para aquele material.
-4. **Reconhecer o local:** consultar localização, referência, foto disponível e eventuais restrições.
+**Fluxo principal:** consultar (`index.html`) → orientação do material (`guia.html?material=id`) → pontos compatíveis (`pontos.html?material=id`) → detalhes do ponto (`pontos.html?ponto=P-xx`). A barra inferior **Materiais | Pontos** leva direto à lista de todos os pontos, que pode ser filtrada por área.
 
-Também está previsto o acesso direto à lista de pontos. Quando não houver destino interno confirmado, o guia deverá informar essa ausência e manter a orientação do material acessível.
+**Estados previstos:** busca sem resultado, material sem destino confirmado (hoje, todos), filtro sem pontos e ponto indisponível. Cada um tem uma mensagem e um caminho de volta.
+
+**Padrão visual:**
+
+- Pensado primeiro para o celular: alvos de toque com no mínimo 48px e conteúdo de até 720px.
+- Tipografia Nunito, verde `#1E5A3C` sobre fundo `#F7F5EC`, todos os textos com contraste de pelo menos 4,5:1 (WCAG).
+- Ícones SVG próprios e etiquetas de situação sempre com ícone + texto: *Confirmado*, *Observado · recebimento a confirmar*, *Indisponível*.
+
+O design é uma proposta de aparência. Os itens marcados como *Exemplo ilustrativo* não existem no levantamento, e o conteúdo final virá dos arquivos de dados validados.
 
 ## Escopo da primeira versão
 
-O EcoTour será um site de consulta com **HTML, CSS e JavaScript**, sem necessidade de login. Os dados serão mantidos pela equipe nos arquivos do projeto.
+Site estático em **HTML, CSS e JavaScript**, sem login, com catálogo pesquisável, orientações com fontes e data de revisão, lista de pontos internos e vínculos somente com destinos confirmados.
 
-Estão previstos:
-
-- Catálogo com busca por nome, categoria e termos comuns.
-- Orientações de descarte com cuidados, fontes e data de revisão.
-- Lista de pontos internos e detalhes para localizar cada um.
-- Relação entre materiais e destinos efetivamente confirmados.
-- Mensagens para buscas sem resultado e materiais sem destino confirmado.
-- Navegação acessível e adaptação para celular e computador.
-
-Pontos externos ao campus ficam para uma etapa futura. Esta versão não contempla back-end, banco de dados, cadastro, painel administrativo, GPS ou cálculo de rotas.
-
-## Conteúdo já preparado
-
-### Catálogo de materiais
-
-Os **sete itens iniciais** estão documentados em [catálogo de materiais](docs/catalogo-materiais.md) e registrados em [materiais.js](assets/data/materiais.js).
-
-| Material | Identificador |
-|---|---|
-| Folha de papel limpa | `folha-papel` |
-| Garrafa PET | `garrafa-pet` |
-| Lata de alumínio | `lata-aluminio` |
-| Garrafa de vidro inteira | `garrafa-vidro` |
-| Medicamento vencido | `medicamento-vencido` |
-| Eletrônicos | `eletronicos` |
-| Restos de comida | `restos-comida` |
-
-Pilhas e baterias foram a dúvida mais frequente da pesquisa, mas ainda precisam de uma entrada própria com orientação revisada. Elas não devem ser tratadas automaticamente como parte da entrada de eletrônicos.
-
-### Levantamento dos pontos
-
-O [inventário de pontos internos](docs/inventario-pontos.md) registra **nove pontos observados em 19/10/2026**: oito conjuntos de coletores e um descartômetro de medicamentos, distribuídos por locais como entrada, refeitório, cantina, secretaria, Bloco B e estacionamento.
-
-Os registros possuem identificadores de `P-01` a `P-09`. No arquivo atual, todos permanecem com validação **“observado”**. Ainda há pendências sobre recebimento de materiais, horários, restrições e destino final dos resíduos.
-
-**Observar um coletor não confirma automaticamente o que ele recebe.** A vinculação ao catálogo deve se apoiar em sinalização verificável ou confirmação do setor responsável, sem presumir aceitação apenas pela cor.
+**Fora do escopo:** pontos externos ao campus, back-end, banco de dados, cadastro, painel administrativo, GPS, rotas e mapa.
 
 ## Andamento
 
-| Frente | Situação em 22/10/2026 |
+| Frente | Situação em 23/10/2026 |
 |---|---|
-| Pesquisa com o público | 52 respostas analisadas |
-| Inventário de campo | Nove pontos documentados, com pendências registradas |
-| Catálogo inicial | Sete materiais documentados e inseridos em JavaScript |
-| Vínculos entre materiais e pontos | Listas `pontosConfirmados` ainda vazias |
-| Dados dos pontos para a interface | `pontos-descarte.js` ainda vazio |
-| Fotografias | Referenciadas no inventário; arquivos ainda não presentes na `main` consultada |
-| Páginas, estilos e interações | Arquivos criados, ainda sem implementação |
-| Demonstração navegável e testes com usuários | Pendentes |
+| Pesquisa (ECO-02) | ✅ 52 respostas analisadas |
+| Inventário de pontos (ECO-03) | ✅ 9 pontos documentados, todos ainda como "observado" |
+| Catálogo (ECO-04) | 🟡 7 materiais em `materiais.js`; `pontosConfirmados` ainda vazios |
+| Telas e padrão visual (ECO-05) | ✅ 9 telas e padrão visual definidos |
+| Dados dos pontos | ⏳ `pontos-descarte.js` vazio; campo de área a definir (ECO-09) |
+| Fotos dos pontos | ⏳ Citadas no inventário, ainda fora do repositório |
+| Páginas e interações (ECO-06 a 09) | ⏳ Arquivos criados, sem implementação |
 
-O planejamento e os critérios de aceite estão nas [issues do projeto](https://github.com/alanfelipe01/EcoTour/issues). O encerramento de uma issue deve ser acompanhado da conferência dos arquivos e das evidências correspondentes.
+O planejamento e os critérios de aceite estão nas [issues do projeto](https://github.com/alanfelipe01/EcoTour/issues).
 
-## Organização dos arquivos
+## Arquivos
 
-| Caminho | Responsabilidade |
+| Caminho | Conteúdo |
 |---|---|
-| `index.html` | Página inicial e entrada da consulta |
-| `guia.html` | Consulta às orientações dos materiais |
-| `pontos.html` | Consulta aos pontos de descarte |
+| `index.html`, `guia.html`, `pontos.html` | Consulta, orientação do material e pontos |
 | `assets/css/style.css` | Estilos e adaptação das telas |
-| `assets/js/main.js` | Interações da página inicial |
-| `assets/js/guia.js` | Interações do guia de materiais |
-| `assets/js/pontos.js` | Interações da consulta aos pontos |
+| `assets/js/` | `main.js`, `guia.js` e `pontos.js`: interações de cada página |
 | `assets/data/materiais.js` | Catálogo e vínculos com pontos confirmados |
-| `assets/data/pontos-descarte.js` | Arquivo reservado para os dados dos pontos |
-| `assets/img/` | Recursos visuais do projeto |
-| `docs/catalogo-materiais.md` | Orientações, justificativas e fontes do catálogo |
-| `docs/inventario-pontos.md` | Levantamento dos pontos e pendências de validação |
+| `assets/data/pontos-descarte.js` | Dados dos pontos (a preencher) |
+| `docs/catalogo-materiais.md` | Orientações, justificativas e fontes dos [7 materiais](docs/catalogo-materiais.md) |
+| `docs/inventario-pontos.md` | [Levantamento dos pontos](docs/inventario-pontos.md) e pendências |
 
-As responsabilidades das páginas e dos scripts representam a organização prevista. Os dados ficam separados da lógica de interface para facilitar a revisão e a manutenção.
+## Como abrir e manter
 
-## Como consultar o projeto localmente
-
-Por enquanto, o conteúdo disponível para análise está nos arquivos de documentação e de dados. **As páginas HTML estão vazias; abri-las ainda não apresenta uma demonstração funcional.**
-
-Para obter os arquivos, use **Code → Download ZIP** no GitHub e extraia a pasta, ou clone o repositório:
+As páginas HTML ainda estão vazias. Por enquanto, o conteúdo está em `docs/` e `assets/data/`.
 
 ```bash
 git clone https://github.com/alanfelipe01/EcoTour.git
-cd EcoTour
 ```
 
-Em seguida, abra a pasta em um editor e consulte `docs/` e `assets/data/materiais.js`. Enquanto o repositório estiver privado, é necessário ter permissão de acesso.
+Para atualizar os dados:
 
-O link da demonstração e as instruções de execução da interface serão acrescentados após a implementação e a verificação do fluxo principal.
+1. **Materiais:** edite `assets/data/materiais.js` sem mudar os IDs. Cada item precisa de nome, termos de busca, categoria, orientação, cuidados, fonte e data de revisão. Cada material novo precisa de um ícone próprio.
+2. **Pontos:** registre as evidências em `docs/inventario-pontos.md` e só depois leve os dados conferidos para `pontos-descarte.js`.
+3. **Vínculos:** só adicione um ID em `pontosConfirmados` quando o ponto estiver **confirmado** por sinalização ou pelo setor responsável. A cor do coletor não confirma nada. Uma lista vazia significa que ainda não há destino interno confirmado.
+4. **Antes de publicar:** confira se documentação e dados estão alinhados (IDs, restrições, fotos e datas).
 
-## Como manter os dados
-
-1. **Materiais:** atualize `assets/data/materiais.js`, preservando os identificadores e preenchendo nome, termos de busca, categoria, orientação, cuidados, fonte e data de revisão.
-2. **Pontos:** registre as evidências e pendências em `docs/inventario-pontos.md`. Após definir a estrutura dos dados, preencha `assets/data/pontos-descarte.js` com informações conferidas.
-3. **Vínculos:** adicione um ID em `pontosConfirmados` somente após verificar que o ponto correspondente recebe aquele material. Uma lista vazia significa que ainda não existe destino interno confirmado no catálogo.
-4. **Consistência:** mantenha documentação e dados alinhados. Confira IDs, restrições, referências às fotos e datas antes de publicar.
-5. **Validação da interface:** quando implementada, teste a consulta do material, seus destinos e os casos sem resultados ou sem ponto confirmado.
-
-As fontes das orientações estão registradas por material no catálogo. As respostas individuais do formulário não devem ser publicadas; a documentação utiliza resultados agregados.
+As respostas individuais do formulário não são publicadas. A documentação usa apenas resultados agregados.
 
 ## Próximas etapas
 
-- Concluir a conferência dos pontos e incorporar as fotografias.
-- Preencher os dados dos pontos e validar os vínculos com os materiais.
-- Construir as telas e implementar busca, orientações e consulta aos destinos.
-- Verificar acessibilidade, uso no celular e consistência do conteúdo.
-- Testar o guia com pessoas do campus e registrar os resultados.
-- Publicar uma demonstração acessível e finalizar os materiais de apresentação.
+- Confirmar os pontos com o setor responsável, incluir as fotos e preencher `pontos-descarte.js`.
+- Construir as telas e implementar busca, orientações e consulta aos pontos (ECO-06 a ECO-09).
+- Verificar acessibilidade, uso no celular e consistência dos dados (ECO-10 e ECO-11).
+- Testar com pessoas do campus e publicar a demonstração (ECO-12 a ECO-16).
+- Criar a entrada de pilhas e baterias, a dúvida mais frequente na pesquisa.
 
-O benefício esperado é facilitar decisões de descarte e apoiar a educação ambiental no campus. Ainda não foram medidos redução de resíduos, volume reciclado ou economia financeira decorrentes do projeto.
+O impacto esperado é facilitar decisões de descarte e apoiar a educação ambiental. Redução de resíduos e volume reciclado ainda não foram medidos.
 
-## Equipe, autoria e referências
+## Equipe, IA e referências
 
-O EcoTour é um projeto acadêmico desenvolvido em equipe. As contribuições podem ser acompanhadas pelo histórico de commits, pelas issues e pelos pull requests. A relação completa de integrantes, cursos, responsabilidades e eventuais mentores será consolidada antes da entrega.
+Projeto acadêmico desenvolvido em equipe. As contribuições aparecem no histórico de commits, nas issues e nos pull requests. A lista de integrantes, cursos e responsabilidades será consolidada antes da entrega.
 
-**Apoio de IA:** o ChatGPT foi utilizado no apoio ao planejamento, à organização da documentação, à análise descritiva da pesquisa e à redação deste README. A equipe é responsável por revisar esses materiais, validar as informações de campo e compreender, adaptar e testar o que incorporar ao projeto. A declaração final deverá incluir outras ferramentas e referências efetivamente utilizadas.
+**Apoio de IA:** o ChatGPT foi usado para apoiar o planejamento, a organização da documentação, a análise descritiva da pesquisa e a redação deste README. A equipe revisa esses materiais, valida as informações de campo e testa o que incorpora ao projeto. A declaração final vai listar todas as ferramentas usadas.
 
-Bases desta documentação:
-
-- Regulamento *HackathonNassau.pdf* — contexto e requisitos da entrega.
-- *EcoTour-Relatorio-Pesquisa-Campus.pdf* — análise das 52 respostas de 19 e 20/10/2026.
-- [Inventário dos pontos](docs/inventario-pontos.md) — observações e pendências do levantamento presencial.
-- [Catálogo de materiais](docs/catalogo-materiais.md) — seleção dos itens e fontes das orientações.
-- [Backlog no GitHub](https://github.com/alanfelipe01/EcoTour/issues) — planejamento e critérios de aceite.
+**Bases:** regulamento *HackathonNassau.pdf* · *EcoTour-Relatorio-Pesquisa-Campus.pdf* · *EcoTour-ECO-05-Telas-e-Padrao-Visual.pdf* · [inventário dos pontos](docs/inventario-pontos.md) · [catálogo de materiais](docs/catalogo-materiais.md) · [backlog no GitHub](https://github.com/alanfelipe01/EcoTour/issues).
 
 ---
 
