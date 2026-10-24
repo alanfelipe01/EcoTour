@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulte os pontos de descarte observados no campus UNINASSAU Aguanambi e verifique sua situação antes de levar resíduos.">
+  <title>EcoTour | Pontos de descarte</title>
+  <link rel="stylesheet" href="assets/css/pontos.css">
+  <script src="assets/data/materiais.js" defer></script>
+  <script src="assets/data/pontos-descarte.js" defer></script>
+  <script src="assets/js/pontos.js" defer></script>
+</head>
+<body class="pagina-pontos">
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a class="marca" href="index.html" aria-label="EcoTour — início">Eco<span>Tour</span></a>
+      <nav aria-label="Navegação principal">
+        <a href="index.html">Materiais</a>
+        <a href="pontos.html" aria-current="page">Pontos de descarte</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="container">
+    <a class="voltar" href="index.html"><span aria-hidden="true">←</span> Voltar aos materiais</a>
+    <section class="apresentacao" aria-labelledby="titulo-pagina">
+      <p class="identificacao-campus">UNINASSAU · Campus Aguanambi</p>
+      <h1 id="titulo-pagina">Pontos de descarte no campus</h1>
+      <p class="introducao">Explore os locais identificados no levantamento de campo. Consulte a situação de cada ponto antes de levar seu material.</p>
+    </section>
+
+    <aside class="aviso-validacao" aria-label="Situação dos pontos">
+      <strong>Recebimento ainda em verificação</strong>
+      <p>Os nove pontos foram observados em 19/10/2026, mas nenhum teve o recebimento confirmado com o setor responsável. As fotos e os rótulos mostram o que havia no local naquela data; não garantem o que é aceito hoje.</p>
+    </aside>
+
+    <section id="estado-erro" class="estado-informativo" hidden aria-labelledby="titulo-erro">
+      <h2 id="titulo-erro">Não foi possível carregar os pontos</h2>
+      <p id="mensagem-erro">Atualize a página para tentar novamente.</p>
+    </section>
+
+    <section id="area-lista" aria-labelledby="titulo-lista" hidden>
+      <div id="aviso-material" class="estado-informativo" hidden>
+        <h2 id="titulo-aviso-material"></h2>
+        <p id="texto-aviso-material"></p>
+        <a href="pontos.html">Ver todos os pontos observados <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="barra-lista">
+        <div>
+          <h2 id="titulo-lista">Locais identificados</h2>
+          <p id="resumo-lista" role="status"></p>
+        </div>
+        <div class="controle-area">
+          <label for="filtro-area">Filtrar por área</label>
+          <select id="filtro-area"><option value="">Todas as áreas</option></select>
+        </div>
+      </div>
+      <ul id="lista-pontos" class="lista-pontos"></ul>
+      <div id="estado-vazio" class="estado-informativo" hidden>
+        <h3>Nenhum ponto nesta área</h3>
+        <p>Escolha outra área ou veja todos os locais identificados.</p>
+        <button id="limpar-filtro" type="button">Ver todas as áreas</button>
+      </div>
+    </section>
+
+    <article id="detalhe-ponto" hidden aria-labelledby="nome-ponto">
+      <a class="voltar-lista" href="pontos.html"><span aria-hidden="true">←</span> Ver todos os pontos</a>
+      <div class="detalhe-cabecalho">
+        <div>
+          <p id="id-ponto" class="identificador"></p>
+          <h2 id="nome-ponto"></h2>
+          <p id="localizacao-ponto" class="localizacao-detalhe"></p>
+          <p id="situacao-ponto" class="etiqueta-situacao"></p>
+        </div>
+        <img id="foto-ponto" alt="" width="640" height="480">
+      </div>
+      <div class="detalhe-informacoes">
+        <section aria-labelledby="titulo-observado">
+          <h3 id="titulo-observado">O que foi observado</h3>
+          <p id="coletores-ponto"></p>
+          <p id="identificacao-ponto"></p>
+        </section>
+        <section aria-labelledby="titulo-verificacao">
+          <h3 id="titulo-verificacao">Antes de descartar</h3>
+          <p id="restricoes-ponto"></p>
+          <p id="disponibilidade-ponto"></p>
+          <p>Horários e recebimento atual devem ser confirmados com o setor responsável.</p>
+        </section>
+      </div>
+      <p class="data-verificacao">Observado em <time id="data-ponto"></time>.</p>
+    </article>
+
+    <noscript><p class="estado-informativo">Ative o JavaScript para consultar os pontos de descarte.</p></noscript>
+  </main>
+  <footer class="rodape"><div class="container"><p>EcoTour · Guia de descarte sustentável</p><p>Campus UNINASSAU Aguanambi · Fortaleza, CE</p></div></footer>
+</body>
+</html>
