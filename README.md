@@ -50,7 +50,7 @@ Site estático em **HTML, CSS e JavaScript**, sem login, com catálogo pesquisá
 | Catálogo (ECO-04) | 🟡 7 materiais em `materiais.js`; 6 vinculados aos pontos identificados |
 | Telas e padrão visual (ECO-05) | ✅ 9 telas e padrão visual definidos |
 | Dados dos pontos | ✅ 9 pontos em `pontos-descarte.js`, organizados por área; materiais identificados por rótulos ou cores confirmadas |
-| Fotos dos pontos | ✅ 9 fotos em `assets/img/`, vinculadas ao inventário |
+| Fotos dos pontos | ✅ 9 JPG originais e 9 WebP de exibição em `assets/img/` |
 | Páginas e interações (ECO-06 a 09) | ✅ Consulta, guia, lista, filtro e detalhe implementados; validação em navegador ainda pendente |
 
 O planejamento e os critérios de aceite estão nas [issues do projeto](https://github.com/alanfelipe01/EcoTour/issues).
@@ -81,6 +81,8 @@ Para atualizar os dados:
 2. **Pontos:** registre as evidências em `docs/inventario-pontos.md` e só depois leve os dados conferidos para `pontos-descarte.js`.
 3. **Vínculos:** só adicione um ID em `pontosConfirmados` quando o material estiver identificado por rótulo ou pelo mapeamento de cores confirmado para o campus: azul = papel, vermelho = plástico, marrom = orgânicos (comida), verde = vidro e amarelo = metal. Uma lista vazia significa que ainda não há destino interno confirmado.
 4. **Antes de publicar:** confira se documentação e dados estão alinhados (IDs, restrições, fotos e datas).
+
+As páginas usam a mesma versão otimizada `P-xx.webp` na lista e no detalhe. A foto `P-xx.jpg` permanece como evidência e pode ser aberta pelo link no detalhe. Ao substituir uma foto original, atualize também o WebP correspondente, sem ampliar a imagem nem copiar metadados EXIF.
 
 As respostas individuais do formulário não são publicadas. A documentação usa apenas resultados agregados.
 

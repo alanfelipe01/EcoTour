@@ -101,11 +101,11 @@ function iniciarPontos() {
     link.className = "cartao-ponto";
     link.href = `pontos.html?ponto=${encodeURIComponent(ponto.id)}`;
     const imagem = document.createElement("img");
-    imagem.src = ponto.foto;
+    imagem.src = fotoOtimizada(ponto.foto);
     imagem.alt = "";
     imagem.loading = "lazy";
-    imagem.width = 320;
-    imagem.height = 220;
+    imagem.width = 1200;
+    imagem.height = 1600;
     const conteudo = document.createElement("span");
     conteudo.className = "cartao-conteudo";
     const id = document.createElement("span");
@@ -141,13 +141,19 @@ function iniciarPontos() {
           ? "Ponto registrado como indisponível."
           : "Disponibilidade atual desconhecida.";
     const imagem = document.querySelector("#foto-ponto");
-    imagem.src = ponto.foto;
+    imagem.src = fotoOtimizada(ponto.foto);
     imagem.alt = `Registro fotográfico de ${ponto.nome}`;
+    imagem.classList.toggle("foto-lixeiras", ponto.id === "P-05");
+    document.querySelector("#link-foto-original").href = ponto.foto;
     const data = document.querySelector("#data-ponto");
     data.dateTime = ponto.verificadoEm;
     data.textContent = formatarData(ponto.verificadoEm);
     detalhe.hidden = false;
   }
+}
+
+function fotoOtimizada(original) {
+  return original.replace(/\.jpg$/i, ".webp");
 }
 
 function rotuloSituacao(ponto) {
