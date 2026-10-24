@@ -1,7 +1,7 @@
 # Catálogo inicial de materiais — ECO-04
 
 Campus UNINASSAU Aguanambi
-Revisão das orientações: 22/10/2026
+Revisão das orientações: 22/10/2026; restos de comida revisado em 24/10/2026.
 
 ## Por que estes materiais foram escolhidos
 
@@ -11,7 +11,7 @@ A seleção combina o levantamento dos pontos internos (ECO-03) e as dúvidas re
 |---|---|
 | Eletrônicos | Marcados como dúvida em 29 de 52 respostas (55,8%). Nenhum ponto interno foi confirmado. |
 | Lata de alumínio | Representa a categoria **metal**, marcada em 16 respostas (30,8%); há coletores com identificação escrita “metal”. |
-| Restos de comida | Marcados em 13 respostas (25,0%). O coletor marrom do P-01 foi observado, mas sua finalidade não foi confirmada. |
+| Restos de comida | Marcados em 13 respostas (25,0%). O coletor marrom do P-01 recebe orgânicos conforme o mapeamento de cores confirmado para o campus. |
 | Folha de papel limpa | Exemplo específico de **papel e papelão**, marcados em 8 respostas (15,4%); há coletores identificados como “papel”. |
 | Garrafa PET | Exemplo específico de **plástico**, marcado em 5 respostas (9,6%); há coletores identificados como “plástico”. |
 | Garrafa de vidro inteira | Incluída pelo levantamento de coletores identificados como “vidro”. A pesquisa não mediu dúvidas sobre vidro como opção separada. |
@@ -25,7 +25,7 @@ Pilhas e baterias foram a dúvida mais marcada (32 de 52, 61,5%), mas ainda não
 - Categoria: Papel
 - Orientação curta: Separe as folhas limpas e secas dos demais resíduos.
 - Cuidados: Papel engordurado, guardanapos usados e papel higiênico não entram neste item.
-- Pontos confirmados pela sinalização fotografada: P-04, P-05, P-06 e P-09, identificados como “papel”.
+- Pontos identificados: P-01, P-02, P-03 e P-08 (azul = papel); P-04, P-05, P-06 e P-09 (rótulo “papel”).
 - Fonte: https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem
 - Revisado em: 22/10/2026
 
@@ -35,7 +35,7 @@ Pilhas e baterias foram a dúvida mais marcada (32 de 52, 61,5%), mas ainda não
 - Categoria: Plástico
 - Orientação curta: Esvazie a garrafa e retire os resíduos de bebida antes do descarte.
 - Cuidados: Se estiver suja, enxágue para não contaminar outros recicláveis. Não inclua embalagens de produtos químicos neste item.
-- Pontos confirmados pela sinalização fotografada: P-04, P-05, P-06 e P-09, identificados como “plástico”.
+- Pontos identificados: P-01, P-02, P-03 e P-08 (vermelho = plástico); P-04, P-05, P-06 e P-09 (rótulo “plástico”).
 - Fonte: https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem
 - Revisado em: 22/10/2026
 
@@ -45,7 +45,7 @@ Pilhas e baterias foram a dúvida mais marcada (32 de 52, 61,5%), mas ainda não
 - Categoria: Metal
 - Orientação curta: Esvazie a lata e retire os resíduos de bebida antes do descarte.
 - Cuidados: Se necessário, enxágue a embalagem. Não misture com restos de comida.
-- Pontos confirmados pela sinalização fotografada: P-04, P-05, P-06 e P-09, identificados como “metal”.
+- Pontos identificados: P-01, P-02, P-03 e P-08 (amarelo = metal); P-04, P-05, P-06 e P-09 (rótulo “metal”).
 - Fonte: https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem
 - Revisado em: 22/10/2026
 
@@ -55,7 +55,7 @@ Pilhas e baterias foram a dúvida mais marcada (32 de 52, 61,5%), mas ainda não
 - Categoria: Vidro
 - Orientação curta: Esvazie a garrafa e retire os resíduos antes do descarte.
 - Cuidados: Esta entrada vale para garrafas inteiras. Não coloque vidro quebrado, lâmpadas, espelhos ou cerâmica no coletor sem uma orientação específica.
-- Pontos confirmados pela sinalização fotografada: P-04, P-05, P-06 e P-09, identificados como “vidro”.
+- Pontos identificados: P-01, P-02, P-03 e P-08 (verde = vidro); P-04, P-05, P-06 e P-09 (rótulo “vidro”).
 - Fonte: https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem
 - Revisado em: 22/10/2026
 
@@ -85,9 +85,7 @@ Pilhas e baterias foram a dúvida mais marcada (32 de 52, 61,5%), mas ainda não
 - Termos de busca: comida, resto de comida, sobra de alimento, resíduo orgânico
 - Categoria: Orgânicos
 - Orientação curta: Separe os restos de comida das embalagens e dos materiais recicláveis.
-- Cuidados: Não coloque alimentos nos coletores de papel, plástico, metal ou vidro. Só indique uma coleta de orgânicos ou compostagem se ela for confirmada no campus.
-- Pontos confirmados: nenhum ponto interno identificado.
-- Ponto a conferir: P-01 tem coletor marrom, mas sua finalidade ainda não foi confirmada.
-- Aviso para o guia: “Ainda não há ponto para restos de comida confirmado dentro do campus.”
+- Cuidados: Não coloque alimentos nos coletores de papel, plástico, metal ou vidro. No P-01, use o coletor marrom para resíduos orgânicos.
+- Ponto identificado: P-01 (marrom = orgânicos/comida), conforme o mapeamento de cores confirmado em 24/10/2026.
 - Fonte: https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-compostagem
-- Revisado em: 22/10/2026
+- Revisado em: 24/10/2026

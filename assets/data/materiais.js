@@ -1,5 +1,6 @@
 // Catálogo de materiais do EcoTour.
-// Vínculos respaldados pela sinalização fotografada no inventário ECO-03.
+// Vínculos respaldados por rótulos fotografados ou pelo mapeamento de cores
+// confirmado para o campus em 24/10/2026.
 const materiais = [
   {
     id: "folha-papel",
@@ -8,7 +9,7 @@ const materiais = [
     categoria: "Papel",
     orientacao: "Separe as folhas limpas e secas dos demais resíduos.",
     cuidados: "Papel engordurado, guardanapos usados e papel higiênico não entram neste item.",
-    pontosConfirmados: ["P-04", "P-05", "P-06", "P-09"],
+    pontosConfirmados: ["P-01", "P-02", "P-03", "P-04", "P-05", "P-06", "P-08", "P-09"],
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
     revisadoEm: "2026-10-22"},
  {
@@ -18,7 +19,7 @@ const materiais = [
     categoria: "Plástico",
     orientacao: "Esvazie a garrafa e retire os resíduos de bebida antes do descarte.",
     cuidados: "Se estiver suja, enxágue para não contaminar outros recicláveis. Esta entrada não inclui embalagens de produtos químicos.",
-    pontosConfirmados: ["P-04", "P-05", "P-06", "P-09"],
+    pontosConfirmados: ["P-01", "P-02", "P-03", "P-04", "P-05", "P-06", "P-08", "P-09"],
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
     revisadoEm: "2026-10-22"
   },
@@ -29,7 +30,7 @@ const materiais = [
     categoria: "Metal",
     orientacao: "Esvazie a lata e retire os resíduos de bebida antes do descarte.",
     cuidados: "Se necessário, enxágue a embalagem. Não misture com restos de comida.",
-    pontosConfirmados: ["P-04", "P-05", "P-06", "P-09"],
+    pontosConfirmados: ["P-01", "P-02", "P-03", "P-04", "P-05", "P-06", "P-08", "P-09"],
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
     revisadoEm: "2026-10-22"
   }, 
@@ -40,7 +41,7 @@ const materiais = [
     categoria: "Vidro",
     orientacao: "Esvazie a garrafa e retire os resíduos antes do descarte.",
     cuidados: "Não inclua vidro quebrado, lâmpadas, espelhos ou cerâmica nesta entrada.",
-    pontosConfirmados: ["P-04", "P-05", "P-06", "P-09"],
+    pontosConfirmados: ["P-01", "P-02", "P-03", "P-04", "P-05", "P-06", "P-08", "P-09"],
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
     revisadoEm: "2026-10-22"
   },
@@ -72,9 +73,9 @@ const materiais = [
     termosBusca: ["comida", "resto de comida", "sobra de alimento", "resíduo orgânico"],
     categoria: "Orgânicos",
     orientacao: "Separe os restos de comida das embalagens e dos materiais recicláveis.",
-    cuidados: "Não coloque alimentos nos coletores de recicláveis. A finalidade do coletor marrom do P-01 ainda precisa ser confirmada.",
-    pontosConfirmados: [],
+    cuidados: "Não coloque alimentos nos coletores de recicláveis. No P-01, use o coletor marrom para resíduos orgânicos.",
+    pontosConfirmados: ["P-01"],
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-compostagem",
-    revisadoEm: "2026-10-22"
+    revisadoEm: "2026-10-24"
   }
 ];

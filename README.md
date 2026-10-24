@@ -4,7 +4,7 @@
 
 Guia digital de descarte de resíduos para a comunidade da **UNINASSAU Aguanambi (Fortaleza–CE)**, desenvolvido no **Hackathon UNINASSAU 2026 — Desafio Sustentabilidade**. Ele responde três perguntas: **qual material tenho, como preparo e onde descarto dentro do campus?**
 
-> **Em desenvolvimento · atualizado em 24/10/2026.** A consulta de materiais, o guia e a página de pontos estão implementados. Cinco pontos têm materiais identificados por sinalização fotografada; horários e disponibilidade atual ainda precisam de conferência.
+> **Em desenvolvimento · atualizado em 24/10/2026.** A consulta de materiais, o guia e a página de pontos estão implementados. Os nove pontos têm materiais identificados por rótulos ou pelo mapeamento de cores confirmado para o campus; horários e disponibilidade atual ainda precisam de conferência.
 
 ## Problema e pesquisa
 
@@ -25,7 +25,7 @@ O fluxo e o padrão visual foram definidos na ECO-05 (*EcoTour-ECO-05-Telas-e-Pa
 
 **Fluxo principal:** consultar (`index.html`) → orientação do material (`guia.html?material=id`) → pontos compatíveis (`pontos.html?material=id`) → detalhes do ponto (`pontos.html?ponto=P-xx`). A navegação no cabeçalho leva à lista de todos os pontos, que pode ser filtrada por área.
 
-**Estados previstos:** busca sem resultado, material sem destino confirmado (eletrônicos e restos de comida), filtro sem pontos e ponto indisponível. Cada um tem uma mensagem e um caminho de volta.
+**Estados previstos:** busca sem resultado, material sem destino confirmado (eletrônicos), filtro sem pontos e ponto indisponível. Cada um tem uma mensagem e um caminho de volta.
 
 **Padrão visual:**
 
@@ -46,10 +46,10 @@ Site estático em **HTML, CSS e JavaScript**, sem login, com catálogo pesquisá
 | Frente | Situação em 24/10/2026 |
 |---|---|
 | Pesquisa (ECO-02) | ✅ 52 respostas analisadas |
-| Inventário de pontos (ECO-03) | ✅ 9 pontos documentados; 5 com sinalização escrita e 4 só com cores |
-| Catálogo (ECO-04) | 🟡 7 materiais em `materiais.js`; 5 vinculados aos pontos sinalizados |
+| Inventário de pontos (ECO-03) | ✅ 9 pontos documentados; 5 com sinalização escrita e 4 identificados por cores |
+| Catálogo (ECO-04) | 🟡 7 materiais em `materiais.js`; 6 vinculados aos pontos identificados |
 | Telas e padrão visual (ECO-05) | ✅ 9 telas e padrão visual definidos |
-| Dados dos pontos | ✅ 9 pontos em `pontos-descarte.js`, organizados por área; 5 confirmados pela sinalização fotografada |
+| Dados dos pontos | ✅ 9 pontos em `pontos-descarte.js`, organizados por área; materiais identificados por rótulos ou cores confirmadas |
 | Fotos dos pontos | ✅ 9 fotos em `assets/img/`, vinculadas ao inventário |
 | Páginas e interações (ECO-06 a 09) | ✅ Consulta, guia, lista, filtro e detalhe implementados; validação em navegador ainda pendente |
 
@@ -79,7 +79,7 @@ Para atualizar os dados:
 
 1. **Materiais:** edite `assets/data/materiais.js` sem mudar os IDs. Cada item precisa de nome, termos de busca, categoria, orientação, cuidados, fonte e data de revisão. Cada material novo precisa de um ícone próprio.
 2. **Pontos:** registre as evidências em `docs/inventario-pontos.md` e só depois leve os dados conferidos para `pontos-descarte.js`.
-3. **Vínculos:** só adicione um ID em `pontosConfirmados` quando o ponto estiver **confirmado** por sinalização ou pelo setor responsável. A cor do coletor não confirma nada. Uma lista vazia significa que ainda não há destino interno confirmado.
+3. **Vínculos:** só adicione um ID em `pontosConfirmados` quando o material estiver identificado por rótulo ou pelo mapeamento de cores confirmado para o campus: azul = papel, vermelho = plástico, marrom = orgânicos (comida), verde = vidro e amarelo = metal. Uma lista vazia significa que ainda não há destino interno confirmado.
 4. **Antes de publicar:** confira se documentação e dados estão alinhados (IDs, restrições, fotos e datas).
 
 As respostas individuais do formulário não são publicadas. A documentação usa apenas resultados agregados.

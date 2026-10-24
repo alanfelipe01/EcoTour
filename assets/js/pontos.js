@@ -66,7 +66,7 @@ function iniciarPontos() {
       return;
     }
     document.querySelector("#titulo-aviso-material").textContent = `Pontos confirmados para ${material.nome}`;
-    document.querySelector("#texto-aviso-material").textContent = "Os materiais foram identificados por rótulos no levantamento de 19/10/2026. Confira localização, restrições e disponibilidade atual antes de levar o material.";
+    document.querySelector("#texto-aviso-material").textContent = "Os materiais foram identificados por rótulos ou pelo mapeamento de cores do campus. Confira localização, restrições e disponibilidade atual antes de levar o material.";
     montarLista(confirmados);
     return;
   }
@@ -152,7 +152,7 @@ function iniciarPontos() {
 
 function rotuloSituacao(ponto) {
   if (ponto.disponibilidade === "indisponível") return "Indisponível";
-  return ponto.situacao === "confirmado" ? "Recebimento sinalizado" : "Observado · recebimento a confirmar";
+  return ponto.situacao === "confirmado" ? "Recebimento identificado" : "Observado · recebimento a confirmar";
 }
 
 function formatarData(valor) {
