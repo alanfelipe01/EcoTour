@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Consulte orientações, cuidados e pontos confirmados para o descarte de materiais no campus UNINASSAU Aguanambi."
+  >
+
+  <title>EcoTour | Guia do material</title>
+
+  <link rel="stylesheet" href="assets/css/guia.css">
+
+  <script src="assets/data/materiais.js" defer></script>
+  <script src="assets/js/guia.js" defer></script>
+</head>
+
+<body class="pagina-guia">
+  <a class="pular-conteudo" href="#conteudo">
+    Pular para o conteúdo
+  </a>
+
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a class="marca" href="index.html" aria-label="EcoTour — início">
+        Eco<span>Tour</span>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <a class="link-pontos" href="pontos.html">
+          Pontos de descarte <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="container">
+    <a class="voltar-materiais" href="index.html">
+      <span aria-hidden="true">←</span>
+      Voltar aos materiais
+    </a>
+
+    <!-- Exibido quando o material não existe ou os dados não carregam. -->
+    <section
+      id="estado-erro"
+      class="estado-erro"
+      aria-labelledby="titulo-erro"
+      hidden
+    >
+      <h1 id="titulo-erro">Material não encontrado</h1>
+      <p id="mensagem-erro"></p>
+      <a class="botao-primario" href="index.html">
+        Escolher um material
+      </a>
+    </section>
+
+    <!-- O JavaScript preenche esta área com os dados do catálogo. -->
+    <article id="guia-material" aria-labelledby="nome-material" hidden>
+      <header class="apresentacao-material">
+        <p class="identificacao-campus">UNINASSAU · Campus Aguanambi</p>
+        <p id="categoria-material" class="categoria-material"></p>
+        <h1 id="nome-material"></h1>
+        <p class="introducao">
+          Veja como preparar esse material e consulte as informações
+          disponíveis para o descarte.
+        </p>
+      </header>
+
+      <div class="orientacoes">
+        <section class="bloco-orientacao" aria-labelledby="titulo-preparo">
+          <div class="titulo-bloco">
+            <span class="numero-etapa" aria-hidden="true">01</span>
+            <h2 id="titulo-preparo">Como preparar</h2>
+          </div>
+          <p id="orientacao-material" class="texto-orientacao"></p>
+        </section>
+
+        <section
+          class="bloco-orientacao bloco-cuidados"
+          aria-labelledby="titulo-cuidados"
+        >
+          <div class="titulo-bloco">
+            <span class="numero-etapa" aria-hidden="true">02</span>
+            <h2 id="titulo-cuidados">Cuidados no descarte</h2>
+          </div>
+          <p id="cuidados-material" class="texto-orientacao"></p>
+        </section>
+      </div>
+
+      <section class="destino-material" aria-labelledby="titulo-destino">
+        <div class="titulo-bloco">
+          <span class="numero-etapa" aria-hidden="true">03</span>
+          <h2 id="titulo-destino">Onde descartar no campus</h2>
+        </div>
+
+        <div id="destino-confirmado" hidden>
+          <p id="resumo-pontos"></p>
+          <a id="link-pontos-material" class="botao-primario">
+            Ver pontos para este material
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div id="destino-nao-confirmado" hidden>
+          <p class="situacao-destino">
+            Recebimento no campus ainda não confirmado
+          </p>
+          <p>
+            Ainda não temos um ponto confirmado no campus para receber
+            este material. Isso não significa que ele não exista:
+            a informação está em verificação.
+          </p>
+          <p>
+            Siga os cuidados indicados acima e confirme o recebimento
+            com o setor responsável antes de levar o material.
+          </p>
+          <a class="link-secundario" href="pontos.html">
+            Consultar todos os pontos do campus
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="referencias" aria-labelledby="titulo-referencias">
+        <h2 id="titulo-referencias">Sobre esta orientação</h2>
+        <p>
+          A orientação utiliza a fonte abaixo. A confirmação de
+          recebimento no campus é feita separadamente pela equipe.
+        </p>
+
+        <a
+          id="fonte-material"
+          class="link-secundario"
+          target="_blank"
+          rel="noopener noreferrer"
+          hidden
+        >
+          Consultar fonte da orientação (abre em nova aba)
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <p id="fonte-indisponivel" hidden>
+          Fonte de referência ainda não informada.
+        </p>
+
+        <p id="revisao-material" class="data-revisao" hidden>
+          Orientação revisada em
+          <time id="data-revisao"></time>.
+        </p>
+      </section>
+
+      <div class="acao-final">
+        <a class="link-secundario" href="index.html">
+          <span aria-hidden="true">←</span>
+          Consultar outro material
+        </a>
+      </div>
+    </article>
+
+    <noscript>
+      <section class="estado-erro">
+        <h1>Ative o JavaScript para consultar o guia</h1>
+        <p>
+          As orientações são carregadas a partir do catálogo de materiais.
+          Ative o JavaScript no navegador e atualize a página.
+        </p>
+      </section>
+    </noscript>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>EcoTour · Guia de descarte sustentável</p>
+      <p>Campus UNINASSAU Aguanambi · Fortaleza, CE</p>
+    </div>
+  </footer>
+</body>
+</html>
