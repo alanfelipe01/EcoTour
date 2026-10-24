@@ -98,8 +98,8 @@ function preencherDestino(material) {
 
   document.querySelector("#resumo-pontos").textContent =
     quantidade === 1
-      ? "Há 1 ponto com recebimento confirmado para este material. Consulte a localização e as restrições antes de levar seu resíduo."
-      : `Há ${quantidade} pontos com recebimento confirmado para este material. Consulte as localizações e as restrições antes de levar seu resíduo.`;
+      ? "Há 1 ponto sinalizado para receber este material no levantamento de 19/10/2026. Consulte a localização e as restrições antes de levar seu resíduo."
+      : `Há ${quantidade} pontos sinalizados para receber este material no levantamento de 19/10/2026. Consulte as localizações e as restrições antes de levar seu resíduo.`;
 
   // A tela de pontos deverá ler esse parâmetro para filtrar a lista.
   document.querySelector("#link-pontos-material").href =
