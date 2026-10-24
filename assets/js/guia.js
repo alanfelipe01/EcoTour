@@ -74,13 +74,16 @@ function preencherDestino(material) {
   const destinoNaoConfirmado =
     document.querySelector("#destino-nao-confirmado");
 
-  // O catálogo só deve conter aqui IDs de pontos já conferidos.
-  const pontos = Array.isArray(material.pontosConfirmados)
-    ? [...new Set(
-        material.pontosConfirmados
-          .filter((id) => typeof id === "string" && id.trim())
-          .map((id) => id.trim())
-      )]
+  // Confere o vínculo nos dois catálogos antes de anunciar um destino.
+  const ids = Array.isArray(material.pontosConfirmados)
+    ? [...new Set(material.pontosConfirmados.filter((id) => typeof id === "string" && id.trim()))]
+    : [];
+  const pontos = typeof pontosDescarte !== "undefined" && Array.isArray(pontosDescarte)
+    ? pontosDescarte.filter((ponto) =>
+        ids.includes(ponto.id) && ponto.situacao === "confirmado" &&
+        ponto.disponibilidade === "disponível" &&
+        Array.isArray(ponto.materiaisConfirmados) &&
+        ponto.materiaisConfirmados.includes(material.id))
     : [];
 
   const quantidade = pontos.length;
@@ -95,8 +98,8 @@ function preencherDestino(material) {
 
   document.querySelector("#resumo-pontos").textContent =
     quantidade === 1
-      ? "Há 1 ponto com recebimento confirmado para este material. Consulte a localização e as restrições antes de levar seu resíduo."
-      : `Há ${quantidade} pontos com recebimento confirmado para este material. Consulte as localizações e as restrições antes de levar seu resíduo.`;
+      ? "Há 1 ponto sinalizado para receber este material no levantamento de 19/10/2026. Consulte a localização e as restrições antes de levar seu resíduo."
+      : `Há ${quantidade} pontos sinalizados para receber este material no levantamento de 19/10/2026. Consulte as localizações e as restrições antes de levar seu resíduo.`;
 
   // A tela de pontos deverá ler esse parâmetro para filtrar a lista.
   document.querySelector("#link-pontos-material").href =

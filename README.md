@@ -4,7 +4,7 @@
 
 Guia digital de descarte de resíduos para a comunidade da **UNINASSAU Aguanambi (Fortaleza–CE)**, desenvolvido no **Hackathon UNINASSAU 2026 — Desafio Sustentabilidade**. Ele responde três perguntas: **qual material tenho, como preparo e onde descarto dentro do campus?**
 
-> **Em desenvolvimento · atualizado em 23/10/2026.** Pesquisa, inventário, catálogo e design das telas estão prontos. As páginas ainda não foram implementadas.
+> **Em desenvolvimento · atualizado em 24/10/2026.** A consulta de materiais, o guia e a página de pontos estão implementados. Cinco pontos têm materiais identificados por sinalização fotografada; horários e disponibilidade atual ainda precisam de conferência.
 
 ## Problema e pesquisa
 
@@ -23,14 +23,14 @@ As perguntas aceitavam múltiplas respostas, e os resultados descrevem só quem 
 
 O fluxo e o padrão visual foram definidos na ECO-05 (*EcoTour-ECO-05-Telas-e-Padrao-Visual.pdf*, 23/10/2026).
 
-**Fluxo principal:** consultar (`index.html`) → orientação do material (`guia.html?material=id`) → pontos compatíveis (`pontos.html?material=id`) → detalhes do ponto (`pontos.html?ponto=P-xx`). A barra inferior **Materiais | Pontos** leva direto à lista de todos os pontos, que pode ser filtrada por área.
+**Fluxo principal:** consultar (`index.html`) → orientação do material (`guia.html?material=id`) → pontos compatíveis (`pontos.html?material=id`) → detalhes do ponto (`pontos.html?ponto=P-xx`). A navegação no cabeçalho leva à lista de todos os pontos, que pode ser filtrada por área.
 
-**Estados previstos:** busca sem resultado, material sem destino confirmado (hoje, todos), filtro sem pontos e ponto indisponível. Cada um tem uma mensagem e um caminho de volta.
+**Estados previstos:** busca sem resultado, material sem destino confirmado (eletrônicos e restos de comida), filtro sem pontos e ponto indisponível. Cada um tem uma mensagem e um caminho de volta.
 
 **Padrão visual:**
 
-- Pensado primeiro para o celular: alvos de toque com no mínimo 48px e conteúdo de até 720px.
-- Tipografia Nunito, verde `#1E5A3C` sobre fundo `#F7F5EC`, todos os textos com contraste de pelo menos 4,5:1 (WCAG).
+- Layout responsivo, com controles principais de pelo menos 48px e conteúdo de até 1040px.
+- Tipografia Arial, verde `#1E5A3C` sobre fundo `#F7F5EC`. A verificação completa de contraste e acessibilidade ainda está pendente.
 - Ícones SVG próprios e etiquetas de situação sempre com ícone + texto: *Confirmado*, *Observado · recebimento a confirmar*, *Indisponível*.
 
 O design é uma proposta de aparência. Os itens marcados como *Exemplo ilustrativo* não existem no levantamento, e o conteúdo final virá dos arquivos de dados validados.
@@ -43,15 +43,15 @@ Site estático em **HTML, CSS e JavaScript**, sem login, com catálogo pesquisá
 
 ## Andamento
 
-| Frente | Situação em 23/10/2026 |
+| Frente | Situação em 24/10/2026 |
 |---|---|
 | Pesquisa (ECO-02) | ✅ 52 respostas analisadas |
-| Inventário de pontos (ECO-03) | ✅ 9 pontos documentados, todos ainda como "observado" |
-| Catálogo (ECO-04) | 🟡 7 materiais em `materiais.js`; `pontosConfirmados` ainda vazios |
+| Inventário de pontos (ECO-03) | ✅ 9 pontos documentados; 5 com sinalização escrita e 4 só com cores |
+| Catálogo (ECO-04) | 🟡 7 materiais em `materiais.js`; 5 vinculados aos pontos sinalizados |
 | Telas e padrão visual (ECO-05) | ✅ 9 telas e padrão visual definidos |
-| Dados dos pontos | ⏳ `pontos-descarte.js` vazio; campo de área a definir (ECO-09) |
-| Fotos dos pontos | ⏳ Citadas no inventário, ainda fora do repositório |
-| Páginas e interações (ECO-06 a 09) | ⏳ Arquivos criados, sem implementação |
+| Dados dos pontos | ✅ 9 pontos em `pontos-descarte.js`, organizados por área; 5 confirmados pela sinalização fotografada |
+| Fotos dos pontos | ✅ 9 fotos em `assets/img/`, vinculadas ao inventário |
+| Páginas e interações (ECO-06 a 09) | ✅ Consulta, guia, lista, filtro e detalhe implementados; validação em navegador ainda pendente |
 
 O planejamento e os critérios de aceite estão nas [issues do projeto](https://github.com/alanfelipe01/EcoTour/issues).
 
@@ -63,13 +63,13 @@ O planejamento e os critérios de aceite estão nas [issues do projeto](https://
 | `assets/css/style.css` | Estilos e adaptação das telas |
 | `assets/js/` | `main.js`, `guia.js` e `pontos.js`: interações de cada página |
 | `assets/data/materiais.js` | Catálogo e vínculos com pontos confirmados |
-| `assets/data/pontos-descarte.js` | Dados dos pontos (a preencher) |
+| `assets/data/pontos-descarte.js` | Dados dos 9 pontos inventariados |
 | `docs/catalogo-materiais.md` | Orientações, justificativas e fontes dos [7 materiais](docs/catalogo-materiais.md) |
 | `docs/inventario-pontos.md` | [Levantamento dos pontos](docs/inventario-pontos.md) e pendências |
 
 ## Como abrir e manter
 
-As páginas HTML ainda estão vazias. Por enquanto, o conteúdo está em `docs/` e `assets/data/`.
+Abra `index.html` no navegador para iniciar a consulta. A página `pontos.html` também pode ser aberta diretamente. Um servidor HTTP local ajuda a testar em condições próximas da publicação.
 
 ```bash
 git clone https://github.com/alanfelipe01/EcoTour.git
@@ -86,7 +86,7 @@ As respostas individuais do formulário não são publicadas. A documentação u
 
 ## Próximas etapas
 
-- Confirmar os pontos com o setor responsável, incluir as fotos e preencher `pontos-descarte.js`.
+- Conferir horários, restrições adicionais e disponibilidade atual com o setor responsável; atualizar os vínculos quando surgirem novas evidências.
 - Construir as telas e implementar busca, orientações e consulta aos pontos (ECO-06 a ECO-09).
 - Verificar acessibilidade, uso no celular e consistência dos dados (ECO-10 e ECO-11).
 - Testar com pessoas do campus e publicar a demonstração (ECO-12 a ECO-16).

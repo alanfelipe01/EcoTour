@@ -10,7 +10,7 @@ A seleção combina o levantamento dos pontos internos (ECO-03) e as dúvidas re
 | Material no catálogo | Relação com a pesquisa e o levantamento |
 |---|---|
 | Eletrônicos | Marcados como dúvida em 29 de 52 respostas (55,8%). Nenhum ponto interno foi confirmado. |
-| Lata de alumínio | Representa a categoria **metal**, marcada em 16 respostas (30,8%); há coletores com identificação escrita “metal”, ainda a conferir. |
+| Lata de alumínio | Representa a categoria **metal**, marcada em 16 respostas (30,8%); há coletores com identificação escrita “metal”. |
 | Restos de comida | Marcados em 13 respostas (25,0%). O coletor marrom do P-01 foi observado, mas sua finalidade não foi confirmada. |
 | Folha de papel limpa | Exemplo específico de **papel e papelão**, marcados em 8 respostas (15,4%); há coletores identificados como “papel”. |
 | Garrafa PET | Exemplo específico de **plástico**, marcado em 5 respostas (9,6%); há coletores identificados como “plástico”. |
@@ -25,8 +25,7 @@ Pilhas e baterias foram a dúvida mais marcada (32 de 52, 61,5%), mas ainda não
 - Categoria: Papel
 - Orientação curta: Separe as folhas limpas e secas dos demais resíduos.
 - Cuidados: Papel engordurado, guardanapos usados e papel higiênico não entram neste item.
-- Pontos confirmados: nenhum até a conferência do ECO-03.
-- Pontos a conferir: P-04, P-05, P-06 e P-09, identificados como “papel”.
+- Pontos confirmados pela sinalização fotografada: P-04, P-05, P-06 e P-09, identificados como “papel”.
 - Fonte: https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem
 - Revisado em: 22/10/2026
 
@@ -36,8 +35,7 @@ Pilhas e baterias foram a dúvida mais marcada (32 de 52, 61,5%), mas ainda não
 - Categoria: Plástico
 - Orientação curta: Esvazie a garrafa e retire os resíduos de bebida antes do descarte.
 - Cuidados: Se estiver suja, enxágue para não contaminar outros recicláveis. Não inclua embalagens de produtos químicos neste item.
-- Pontos confirmados: nenhum até a conferência do ECO-03.
-- Pontos a conferir: P-04, P-05, P-06 e P-09, identificados como “plástico”.
+- Pontos confirmados pela sinalização fotografada: P-04, P-05, P-06 e P-09, identificados como “plástico”.
 - Fonte: https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem
 - Revisado em: 22/10/2026
 
@@ -47,8 +45,7 @@ Pilhas e baterias foram a dúvida mais marcada (32 de 52, 61,5%), mas ainda não
 - Categoria: Metal
 - Orientação curta: Esvazie a lata e retire os resíduos de bebida antes do descarte.
 - Cuidados: Se necessário, enxágue a embalagem. Não misture com restos de comida.
-- Pontos confirmados: nenhum até a conferência do ECO-03.
-- Pontos a conferir: P-04, P-05, P-06 e P-09, identificados como “metal”.
+- Pontos confirmados pela sinalização fotografada: P-04, P-05, P-06 e P-09, identificados como “metal”.
 - Fonte: https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem
 - Revisado em: 22/10/2026
 
@@ -58,8 +55,7 @@ Pilhas e baterias foram a dúvida mais marcada (32 de 52, 61,5%), mas ainda não
 - Categoria: Vidro
 - Orientação curta: Esvazie a garrafa e retire os resíduos antes do descarte.
 - Cuidados: Esta entrada vale para garrafas inteiras. Não coloque vidro quebrado, lâmpadas, espelhos ou cerâmica no coletor sem uma orientação específica.
-- Pontos confirmados: nenhum até a conferência do ECO-03.
-- Pontos a conferir: P-04, P-05, P-06 e P-09, identificados como “vidro”.
+- Pontos confirmados pela sinalização fotografada: P-04, P-05, P-06 e P-09, identificados como “vidro”.
 - Fonte: https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem
 - Revisado em: 22/10/2026
 
@@ -69,8 +65,7 @@ Pilhas e baterias foram a dúvida mais marcada (32 de 52, 61,5%), mas ainda não
 - Categoria: Medicamentos
 - Orientação curta: Separe o medicamento vencido para entrega em um ponto que receba esse tipo de resíduo.
 - Cuidados: Não descarte no lixo comum, na pia ou no vaso sanitário. Agulhas, seringas e outros perfurocortantes não são aceitos pelo descartômetro descrito no inventário do campus.
-- Pontos confirmados: nenhum até a conferência do ECO-03.
-- Ponto a conferir: P-07, descartômetro dentro da secretaria. Confirmar recebimento e horário de acesso.
+- Ponto confirmado pela sinalização fotografada: P-07, descartômetro dentro da secretaria. Confirmar o horário de acesso.
 - Fonte: https://sinir.gov.br/perfis/logistica-reversa/logistica-reversa/medicamentos-seus-residuos-e-embalagens/
 - Revisado em: 22/10/2026
 

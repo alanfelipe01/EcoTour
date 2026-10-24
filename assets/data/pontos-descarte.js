@@ -1,120 +1,13 @@
-// Pontos de descarte do EcoTour, conforme mapeamento informado em 24/10/2026.
-// Os IDs de materiais correspondem ao catálogo em materiais.js.
-// Localizações conforme docs/inventario-pontos.md; horários ainda não confirmados.
+// Inventário de 19/10/2026. Rótulos escritos confirmam os materiais indicados;
+// apenas cores não confirmam recebimento. Horários e situação atual podem mudar.
 const pontosDescarte = [
-  {
-    "id": "P-01",
-    "nome": "Entrada da universidade",
-    "localizacao": "Entrada, perto do elevador",
-    "materiais": [
-      "folha-papel",
-      "garrafa-pet",
-      "lata-aluminio",
-      "garrafa-vidro",
-      "restos-comida"
-    ],
-    "foto": "assets/img/P-01.jpg",
-    "restricoes": ""
-  },
-  {
-    "id": "P-02",
-    "nome": "Entrada do refeitório",
-    "localizacao": "Entrada do refeitório",
-    "materiais": [
-      "folha-papel",
-      "garrafa-pet",
-      "lata-aluminio",
-      "garrafa-vidro"
-    ],
-    "foto": "assets/img/P-02.jpg",
-    "restricoes": ""
-  },
-  {
-    "id": "P-03",
-    "nome": "Ao lado da cantina",
-    "localizacao": "Bloco D, ao lado da cantina",
-    "materiais": [
-      "folha-papel",
-      "garrafa-pet",
-      "lata-aluminio",
-      "garrafa-vidro"
-    ],
-    "foto": "assets/img/P-03.jpg",
-    "restricoes": ""
-  },
-  {
-    "id": "P-04",
-    "nome": "Refeitório 1",
-    "localizacao": "Refeitório",
-    "materiais": [
-      "folha-papel",
-      "garrafa-pet",
-      "lata-aluminio",
-      "garrafa-vidro"
-    ],
-    "foto": "assets/img/P-04.jpg",
-    "restricoes": ""
-  },
-  {
-    "id": "P-05",
-    "nome": "Refeitório 2",
-    "localizacao": "Refeitório",
-    "materiais": [
-      "folha-papel",
-      "garrafa-pet",
-      "lata-aluminio",
-      "garrafa-vidro"
-    ],
-    "foto": "assets/img/P-05.jpg",
-    "restricoes": ""
-  },
-  {
-    "id": "P-06",
-    "nome": "Em frente à secretaria",
-    "localizacao": "Em frente à secretaria",
-    "materiais": [
-      "folha-papel",
-      "garrafa-pet",
-      "lata-aluminio",
-      "garrafa-vidro"
-    ],
-    "foto": "assets/img/P-06.jpg",
-    "restricoes": ""
-  },
-  {
-    "id": "P-07",
-    "nome": "Descartômetro",
-    "localizacao": "Dentro da secretaria",
-    "materiais": [
-      "medicamento-vencido"
-    ],
-    "foto": "assets/img/P-07.jpg",
-    "restricoes": "Não aceita agulhas, seringas ou qualquer material perfurocortante."
-  },
-  {
-    "id": "P-08",
-    "nome": "Bloco B",
-    "localizacao": "Bloco B",
-    "materiais": [
-      "folha-papel",
-      "garrafa-pet",
-      "lata-aluminio",
-      "garrafa-vidro"
-    ],
-    "foto": "assets/img/P-08.jpg",
-    "restricoes": ""
-  },
-  {
-    "id": "P-09",
-    "nome": "Entrada do estacionamento",
-    "localizacao": "Entrada do estacionamento",
-    "materiais": [
-      "folha-papel",
-      "garrafa-pet",
-      "lata-aluminio",
-      "garrafa-vidro"
-    ],
-    "foto": "assets/img/P-09.jpg",
-    "restricoes": ""
-  }
+  { id: "P-01", nome: "Entrada da universidade", area: "Entrada", localizacao: "Entrada, perto do elevador", coletores: "Cinco coletores nas cores marrom, verde, amarelo, vermelho e azul.", identificacao: "Apenas cores, sem indicação escrita do que recebem.", situacao: "observado", disponibilidade: "disponível", verificadoEm: "2026-10-19", foto: "assets/img/P-01.jpg", restricoes: "Finalidade do coletor marrom e dos demais coletores ainda não confirmada.", materiaisConfirmados: [] },
+  { id: "P-02", nome: "Entrada do refeitório", area: "Alimentação", localizacao: "Entrada do refeitório", coletores: "Quatro coletores nas cores verde, azul, amarelo e vermelho.", identificacao: "Apenas cores, sem indicação escrita do que recebem.", situacao: "observado", disponibilidade: "disponível", verificadoEm: "2026-10-19", foto: "assets/img/P-02.jpg", restricoes: "Materiais recebidos ainda não confirmados.", materiaisConfirmados: [] },
+  { id: "P-03", nome: "Ao lado da cantina", area: "Blocos", localizacao: "Bloco D, ao lado da cantina", coletores: "Quatro coletores nas cores azul, amarelo, verde e vermelho.", identificacao: "Apenas cores, sem indicação escrita do que recebem.", situacao: "observado", disponibilidade: "disponível", verificadoEm: "2026-10-19", foto: "assets/img/P-03.jpg", restricoes: "Materiais recebidos ainda não confirmados.", materiaisConfirmados: [] },
+  { id: "P-04", nome: "Refeitório 1", area: "Alimentação", localizacao: "Refeitório", coletores: "Coletores com rótulos para papel, metal, vidro e plástico.", identificacao: "Rótulos escritos nos coletores.", situacao: "confirmado", disponibilidade: "disponível", verificadoEm: "2026-10-19", foto: "assets/img/P-04.jpg", restricoes: "Materiais indicados pelos rótulos fotografados em 19/10/2026. Horários e restrições adicionais ainda não confirmados com o setor responsável.", materiaisConfirmados: ["folha-papel", "garrafa-pet", "lata-aluminio", "garrafa-vidro"] },
+  { id: "P-05", nome: "Refeitório 2", area: "Alimentação", localizacao: "Refeitório", coletores: "Coletores com rótulos para papel, vidro, metal e plástico.", identificacao: "Rótulos escritos nos coletores.", situacao: "confirmado", disponibilidade: "disponível", verificadoEm: "2026-10-19", foto: "assets/img/P-05.jpg", restricoes: "Materiais indicados pelos rótulos fotografados em 19/10/2026. Horários e restrições adicionais ainda não confirmados com o setor responsável.", materiaisConfirmados: ["folha-papel", "garrafa-pet", "lata-aluminio", "garrafa-vidro"] },
+  { id: "P-06", nome: "Em frente à secretaria", area: "Secretaria", localizacao: "Em frente à secretaria", coletores: "Coletores com rótulos para papel, plástico, vidro e metal.", identificacao: "Rótulos escritos nos coletores.", situacao: "confirmado", disponibilidade: "disponível", verificadoEm: "2026-10-19", foto: "assets/img/P-06.jpg", restricoes: "Materiais indicados pelos rótulos fotografados em 19/10/2026. Horários e restrições adicionais ainda não confirmados com o setor responsável.", materiaisConfirmados: ["folha-papel", "garrafa-pet", "lata-aluminio", "garrafa-vidro"] },
+  { id: "P-07", nome: "Descartômetro", area: "Secretaria", localizacao: "Dentro da secretaria", coletores: "Sinalização para medicamentos vencidos, caixas e bulas.", identificacao: "Rótulos escritos no ponto.", situacao: "confirmado", disponibilidade: "disponível", verificadoEm: "2026-10-19", foto: "assets/img/P-07.jpg", restricoes: "A sinalização informa que não aceita agulhas, seringas ou perfurocortantes. Horário de acesso ainda não confirmado.", materiaisConfirmados: ["medicamento-vencido"] },
+  { id: "P-08", nome: "Bloco B", area: "Blocos", localizacao: "Bloco B", coletores: "Quatro coletores nas cores amarelo, azul, vermelho e verde.", identificacao: "Apenas cores, sem indicação escrita do que recebem.", situacao: "observado", disponibilidade: "disponível", verificadoEm: "2026-10-19", foto: "assets/img/P-08.jpg", restricoes: "Materiais recebidos ainda não confirmados.", materiaisConfirmados: [] },
+  { id: "P-09", nome: "Entrada do estacionamento", area: "Estacionamento", localizacao: "Entrada do estacionamento", coletores: "Coletores com rótulos para plástico, papel, vidro e metal.", identificacao: "Rótulos escritos nos coletores.", situacao: "confirmado", disponibilidade: "disponível", verificadoEm: "2026-10-19", foto: "assets/img/P-09.jpg", restricoes: "Materiais indicados pelos rótulos fotografados em 19/10/2026. Horários e restrições adicionais ainda não confirmados com o setor responsável.", materiaisConfirmados: ["folha-papel", "garrafa-pet", "lata-aluminio", "garrafa-vidro"] }
 ];
