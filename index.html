@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulte orientações e pontos de descarte no campus UNINASSAU Aguanambi.">
+  <title>EcoTour | Guia de descarte</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="assets/data/materiais.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body class="pagina-inicial">
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a class="marca" href="index.html" aria-label="EcoTour — início">
+        Eco<span>Tour</span>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <a class="link-pontos" href="pontos.html">
+          Pontos de descarte <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="container">
+    <section class="consulta" aria-labelledby="titulo-consulta">
+      <p class="identificacao-campus">UNINASSAU · Campus Aguanambi</p>
+
+      <h1 id="titulo-consulta">O que você quer descartar?</h1>
+
+      <p class="introducao">
+        Encontre orientações para preparar e descartar seus resíduos no campus.
+      </p>
+
+      <form id="formulario-busca" class="formulario-busca" role="search">
+        <label for="busca-material">Buscar um material</label>
+
+        <div class="campo-busca">
+          <input
+            type="search"
+            id="busca-material"
+            name="busca"
+            placeholder="Ex.: papel, garrafa ou remédio"
+            autocomplete="off"
+            aria-controls="lista-materiais"
+          >
+
+          <button type="submit" class="botao-buscar">Buscar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="materiais" aria-labelledby="titulo-materiais">
+      <div class="materiais-cabecalho">
+        <h2 id="titulo-materiais">Escolha um material</h2>
+
+        <button id="limpar-busca" class="botao-limpar" type="button" hidden>
+          Limpar busca
+        </button>
+      </div>
+
+      <p id="mensagem-busca" class="mensagem-busca" role="status"></p>
+
+      <ul id="lista-materiais" class="lista-materiais"></ul>
+
+      <div id="estado-vazio" class="estado-vazio" hidden>
+        <h3>Nenhum material encontrado</h3>
+        <p>Tente outro nome ou limpe a busca para ver todos os materiais.</p>
+      </div>
+
+      <noscript>
+        <p>Ative o JavaScript para consultar o catálogo de materiais.</p>
+      </noscript>
+    </section>
+
+    <aside class="atalho-pontos" aria-labelledby="titulo-pontos">
+      <div>
+        <h2 id="titulo-pontos">Quer encontrar os pontos do campus?</h2>
+        <p>Consulte as localizações e as informações dos pontos levantados.</p>
+      </div>
+
+      <a href="pontos.html">Ver pontos de descarte <span aria-hidden="true">→</span></a>
+    </aside>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>EcoTour · Guia de descarte sustentável</p>
+      <p>Campus UNINASSAU Aguanambi · Fortaleza, CE</p>
+    </div>
+  </footer>
+</body>
+</html>
