@@ -8,9 +8,9 @@ const materiais = [
     categoria: "Papel",
     orientacao: "Separe as folhas limpas e secas dos demais resíduos.",
     cuidados: "Papel engordurado, guardanapos usados e papel higiênico não entram neste item.",
-    pontosConfirmados: [],
+    pontosConfirmados: ["P-01","P-02","P-03","P-04","P-05","P-06","P-08","P-09"],
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
-    revisadoEm: "2026-10-22"},
+    revisadoEm: "2026-10-24"},
  {
     id: "garrafa-pet",
     nome: "Garrafa PET",
@@ -18,9 +18,9 @@ const materiais = [
     categoria: "Plástico",
     orientacao: "Esvazie a garrafa e retire os resíduos de bebida antes do descarte.",
     cuidados: "Se estiver suja, enxágue para não contaminar outros recicláveis. Esta entrada não inclui embalagens de produtos químicos.",
-    pontosConfirmados: [],
+    pontosConfirmados: ["P-01","P-02","P-03","P-04","P-05","P-06","P-08","P-09"],
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
-    revisadoEm: "2026-10-22"
+    revisadoEm: "2026-10-24"
   },
    {
     id: "lata-aluminio",
@@ -29,9 +29,9 @@ const materiais = [
     categoria: "Metal",
     orientacao: "Esvazie a lata e retire os resíduos de bebida antes do descarte.",
     cuidados: "Se necessário, enxágue a embalagem. Não misture com restos de comida.",
-    pontosConfirmados: [],
+    pontosConfirmados: ["P-01","P-02","P-03","P-04","P-05","P-06","P-08","P-09"],
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
-    revisadoEm: "2026-10-22"
+    revisadoEm: "2026-10-24"
   }, 
    {
     id: "garrafa-vidro",
@@ -40,9 +40,9 @@ const materiais = [
     categoria: "Vidro",
     orientacao: "Esvazie a garrafa e retire os resíduos antes do descarte.",
     cuidados: "Não inclua vidro quebrado, lâmpadas, espelhos ou cerâmica nesta entrada.",
-    pontosConfirmados: [],
+    pontosConfirmados: ["P-01","P-02","P-03","P-04","P-05","P-06","P-08","P-09"],
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-reciclagem",
-    revisadoEm: "2026-10-22"
+    revisadoEm: "2026-10-24"
   },
     {
     id: "medicamento-vencido",
@@ -51,9 +51,9 @@ const materiais = [
     categoria: "Medicamentos",
     orientacao: "Separe o medicamento vencido para entrega em um ponto que receba esse resíduo.",
     cuidados: "Não descarte no lixo comum, pia ou vaso sanitário. O descartômetro do campus não aceita agulhas, seringas ou perfurocortantes.",
-    pontosConfirmados: [],
+    pontosConfirmados: ["P-07"],
     fonte: "https://sinir.gov.br/perfis/logistica-reversa/logistica-reversa/medicamentos-seus-residuos-e-embalagens/",
-    revisadoEm: "2026-10-22"
+    revisadoEm: "2026-10-24"
   },
     {
     id: "eletronicos",
@@ -64,7 +64,7 @@ const materiais = [
     cuidados: "Não coloque nos coletores comuns. Pilhas, baterias e lâmpadas exigem orientação específica.",
     pontosConfirmados: [],
     fonte: "https://sema.rs.gov.br/logistica-reversa",
-    revisadoEm: "2026-10-22"
+    revisadoEm: "2026-10-24"
   },
    {
     id: "restos-comida",
@@ -72,9 +72,9 @@ const materiais = [
     termosBusca: ["comida", "resto de comida", "sobra de alimento", "resíduo orgânico"],
     categoria: "Orgânicos",
     orientacao: "Separe os restos de comida das embalagens e dos materiais recicláveis.",
-    cuidados: "Não coloque alimentos nos coletores de recicláveis. A finalidade do coletor marrom do P-01 ainda precisa ser confirmada.",
-    pontosConfirmados: [],
+    cuidados: "Não coloque alimentos nos coletores de recicláveis. Descarte os resíduos orgânicos no coletor correspondente do P-01.",
+    pontosConfirmados: ["P-01"],
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-compostagem",
-    revisadoEm: "2026-10-22"
+    revisadoEm: "2026-10-24"
   }
 ];
