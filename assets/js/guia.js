@@ -74,13 +74,16 @@ function preencherDestino(material) {
   const destinoNaoConfirmado =
     document.querySelector("#destino-nao-confirmado");
 
-  // O catálogo só deve conter aqui IDs de pontos já conferidos.
-  const pontos = Array.isArray(material.pontosConfirmados)
-    ? [...new Set(
-        material.pontosConfirmados
-          .filter((id) => typeof id === "string" && id.trim())
-          .map((id) => id.trim())
-      )]
+  // Confere o vínculo nos dois catálogos antes de anunciar um destino.
+  const ids = Array.isArray(material.pontosConfirmados)
+    ? [...new Set(material.pontosConfirmados.filter((id) => typeof id === "string" && id.trim()))]
+    : [];
+  const pontos = typeof pontosDescarte !== "undefined" && Array.isArray(pontosDescarte)
+    ? pontosDescarte.filter((ponto) =>
+        ids.includes(ponto.id) && ponto.situacao === "confirmado" &&
+        ponto.disponibilidade === "disponível" &&
+        Array.isArray(ponto.materiaisConfirmados) &&
+        ponto.materiaisConfirmados.includes(material.id))
     : [];
 
   const quantidade = pontos.length;
