@@ -25,6 +25,9 @@ function iniciarPontos() {
     return;
   }
 
+  document.querySelector("#total-pontos").textContent =
+    String(pontosDescarte.length).padStart(2, "0");
+
   if (idPonto) {
     const ponto = pontosDescarte.find((item) => item.id === idPonto);
     if (!ponto) {
@@ -39,59 +42,78 @@ function iniciarPontos() {
     return;
   }
 
-  if (idMaterial) {
-    if (typeof materiais === "undefined" || !Array.isArray(materiais)) {
-      mostrarErro("Não foi possível carregar o material", "Atualize a página para tentar novamente.");
-      return;
-    }
-    const material = materiais.find((item) => item.id === idMaterial);
-    if (!material) {
-      mostrarErro("Material não encontrado", "Este material não está no catálogo. Escolha um material na página inicial.");
-      return;
-    }
-    document.title = `EcoTour | Pontos para ${material.nome}`;
-    const ids = Array.isArray(material.pontosConfirmados) ? material.pontosConfirmados : [];
-    const confirmados = pontosDescarte.filter((p) =>
-      ids.includes(p.id) && p.situacao === "confirmado" &&
-      p.disponibilidade === "disponível" && Array.isArray(p.materiaisConfirmados) &&
-      p.materiaisConfirmados.includes(material.id));
-    const aviso = document.querySelector("#aviso-material");
-    aviso.hidden = false;
-    if (confirmados.length === 0) {
-      document.querySelector("#titulo-aviso-material").textContent = `Sem ponto confirmado para ${material.nome}`;
-      document.querySelector("#texto-aviso-material").textContent = "Ainda não há um local com recebimento confirmado e disponível para este material no campus. Confirme com o setor responsável antes de levá-lo.";
-      document.querySelector(".barra-lista").hidden = true;
-      document.querySelector("#lista-pontos").hidden = true;
-      listaArea.hidden = false;
-      return;
-    }
-    document.querySelector("#titulo-aviso-material").textContent = `Pontos confirmados para ${material.nome}`;
-    document.querySelector("#texto-aviso-material").textContent = "Os materiais foram identificados por rótulos ou pelo mapeamento de cores do campus. Confira localização, restrições e disponibilidade atual antes de levar o material.";
-    montarLista(confirmados);
+  if (typeof materiais === "undefined" || !Array.isArray(materiais)) {
+    mostrarErro("Não foi possível carregar os materiais", "Atualize a página para tentar novamente.");
     return;
   }
 
-  montarLista(pontosDescarte);
+  const materialInicial = idMaterial
+    ? materiais.find((item) => item.id === idMaterial)
+    : null;
+  if (idMaterial && !materialInicial) {
+    mostrarErro("Material não encontrado", "Este material não está no catálogo. Escolha um material na página inicial.");
+    return;
+  }
 
-  function montarLista(pontos) {
-    const filtro = document.querySelector("#filtro-area");
-    const areas = [...new Set(pontos.map((p) => p.area))].sort((a, b) => a.localeCompare(b, "pt-BR"));
-    areas.forEach((area) => filtro.add(new Option(area, area)));
-    filtro.addEventListener("change", renderizar);
-    document.querySelector("#limpar-filtro").addEventListener("click", () => {
-      filtro.value = "";
+  montarLista(materialInicial);
+
+  function montarLista(materialInicial) {
+    const filtroArea = document.querySelector("#filtro-area");
+    const filtroMaterial = document.querySelector("#filtro-material");
+    const areas = [...new Set(pontosDescarte.map((p) => p.area))]
+      .sort((a, b) => a.localeCompare(b, "pt-BR"));
+    areas.forEach((area) => filtroArea.add(new Option(area, area)));
+    [...materiais].sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"))
+      .forEach((material) => filtroMaterial.add(new Option(material.nome, material.id)));
+    filtroMaterial.value = materialInicial?.id ?? "";
+    filtroArea.addEventListener("change", renderizar);
+    filtroMaterial.addEventListener("change", () => {
+      const url = new URL(window.location.href);
+      if (filtroMaterial.value) url.searchParams.set("material", filtroMaterial.value);
+      else url.searchParams.delete("material");
+      try {
+        window.history.replaceState(null, "", url);
+      } catch {
+        // Alguns navegadores restringem alterações da URL ao abrir o HTML como arquivo local.
+      }
       renderizar();
-      filtro.focus();
+    });
+    document.querySelector("#limpar-filtro").addEventListener("click", () => {
+      filtroArea.value = "";
+      renderizar();
+      filtroArea.focus();
     });
     listaArea.hidden = false;
     renderizar();
 
     function renderizar() {
-      const visiveis = pontos.filter((p) => !filtro.value || p.area === filtro.value);
+      const material = materiais.find((item) => item.id === filtroMaterial.value);
+      const pontosMaterial = material
+        ? pontosDescarte.filter((ponto) => pontoRecebeMaterial(ponto, material))
+        : pontosDescarte;
+      const visiveis = pontosMaterial.filter((ponto) =>
+        !filtroArea.value || ponto.area === filtroArea.value);
+      const aviso = document.querySelector("#aviso-material");
+      aviso.hidden = !material;
+      document.title = material
+        ? `EcoTour | Pontos para ${material.nome}`
+        : "EcoTour | Pontos de descarte";
+      if (material) {
+        document.querySelector("#titulo-aviso-material").textContent = pontosMaterial.length
+          ? `Pontos identificados para ${material.nome}`
+          : `Sem ponto confirmado para ${material.nome}`;
+        document.querySelector("#texto-aviso-material").textContent = pontosMaterial.length
+          ? "Confira localização, restrições e disponibilidade atual antes de levar o material."
+          : "Ainda não há um local com recebimento confirmado e disponível para este material no campus. Confirme com o setor responsável antes de levá-lo.";
+      }
       const lista = document.querySelector("#lista-pontos");
       lista.replaceChildren(...visiveis.map(criarCartao));
       document.querySelector("#resumo-lista").textContent = `${visiveis.length} ${visiveis.length === 1 ? "ponto encontrado" : "pontos encontrados"}`;
-      document.querySelector("#estado-vazio").hidden = visiveis.length > 0;
+      document.querySelector("#estado-vazio").hidden =
+        visiveis.length > 0 || !filtroArea.value || pontosMaterial.length === 0;
+      document.querySelector("#texto-estado-vazio").textContent = material
+        ? "Não há ponto identificado para este material nesta área. Escolha outra área ou veja todas."
+        : "Escolha outra área ou veja todos os locais identificados.";
     }
   }
 
@@ -119,7 +141,20 @@ function iniciarPontos() {
     const situacao = document.createElement("span");
     situacao.className = "etiqueta-situacao";
     situacao.textContent = rotuloSituacao(ponto);
-    conteudo.append(id, nome, local, situacao);
+    const materiaisPonto = document.createElement("span");
+    materiaisPonto.className = "materiais-ponto";
+    const categorias = typeof materiais !== "undefined" && Array.isArray(materiais)
+      ? [...new Set(materiais.filter((material) =>
+          Array.isArray(ponto.materiaisConfirmados) &&
+          ponto.materiaisConfirmados.includes(material.id)).map((material) => material.categoria))]
+      : [];
+    materiaisPonto.textContent = categorias.length && ponto.situacao === "confirmado"
+      ? `Recebe: ${categorias.join(", ")}`
+      : "Materiais em verificação";
+    const chamada = document.createElement("span");
+    chamada.className = "chamada-ponto";
+    chamada.textContent = "Ver detalhes →";
+    conteudo.append(id, nome, local, materiaisPonto, situacao, chamada);
     link.append(imagem, conteudo);
     item.append(link);
     return item;
@@ -150,6 +185,15 @@ function iniciarPontos() {
     data.textContent = formatarData(ponto.verificadoEm);
     detalhe.hidden = false;
   }
+}
+
+function pontoRecebeMaterial(ponto, material) {
+  return ponto.situacao === "confirmado" &&
+    ponto.disponibilidade === "disponível" &&
+    Array.isArray(ponto.materiaisConfirmados) &&
+    ponto.materiaisConfirmados.includes(material.id) &&
+    Array.isArray(material.pontosConfirmados) &&
+    material.pontosConfirmados.includes(ponto.id);
 }
 
 function fotoOtimizada(original) {

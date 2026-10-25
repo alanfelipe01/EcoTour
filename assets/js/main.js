@@ -7,6 +7,14 @@ if (document.body.classList.contains("pagina-inicial")) {
   const estadoVazio = document.querySelector("#estado-vazio");
   const botaoLimpar = document.querySelector("#limpar-busca");
 
+  document.querySelectorAll("[data-busca]").forEach((botao) => {
+    botao.addEventListener("click", () => {
+      campoBusca.value = botao.dataset.busca;
+      atualizarMateriais();
+      document.querySelector("#titulo-materiais").scrollIntoView({ block: "start" });
+    });
+  });
+
   // Permite encontrar "remédio" mesmo digitando "remedio".
   function normalizar(texto) {
     return texto
@@ -95,8 +103,9 @@ function criarCartao(material) {
   const categoria = document.createElement("span");
   const nome = document.createElement("strong");
   const seta = document.createElement("span");
+  const chamada = document.createElement("span");
 
-  link.className = "cartao-material";
+  link.className = `cartao-material cartao-${material.id}`;
   link.href = `guia.html?material=${encodeURIComponent(material.id)}`;
 
   conteudo.className = "conteudo-material";
@@ -111,7 +120,10 @@ function criarCartao(material) {
   seta.textContent = "→";
   seta.setAttribute("aria-hidden", "true");
 
-  conteudo.append(categoria, nome);
+  chamada.className = "chamada-material";
+  chamada.textContent = "Ver orientação";
+
+  conteudo.append(categoria, nome, chamada);
   link.append(criarIconeMaterial(material.id), conteudo, seta);
   item.append(link);
 

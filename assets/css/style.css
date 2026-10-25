@@ -394,3 +394,149 @@
     margin-right: calc(100% - 48px);
   }
 }
+
+/* Nova apresentação da consulta */
+.pagina-inicial {
+  --cor-fundo: #f8f8f2;
+  --cor-primaria: #164e3b;
+  --cor-primaria-suave: #e8f0df;
+  --cor-texto: #183a30;
+  --cor-texto-suave: #5a6c61;
+  --cor-borda: #dce5d9;
+}
+
+.pagina-inicial .cabecalho { background: rgba(255, 255, 255, .82); }
+.pagina-inicial .cabecalho-conteudo { min-height: 76px; }
+.pagina-inicial .cabecalho nav { display: flex; align-items: center; gap: 8px; }
+.pagina-inicial .cabecalho nav a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  padding: 8px 15px; border-radius: 100px; color: var(--cor-primaria);
+  font-size: 14px; font-weight: 700; text-decoration: none;
+}
+.pagina-inicial .cabecalho nav a:hover,
+.pagina-inicial .cabecalho nav a[aria-current] { background: var(--cor-primaria-suave); }
+
+.pagina-inicial .consulta {
+  display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(320px, .88fr);
+  align-items: stretch; max-width: none; min-height: 500px;
+  margin-block: 30px 68px; padding: 0; overflow: hidden;
+  border-radius: 28px; background: #e8eee1;
+}
+.pagina-inicial .consulta-conteudo { padding: clamp(30px, 5vw, 66px); position: relative; z-index: 1; }
+.pagina-inicial .identificacao-campus {
+  margin-bottom: 22px; padding: 0; border-radius: 0;
+  background: none; color: #426d53; font-size: 12px; letter-spacing: .12em;
+}
+.pagina-inicial h1 { max-width: 600px; font-size: clamp(37px, 4.5vw, 62px); letter-spacing: -.055em; }
+.pagina-inicial h1 em { color: #45855c; font-style: normal; }
+.pagina-inicial .introducao { max-width: 500px; margin: 20px 0 34px; font-size: 17px; }
+.pagina-inicial .formulario-busca label { margin-bottom: 10px; color: #214d3c; }
+.pagina-inicial .campo-busca {
+  max-width: 590px; gap: 0; padding: 5px; border: 1px solid #c8d7c7;
+  border-radius: 14px; background: #fff; box-shadow: 0 12px 35px rgba(28, 67, 46, .08);
+}
+.pagina-inicial .campo-busca input { min-height: 48px; padding: 10px 16px; border: 0; background: transparent; }
+.pagina-inicial .campo-busca input:focus { outline: none; }
+.pagina-inicial .campo-busca:focus-within { outline: 3px solid var(--cor-primaria); outline-offset: 3px; }
+.pagina-inicial .botao-buscar { min-height: 48px; padding-inline: 21px; border-radius: 10px; white-space: nowrap; }
+.pagina-inicial .botao-buscar span { margin-left: 8px; }
+.pagina-inicial .buscas-rapidas { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 15px; font-size: 13px; }
+.pagina-inicial .buscas-rapidas > span { color: var(--cor-texto-suave); }
+.pagina-inicial .buscas-rapidas button {
+  min-height: 34px; padding: 5px 12px; border: 1px solid #c9d9c7;
+  border-radius: 100px; background: rgba(255,255,255,.58); color: var(--cor-primaria);
+  font-size: 13px; font-weight: 700;
+}
+.pagina-inicial .buscas-rapidas button:hover { background: #fff; border-color: var(--cor-primaria); }
+
+.pagina-inicial .consulta-visual {
+  position: relative; overflow: hidden; min-height: 500px;
+  background: radial-gradient(circle at 48% 45%, #407c58, #1a5940 68%, #124431);
+}
+.pagina-inicial .visual-orbita { position: absolute; border: 1px solid rgba(233, 246, 220, .19); border-radius: 50%; }
+.pagina-inicial .visual-orbita-um { width: 420px; height: 420px; top: 30px; left: 2%; }
+.pagina-inicial .visual-orbita-dois { width: 620px; height: 620px; top: -70px; left: -22%; }
+.pagina-inicial .visual-selo {
+  position: absolute; top: 50%; left: 50%; display: grid; place-items: center;
+  width: 190px; height: 190px; border: 1px solid rgba(255,255,255,.3); border-radius: 50%;
+  background: #e7edcf; color: #1a593e; box-shadow: 0 24px 70px rgba(5, 40, 25, .3);
+  font-size: 31px; font-weight: 800; line-height: 1.03; letter-spacing: -.06em;
+  text-align: center; transform: translate(-50%, -50%) rotate(-10deg);
+}
+.pagina-inicial .visual-cartao {
+  position: absolute; display: flex; flex-direction: column; min-width: 132px;
+  padding: 15px 18px; border-radius: 14px; background: #fffdf1;
+  color: #244a35; box-shadow: 0 12px 30px rgba(6, 41, 26, .2);
+}
+.pagina-inicial .visual-cartao span { color: #598264; font-size: 12px; font-weight: 800; }
+.pagina-inicial .visual-cartao strong { margin-top: 4px; font-size: 18px; }
+.pagina-inicial .visual-cartao small { color: #687a67; }
+.pagina-inicial .visual-cartao-papel { top: 11%; left: 8%; transform: rotate(-9deg); }
+.pagina-inicial .visual-cartao-plastico { top: 17%; right: 5%; transform: rotate(9deg); }
+.pagina-inicial .visual-cartao-pontos { bottom: 9%; right: 12%; transform: rotate(-5deg); }
+
+.pagina-inicial .materiais { padding-bottom: 46px; scroll-margin-top: 25px; }
+.pagina-inicial .rotulo-secao { margin: 0 0 7px; color: #5a8a64; font-size: 12px; font-weight: 800; letter-spacing: .14em; }
+.pagina-inicial .materiais h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -.04em; }
+.pagina-inicial .mensagem-busca { margin: 8px 0 23px; }
+.pagina-inicial .lista-materiais { gap: 18px; }
+.pagina-inicial .cartao-material {
+  position: relative; display: flex; flex-direction: column; align-items: flex-start;
+  min-height: 210px; padding: 22px; border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(29, 61, 42, .035);
+  transition: border-color .18s, transform .18s, box-shadow .18s;
+}
+.pagina-inicial .cartao-material:hover { transform: translateY(-4px); background: #fff; box-shadow: 0 16px 38px rgba(29, 61, 42, .1); }
+.pagina-inicial .icone-material { width: 54px; height: 54px; margin-bottom: 24px; border-radius: 14px; }
+.pagina-inicial .categoria-material { margin-bottom: 4px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.pagina-inicial .nome-material { font-size: 19px; }
+.pagina-inicial .chamada-material { display: block; margin-top: 14px; color: var(--cor-primaria); font-size: 13px; font-weight: 700; }
+.pagina-inicial .seta-material { position: absolute; right: 22px; bottom: 21px; }
+.pagina-inicial .cartao-folha-papel .icone-material { background: #e0edfa; color: #2c658e; }
+.pagina-inicial .cartao-garrafa-pet .icone-material { background: #fce5df; color: #aa5549; }
+.pagina-inicial .cartao-lata-aluminio .icone-material { background: #fff0cd; color: #946c20; }
+.pagina-inicial .cartao-garrafa-vidro .icone-material { background: #e3f0e5; color: #3b7a57; }
+.pagina-inicial .cartao-medicamento-vencido .icone-material { background: #f4e7ed; color: #a34f75; }
+.pagina-inicial .cartao-eletronicos .icone-material { background: #e8e6fa; color: #645da5; }
+.pagina-inicial .cartao-restos-comida .icone-material { background: #f1ead9; color: #826d34; }
+
+.pagina-inicial .atalho-pontos {
+  align-items: flex-end; margin-bottom: 64px; padding: 35px 40px;
+  border-radius: 20px; background: #dfece2;
+}
+.pagina-inicial .atalho-icone { display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 16px; border-radius: 50%; background: #1e6246; color: #fff; font-size: 23px; }
+.pagina-inicial .atalho-pontos h2 { max-width: 470px; font-size: clamp(22px, 3vw, 30px); letter-spacing: -.04em; }
+.pagina-inicial .atalho-pontos a { flex-shrink: 0; padding: 11px 18px; border-radius: 9px; background: #1a593f; color: #fff; text-decoration: none; }
+.pagina-inicial .atalho-pontos a:hover { background: #123e2d; }
+
+@media (max-width: 850px) {
+  .pagina-inicial .consulta { grid-template-columns: 1fr; }
+  .pagina-inicial .consulta-visual { min-height: 280px; }
+  .pagina-inicial .visual-orbita-um { top: -90px; left: 20%; }
+  .pagina-inicial .visual-orbita-dois { top: -160px; left: 4%; }
+  .pagina-inicial .visual-cartao-papel { top: 16%; left: 13%; }
+  .pagina-inicial .visual-cartao-plastico { top: 10%; right: 13%; }
+  .pagina-inicial .visual-cartao-pontos { bottom: 7%; right: 17%; }
+}
+@media (max-width: 600px) {
+  .pagina-inicial .cabecalho nav { gap: 0; }
+  .pagina-inicial .cabecalho nav a { padding-inline: 10px; font-size: 13px; }
+  .pagina-inicial .consulta { margin-block: 16px 42px; border-radius: 20px; }
+  .pagina-inicial .consulta-conteudo { padding: 32px 23px 38px; }
+  .pagina-inicial .consulta-visual { min-height: 225px; }
+  .pagina-inicial .visual-selo { width: 126px; height: 126px; font-size: 23px; }
+  .pagina-inicial .visual-cartao { min-width: 94px; padding: 9px 11px; }
+  .pagina-inicial .visual-cartao strong { font-size: 13px; }
+  .pagina-inicial .visual-cartao small { font-size: 10px; }
+  .pagina-inicial .visual-cartao-papel { top: 12%; left: 2%; }
+  .pagina-inicial .visual-cartao-plastico { top: 9%; right: 2%; }
+  .pagina-inicial .visual-cartao-pontos { right: 6%; }
+  .pagina-inicial .campo-busca { flex-direction: row; }
+  .pagina-inicial .botao-buscar { padding-inline: 13px; }
+  .pagina-inicial .botao-buscar span { display: none; }
+  .pagina-inicial .lista-materiais { grid-template-columns: 1fr; }
+  .pagina-inicial .cartao-material { min-height: 150px; }
+  .pagina-inicial .icone-material { margin-bottom: 14px; }
+  .pagina-inicial .icone-material { margin-right: 0; }
+  .pagina-inicial .atalho-pontos { padding: 28px 24px; }
+}

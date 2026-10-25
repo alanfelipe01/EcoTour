@@ -29,9 +29,8 @@
       </a>
 
       <nav aria-label="Navegação principal">
-        <a class="link-pontos" href="pontos.html">
-          Pontos de descarte <span aria-hidden="true">↗</span>
-        </a>
+        <a href="index.html">Materiais</a>
+        <a href="pontos.html">Pontos de descarte</a>
       </nav>
     </div>
   </header>
@@ -59,76 +58,74 @@
     <!-- O JavaScript preenche esta área com os dados do catálogo. -->
     <article id="guia-material" aria-labelledby="nome-material" hidden>
       <header class="apresentacao-material">
-        <p class="identificacao-campus">UNINASSAU · Campus Aguanambi</p>
-        <p id="categoria-material" class="categoria-material"></p>
-        <h1 id="nome-material"></h1>
-        <p class="introducao">
-          Veja como preparar esse material e consulte as informações
-          disponíveis para o descarte.
-        </p>
+        <div class="apresentacao-conteudo">
+          <p class="identificacao-campus">GUIA DE DESCARTE · UNINASSAU AGUANAMBI</p>
+          <p id="categoria-material" class="categoria-material"></p>
+          <h1 id="nome-material"></h1>
+          <p class="introducao">Tudo o que você precisa saber antes de levar este material a um ponto de descarte.</p>
+        </div>
+        <div class="apresentacao-visual" aria-hidden="true">
+          <span class="visual-circulo"></span>
+          <span class="visual-folha visual-folha-um">✦</span>
+          <span class="visual-folha visual-folha-dois">✦</span>
+          <span class="visual-selo">ECO<br>TOUR</span>
+        </div>
       </header>
 
-      <div class="orientacoes">
-        <section class="bloco-orientacao" aria-labelledby="titulo-preparo">
+      <div class="passos-guia">
+        <section class="bloco-orientacao bloco-preparo" aria-labelledby="titulo-preparo">
           <div class="titulo-bloco">
             <span class="numero-etapa" aria-hidden="true">01</span>
-            <h2 id="titulo-preparo">Como preparar</h2>
+            <div>
+              <p class="rotulo-etapa">PRIMEIRO PASSO</p>
+              <h2 id="titulo-preparo">Como preparar</h2>
+            </div>
           </div>
           <p id="orientacao-material" class="texto-orientacao"></p>
         </section>
 
-        <section
-          class="bloco-orientacao bloco-cuidados"
-          aria-labelledby="titulo-cuidados"
-        >
+        <section class="destino-material" aria-labelledby="titulo-destino">
           <div class="titulo-bloco">
             <span class="numero-etapa" aria-hidden="true">02</span>
-            <h2 id="titulo-cuidados">Cuidados no descarte</h2>
+            <div>
+              <p class="rotulo-etapa">SEU DESTINO</p>
+              <h2 id="titulo-destino">Onde descartar</h2>
+            </div>
+          </div>
+          <p id="status-destino" class="status-destino" role="status"></p>
+
+          <div id="destino-confirmado" hidden>
+            <p id="resumo-pontos"></p>
+            <a id="link-pontos-material" class="botao-primario">
+              Ver pontos para este material
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <div id="destino-nao-confirmado" hidden>
+            <p>O recebimento deste material no campus ainda está em verificação. Confirme com o setor responsável antes de levá-lo.</p>
+            <a class="link-secundario" href="pontos.html">
+              Explorar o inventário de pontos
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="bloco-orientacao bloco-cuidados" aria-labelledby="titulo-cuidados">
+          <div class="titulo-bloco">
+            <span class="numero-etapa" aria-hidden="true">03</span>
+            <div>
+              <p class="rotulo-etapa">ANTES DE SAIR</p>
+              <h2 id="titulo-cuidados">O que evitar</h2>
+            </div>
           </div>
           <p id="cuidados-material" class="texto-orientacao"></p>
         </section>
       </div>
 
-      <section class="destino-material" aria-labelledby="titulo-destino">
-        <div class="titulo-bloco">
-          <span class="numero-etapa" aria-hidden="true">03</span>
-          <h2 id="titulo-destino">Onde descartar no campus</h2>
-        </div>
-
-        <div id="destino-confirmado" hidden>
-          <p id="resumo-pontos"></p>
-          <a id="link-pontos-material" class="botao-primario">
-            Ver pontos para este material
-            <span aria-hidden="true">→</span>
-          </a>
-        </div>
-
-        <div id="destino-nao-confirmado" hidden>
-          <p class="situacao-destino">
-            Recebimento no campus ainda não confirmado
-          </p>
-          <p>
-            Ainda não temos um ponto confirmado no campus para receber
-            este material. Isso não significa que ele não exista:
-            a informação está em verificação.
-          </p>
-          <p>
-            Siga os cuidados indicados acima e confirme o recebimento
-            com o setor responsável antes de levar o material.
-          </p>
-          <a class="link-secundario" href="pontos.html">
-            Consultar todos os pontos do campus
-            <span aria-hidden="true">→</span>
-          </a>
-        </div>
-      </section>
-
       <section class="referencias" aria-labelledby="titulo-referencias">
-        <h2 id="titulo-referencias">Sobre esta orientação</h2>
-        <p>
-          A orientação utiliza a fonte abaixo. Os locais indicados
-          no campus foram vinculados pelos rótulos ou pelo mapeamento de cores.
-        </p>
+        <h2 id="titulo-referencias">Fonte e revisão</h2>
+        <p>Os pontos foram vinculados pelos rótulos ou pelo mapeamento de cores confirmado para o campus.</p>
 
         <a
           id="fonte-material"

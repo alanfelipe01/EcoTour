@@ -70,6 +70,8 @@ function iniciarGuia() {
 }
 
 function preencherDestino(material) {
+  const blocoDestino = document.querySelector(".destino-material");
+  const statusDestino = document.querySelector("#status-destino");
   const destinoConfirmado = document.querySelector("#destino-confirmado");
   const destinoNaoConfirmado =
     document.querySelector("#destino-nao-confirmado");
@@ -89,6 +91,10 @@ function preencherDestino(material) {
   const quantidade = pontos.length;
   const possuiDestino = quantidade > 0;
 
+  blocoDestino.classList.toggle("sem-destino", !possuiDestino);
+  statusDestino.textContent = possuiDestino
+    ? `${quantidade} ${quantidade === 1 ? "ponto identificado" : "pontos identificados"} no campus`
+    : "Recebimento ainda não confirmado no campus";
   destinoConfirmado.hidden = !possuiDestino;
   destinoNaoConfirmado.hidden = possuiDestino;
 
@@ -98,8 +104,8 @@ function preencherDestino(material) {
 
   document.querySelector("#resumo-pontos").textContent =
     quantidade === 1
-      ? "Há 1 ponto identificado para receber este material no campus. Consulte a localização e as restrições antes de levar seu resíduo."
-      : `Há ${quantidade} pontos identificados para receber este material no campus. Consulte as localizações e as restrições antes de levar seu resíduo.`;
+      ? "Confira a localização, as restrições e a disponibilidade atual antes de levar o material."
+      : "Escolha o local mais conveniente e confira as restrições e a disponibilidade atual antes de levar o material.";
 
   // A tela de pontos deverá ler esse parâmetro para filtrar a lista.
   document.querySelector("#link-pontos-material").href =
