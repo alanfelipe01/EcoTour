@@ -59,15 +59,21 @@
           <h2 id="titulo-lista">Locais identificados</h2>
           <p id="resumo-lista" role="status"></p>
         </div>
-        <div class="controle-area">
-          <label for="filtro-area">Filtrar por área</label>
-          <select id="filtro-area"><option value="">Todas as áreas</option></select>
+        <div class="filtros-lista">
+          <div class="controle-filtro">
+            <label for="filtro-material">Filtrar por material</label>
+            <select id="filtro-material"><option value="">Todos os materiais</option></select>
+          </div>
+          <div class="controle-filtro">
+            <label for="filtro-area">Filtrar por área</label>
+            <select id="filtro-area"><option value="">Todas as áreas</option></select>
+          </div>
         </div>
       </div>
       <ul id="lista-pontos" class="lista-pontos"></ul>
       <div id="estado-vazio" class="estado-informativo" hidden>
         <h3>Nenhum ponto nesta área</h3>
-        <p>Escolha outra área ou veja todos os locais identificados.</p>
+        <p id="texto-estado-vazio">Escolha outra área ou veja todos os locais identificados.</p>
         <button id="limpar-filtro" type="button">Ver todas as áreas</button>
       </div>
     </section>

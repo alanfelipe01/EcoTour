@@ -140,7 +140,14 @@ h1 { max-width: 740px; margin: 0; font-size: clamp(32px, 5vw, 50px); line-height
 .pagina-pontos .barra-lista { align-items: end; margin-top: 46px; }
 .pagina-pontos .rotulo-secao { margin: 0 0 7px; color: #5a8a64; font-size: 12px; font-weight: 800; letter-spacing: .14em; }
 .pagina-pontos .barra-lista h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -.04em; }
-.pagina-pontos .controle-area select { border-color: var(--cor-borda); border-radius: 10px; }
+.pagina-pontos .filtros-lista { display: flex; align-items: end; flex-wrap: wrap; gap: 12px; }
+.pagina-pontos .controle-filtro { min-width: 205px; }
+.pagina-pontos .controle-filtro label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 700; }
+.pagina-pontos .controle-filtro select {
+  width: 100%; min-height: 48px; padding: 8px 12px;
+  border: 1px solid var(--cor-borda); border-radius: 10px;
+  background: #fff; color: var(--cor-texto);
+}
 .pagina-pontos .lista-pontos { gap: 20px; }
 .pagina-pontos .cartao-ponto {
   border-radius: 18px; box-shadow: 0 8px 30px rgba(29, 61, 42, .04);
@@ -171,6 +178,8 @@ h1 { max-width: 740px; margin: 0; font-size: clamp(32px, 5vw, 50px); line-height
   .pagina-pontos .cabecalho nav a { padding-inline: 10px; font-size: 13px; }
   .pagina-pontos .apresentacao { padding-top: 25px; }
   .pagina-pontos .barra-lista { margin-top: 35px; }
+  .pagina-pontos .filtros-lista { width: 100%; }
+  .pagina-pontos .controle-filtro { flex: 1 1 100%; min-width: 0; }
   .pagina-pontos .lista-pontos { grid-template-columns: 1fr; }
   .pagina-pontos .cartao-ponto img { height: 210px; }
 }
