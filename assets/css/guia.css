@@ -88,8 +88,12 @@
   text-decoration: none;
 }
 
-.pagina-guia .marca span {
-  font-weight: 400;
+.pagina-guia .marca-pino {
+  display: inline-block;
+  width: .62em;
+  height: .82em;
+  margin: 0 .07em 0 .06em;
+  vertical-align: baseline;
 }
 
 .pagina-guia .link-pontos,

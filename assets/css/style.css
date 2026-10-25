@@ -86,8 +86,12 @@
   text-decoration: none;
 }
 
-.pagina-inicial .marca span {
-  font-weight: 400;
+.pagina-inicial .marca-pino {
+  display: inline-block;
+  width: .62em;
+  height: .82em;
+  margin: 0 .07em 0 .06em;
+  vertical-align: baseline;
 }
 
 .pagina-inicial .link-pontos {
@@ -450,30 +454,29 @@
 .pagina-inicial .buscas-rapidas button:hover { background: #fff; border-color: var(--cor-primaria); }
 
 .pagina-inicial .consulta-visual {
-  position: relative; overflow: hidden; min-height: 500px;
-  background: radial-gradient(circle at 48% 45%, #407c58, #1a5940 68%, #124431);
+  position: relative; overflow: hidden; min-height: 500px; margin: 0;
+  background: #1a3d2e;
 }
-.pagina-inicial .visual-orbita { position: absolute; border: 1px solid rgba(233, 246, 220, .19); border-radius: 50%; }
-.pagina-inicial .visual-orbita-um { width: 420px; height: 420px; top: 30px; left: 2%; }
-.pagina-inicial .visual-orbita-dois { width: 620px; height: 620px; top: -70px; left: -22%; }
-.pagina-inicial .visual-selo {
-  position: absolute; top: 50%; left: 50%; display: grid; place-items: center;
-  width: 190px; height: 190px; border: 1px solid rgba(255,255,255,.3); border-radius: 50%;
-  background: #e7edcf; color: #1a593e; box-shadow: 0 24px 70px rgba(5, 40, 25, .3);
-  font-size: 31px; font-weight: 800; line-height: 1.03; letter-spacing: -.06em;
-  text-align: center; transform: translate(-50%, -50%) rotate(-10deg);
+.pagina-inicial .consulta-visual img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 72%;
 }
-.pagina-inicial .visual-cartao {
-  position: absolute; display: flex; flex-direction: column; min-width: 132px;
-  padding: 15px 18px; border-radius: 14px; background: #fffdf1;
-  color: #244a35; box-shadow: 0 12px 30px rgba(6, 41, 26, .2);
+.pagina-inicial .consulta-visual::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(10, 30, 22, .78), rgba(10, 30, 22, 0) 48%);
 }
-.pagina-inicial .visual-cartao span { color: #598264; font-size: 12px; font-weight: 800; }
-.pagina-inicial .visual-cartao strong { margin-top: 4px; font-size: 18px; }
-.pagina-inicial .visual-cartao small { color: #687a67; }
-.pagina-inicial .visual-cartao-papel { top: 11%; left: 8%; transform: rotate(-9deg); }
-.pagina-inicial .visual-cartao-plastico { top: 17%; right: 5%; transform: rotate(9deg); }
-.pagina-inicial .visual-cartao-pontos { bottom: 9%; right: 12%; transform: rotate(-5deg); }
+.pagina-inicial .visual-legenda {
+  position: absolute; right: 26px; bottom: 24px; left: 26px; z-index: 1;
+  display: flex; flex-direction: column; gap: 2px; color: #fff;
+}
+.pagina-inicial .visual-codigo { color: #cfe3c8; font-size: 11px; font-weight: 800; letter-spacing: .14em; }
+.pagina-inicial .visual-legenda strong { font-size: 17px; line-height: 1.35; }
+.pagina-inicial .visual-legenda a {
+  align-self: flex-start; margin-top: 8px; padding-block: 4px;
+  font-size: 14px; font-weight: 700; text-underline-offset: 5px;
+}
+.pagina-inicial .visual-legenda a:hover { color: #cfe3c8; }
+.pagina-inicial .visual-legenda a:focus-visible { outline-color: #fff; }
 
 .pagina-inicial .materiais { padding-bottom: 46px; scroll-margin-top: 25px; }
 .pagina-inicial .rotulo-secao { margin: 0 0 7px; color: #5a8a64; font-size: 12px; font-weight: 800; letter-spacing: .14em; }
@@ -511,26 +514,16 @@
 
 @media (max-width: 850px) {
   .pagina-inicial .consulta { grid-template-columns: 1fr; }
-  .pagina-inicial .consulta-visual { min-height: 280px; }
-  .pagina-inicial .visual-orbita-um { top: -90px; left: 20%; }
-  .pagina-inicial .visual-orbita-dois { top: -160px; left: 4%; }
-  .pagina-inicial .visual-cartao-papel { top: 16%; left: 13%; }
-  .pagina-inicial .visual-cartao-plastico { top: 10%; right: 13%; }
-  .pagina-inicial .visual-cartao-pontos { bottom: 7%; right: 17%; }
+  .pagina-inicial .consulta-visual { min-height: 340px; }
 }
 @media (max-width: 600px) {
   .pagina-inicial .cabecalho nav { gap: 0; }
   .pagina-inicial .cabecalho nav a { padding-inline: 10px; font-size: 13px; }
   .pagina-inicial .consulta { margin-block: 16px 42px; border-radius: 20px; }
   .pagina-inicial .consulta-conteudo { padding: 32px 23px 38px; }
-  .pagina-inicial .consulta-visual { min-height: 225px; }
-  .pagina-inicial .visual-selo { width: 126px; height: 126px; font-size: 23px; }
-  .pagina-inicial .visual-cartao { min-width: 94px; padding: 9px 11px; }
-  .pagina-inicial .visual-cartao strong { font-size: 13px; }
-  .pagina-inicial .visual-cartao small { font-size: 10px; }
-  .pagina-inicial .visual-cartao-papel { top: 12%; left: 2%; }
-  .pagina-inicial .visual-cartao-plastico { top: 9%; right: 2%; }
-  .pagina-inicial .visual-cartao-pontos { right: 6%; }
+  .pagina-inicial .consulta-visual { min-height: 280px; }
+  .pagina-inicial .visual-legenda { right: 18px; bottom: 16px; left: 18px; }
+  .pagina-inicial .visual-legenda strong { font-size: 15px; }
   .pagina-inicial .campo-busca { flex-direction: row; }
   .pagina-inicial .botao-buscar { padding-inline: 13px; }
   .pagina-inicial .botao-buscar span { display: none; }
