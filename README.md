@@ -23,7 +23,7 @@ As perguntas aceitavam múltiplas respostas, e os resultados descrevem só quem 
 
 O fluxo e o padrão visual foram definidos na ECO-05 (*EcoTour-ECO-05-Telas-e-Padrao-Visual.pdf*, 23/10/2026).
 
-**Fluxo principal:** consultar (`index.html`) → orientação do material (`guia.html?material=id`) → pontos compatíveis (`pontos.html?material=id`) → detalhes do ponto (`pontos.html?ponto=P-xx`). A navegação no cabeçalho leva à lista de todos os pontos, que pode ser filtrada por material e área.
+**Fluxo principal:** consultar (`index.html`) → preparar o material e identificar o coletor (`guia.html?material=id`) → pontos compatíveis (`pontos.html?material=id`) → detalhes do ponto (`pontos.html?ponto=P-xx&material=id`). A navegação no cabeçalho leva à lista de todos os pontos, que pode ser filtrada por material e área.
 
 **Estados previstos:** busca sem resultado, material sem destino confirmado (eletrônicos), filtro sem pontos e ponto indisponível. Cada um tem uma mensagem e um caminho de volta.
 

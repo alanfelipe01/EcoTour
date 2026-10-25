@@ -167,6 +167,12 @@ h1 { max-width: 740px; margin: 0; font-size: clamp(32px, 5vw, 50px); line-height
   display: block; margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--cor-borda);
   color: var(--cor-primaria); font-size: 13px; font-weight: 800;
 }
+.pagina-pontos .instrucao-material {
+  margin: 24px 0; padding: 22px 26px; border-radius: 14px;
+  background: #e8f0df; color: #183a30;
+}
+.pagina-pontos .instrucao-material h3 { margin: 0 0 8px; font-size: 21px; }
+.pagina-pontos .instrucao-material p { margin: 0; }
 @media (max-width: 700px) {
   .pagina-pontos .apresentacao { align-items: stretch; flex-direction: column; gap: 22px; }
   .pagina-pontos .resumo-campus { flex-direction: row; align-items: center; gap: 14px; min-width: 0; }

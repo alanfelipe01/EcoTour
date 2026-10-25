@@ -38,7 +38,10 @@ function iniciarPontos() {
       erro.append(link);
       return;
     }
-    mostrarDetalhe(ponto);
+    const materialDoDetalhe = typeof materiais !== "undefined" && Array.isArray(materiais)
+      ? materiais.find((item) => item.id === idMaterial && pontoRecebeMaterial(ponto, item))
+      : null;
+    mostrarDetalhe(ponto, materialDoDetalhe);
     return;
   }
 
@@ -103,11 +106,11 @@ function iniciarPontos() {
           ? `Pontos identificados para ${material.nome}`
           : `Sem ponto confirmado para ${material.nome}`;
         document.querySelector("#texto-aviso-material").textContent = pontosMaterial.length
-          ? "Confira localização, restrições e disponibilidade atual antes de levar o material."
+          ? `${material.coletor} Confira a sinalização e a disponibilidade atual ao chegar.`
           : "Ainda não há um local com recebimento confirmado e disponível para este material no campus. Confirme com o setor responsável antes de levá-lo.";
       }
       const lista = document.querySelector("#lista-pontos");
-      lista.replaceChildren(...visiveis.map(criarCartao));
+      lista.replaceChildren(...visiveis.map((ponto) => criarCartao(ponto, material)));
       document.querySelector("#resumo-lista").textContent = `${visiveis.length} ${visiveis.length === 1 ? "ponto encontrado" : "pontos encontrados"}`;
       document.querySelector("#estado-vazio").hidden =
         visiveis.length > 0 || !filtroArea.value || pontosMaterial.length === 0;
@@ -117,11 +120,12 @@ function iniciarPontos() {
     }
   }
 
-  function criarCartao(ponto) {
+  function criarCartao(ponto, material) {
     const item = document.createElement("li");
     const link = document.createElement("a");
     link.className = "cartao-ponto";
-    link.href = `pontos.html?ponto=${encodeURIComponent(ponto.id)}`;
+    link.href = `pontos.html?ponto=${encodeURIComponent(ponto.id)}` +
+      (material ? `&material=${encodeURIComponent(material.id)}` : "");
     const imagem = document.createElement("img");
     imagem.src = fotoOtimizada(ponto.foto);
     imagem.alt = "";
@@ -160,12 +164,21 @@ function iniciarPontos() {
     return item;
   }
 
-  function mostrarDetalhe(ponto) {
+  function mostrarDetalhe(ponto, material) {
     document.title = `EcoTour | ${ponto.nome}`;
     document.querySelector("#id-ponto").textContent = `${ponto.id} · ${ponto.area}`;
     document.querySelector("#nome-ponto").textContent = ponto.nome;
     document.querySelector("#localizacao-ponto").textContent = ponto.localizacao;
     document.querySelector("#situacao-ponto").textContent = rotuloSituacao(ponto);
+    const instrucao = document.querySelector("#instrucao-material");
+    instrucao.hidden = !material;
+    if (material) {
+      document.querySelector("#titulo-instrucao-material").textContent = `Como descartar ${material.nome} aqui`;
+      document.querySelector("#texto-instrucao-material").textContent = material.coletor;
+      document.querySelector("#voltar-lista").href =
+        `pontos.html?material=${encodeURIComponent(material.id)}`;
+      document.querySelector("#voltar-lista").lastChild.textContent = " Ver pontos para este material";
+    }
     document.querySelector("#coletores-ponto").textContent = ponto.coletores;
     document.querySelector("#identificacao-ponto").textContent = ponto.identificacao;
     document.querySelector("#restricoes-ponto").textContent = ponto.restricoes;
