@@ -58,6 +58,9 @@ function iniciarGuia() {
   document.querySelector("#orientacao-material").textContent =
     material.orientacao;
 
+  document.querySelector("#coletor-material").textContent =
+    material.coletor;
+
   document.querySelector("#cuidados-material").textContent =
     material.cuidados;
 
@@ -93,8 +96,8 @@ function preencherDestino(material) {
 
   blocoDestino.classList.toggle("sem-destino", !possuiDestino);
   statusDestino.textContent = possuiDestino
-    ? `${quantidade} ${quantidade === 1 ? "ponto identificado" : "pontos identificados"} no campus`
-    : "Recebimento ainda não confirmado no campus";
+    ? `${quantidade} ${quantidade === 1 ? "ponto identificado" : "pontos identificados"} para este material`
+    : "Ainda não há ponto confirmado no campus";
   destinoConfirmado.hidden = !possuiDestino;
   destinoNaoConfirmado.hidden = possuiDestino;
 
@@ -104,8 +107,11 @@ function preencherDestino(material) {
 
   document.querySelector("#resumo-pontos").textContent =
     quantidade === 1
-      ? "Confira a localização, as restrições e a disponibilidade atual antes de levar o material."
-      : "Escolha o local mais conveniente e confira as restrições e a disponibilidade atual antes de levar o material.";
+      ? "Veja onde fica o ponto. Ao chegar, confira a sinalização e se ele está acessível."
+      : "Escolha um ponto. Ao chegar, confira a sinalização e se ele está acessível.";
+
+  document.querySelector("#link-pontos-material").firstChild.textContent =
+    `Encontrar um ponto para ${material.nome} `;
 
   // A tela de pontos deverá ler esse parâmetro para filtrar a lista.
   document.querySelector("#link-pontos-material").href =

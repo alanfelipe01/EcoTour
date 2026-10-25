@@ -62,7 +62,7 @@
           <p class="identificacao-campus">GUIA DE DESCARTE · UNINASSAU AGUANAMBI</p>
           <p id="categoria-material" class="categoria-material"></p>
           <h1 id="nome-material"></h1>
-          <p class="introducao">Tudo o que você precisa saber antes de levar este material a um ponto de descarte.</p>
+          <p class="introducao">Siga os passos para preparar o material, escolher o coletor certo e encontrar um ponto no campus.</p>
         </div>
         <div class="apresentacao-visual" aria-hidden="true">
           <span class="visual-circulo"></span>
@@ -82,14 +82,26 @@
             </div>
           </div>
           <p id="orientacao-material" class="texto-orientacao"></p>
+          <p class="aviso-cuidados"><strong>Atenção:</strong> <span id="cuidados-material"></span></p>
+        </section>
+
+        <section class="bloco-orientacao bloco-coletor" aria-labelledby="titulo-coletor">
+          <div class="titulo-bloco">
+            <span class="numero-etapa" aria-hidden="true">02</span>
+            <div>
+              <p class="rotulo-etapa">NA HORA DE DESCARTAR</p>
+              <h2 id="titulo-coletor">Qual coletor usar</h2>
+            </div>
+          </div>
+          <p id="coletor-material" class="texto-orientacao"></p>
         </section>
 
         <section class="destino-material" aria-labelledby="titulo-destino">
           <div class="titulo-bloco">
-            <span class="numero-etapa" aria-hidden="true">02</span>
+            <span class="numero-etapa" aria-hidden="true">03</span>
             <div>
-              <p class="rotulo-etapa">SEU DESTINO</p>
-              <h2 id="titulo-destino">Onde descartar</h2>
+              <p class="rotulo-etapa">NO CAMPUS</p>
+              <h2 id="titulo-destino">Encontre um ponto</h2>
             </div>
           </div>
           <p id="status-destino" class="status-destino" role="status"></p>
@@ -97,29 +109,14 @@
           <div id="destino-confirmado" hidden>
             <p id="resumo-pontos"></p>
             <a id="link-pontos-material" class="botao-primario">
-              Ver pontos para este material
+              Encontrar um ponto para este material
               <span aria-hidden="true">→</span>
             </a>
           </div>
 
           <div id="destino-nao-confirmado" hidden>
-            <p>O recebimento deste material no campus ainda está em verificação. Confirme com o setor responsável antes de levá-lo.</p>
-            <a class="link-secundario" href="pontos.html">
-              Explorar o inventário de pontos
-              <span aria-hidden="true">→</span>
-            </a>
+            <p>Guarde o material e confirme com o setor responsável onde entregá-lo antes de levá-lo ao campus.</p>
           </div>
-        </section>
-
-        <section class="bloco-orientacao bloco-cuidados" aria-labelledby="titulo-cuidados">
-          <div class="titulo-bloco">
-            <span class="numero-etapa" aria-hidden="true">03</span>
-            <div>
-              <p class="rotulo-etapa">ANTES DE SAIR</p>
-              <h2 id="titulo-cuidados">O que evitar</h2>
-            </div>
-          </div>
-          <p id="cuidados-material" class="texto-orientacao"></p>
         </section>
       </div>
 

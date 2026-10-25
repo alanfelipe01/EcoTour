@@ -431,19 +431,18 @@
 .pagina-guia .visual-folha-dois { bottom: 14%; left: 16%; font-size: 20px; }
 
 .pagina-guia .passos-guia {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
-  grid-template-areas: "preparo destino" "cuidados destino";
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas: "preparo coletor" "destino destino";
   gap: 18px; margin-top: 30px;
 }
 .pagina-guia .bloco-preparo { grid-area: preparo; }
-.pagina-guia .bloco-cuidados { grid-area: cuidados; }
+.pagina-guia .bloco-coletor { grid-area: coletor; }
 .pagina-guia .destino-material { grid-area: destino; }
 .pagina-guia .bloco-orientacao {
   min-height: 195px; padding: 27px 30px; border: 1px solid var(--cor-borda);
   border-radius: 18px; background: #fff;
   box-shadow: 0 8px 25px rgba(29, 61, 42, .035);
 }
-.pagina-guia .bloco-cuidados { border-top: 1px solid var(--cor-borda); }
 .pagina-guia .titulo-bloco { align-items: flex-start; gap: 15px; }
 .pagina-guia .numero-etapa {
   width: 46px; height: 46px; border-radius: 13px; font-size: 13px;
@@ -451,6 +450,11 @@
 .pagina-guia .rotulo-etapa { margin: 0 0 3px; color: #5a8a64; font-size: 11px; font-weight: 800; letter-spacing: .13em; }
 .pagina-guia h2 { font-size: clamp(21px, 2.4vw, 26px); letter-spacing: -.035em; }
 .pagina-guia .texto-orientacao { max-width: 580px; margin-top: 20px; font-size: 17px; line-height: 1.65; }
+.pagina-guia .aviso-cuidados {
+  margin: 18px 0 0; padding: 13px 16px; border-left: 4px solid #ad7b36;
+  border-radius: 8px; background: #faf3e7; color: #513d25;
+  font-size: 15px; line-height: 1.6;
+}
 .pagina-guia .destino-material {
   display: flex; flex-direction: column; margin: 0; padding: 29px 32px;
   border: 0; border-radius: 18px; background: #1b5a40; color: #fff;
@@ -492,7 +496,7 @@
   .pagina-guia .apresentacao-visual { min-height: 180px; }
   .pagina-guia .visual-circulo { top: -105px; }
   .pagina-guia .visual-selo { width: 115px; height: 115px; font-size: 21px; }
-  .pagina-guia .passos-guia { grid-template-columns: 1fr; grid-template-areas: "preparo" "destino" "cuidados"; }
+  .pagina-guia .passos-guia { grid-template-columns: 1fr; grid-template-areas: "preparo" "coletor" "destino"; }
 }
 @media (max-width: 480px) {
   .pagina-guia .apresentacao-material { margin-top: 12px; border-radius: 20px; }
@@ -501,6 +505,5 @@
   .pagina-guia .passos-guia { margin-top: 18px; }
   .pagina-guia .bloco-orientacao,
   .pagina-guia .destino-material { min-height: 0; padding: 23px; }
-  .pagina-guia .bloco-cuidados { padding-top: 23px; }
   .pagina-guia .referencias { padding: 23px; }
 }
