@@ -26,7 +26,7 @@
 .cabecalho { border-bottom: 1px solid var(--cor-borda); }
 .cabecalho-conteudo { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 88px; }
 .marca { color: var(--cor-primaria) !important; font-size: 28px; font-weight: 800; letter-spacing: -1px; text-decoration: none; }
-.marca span { font-weight: 400; }
+.marca-pino { display: inline-block; width: .62em; height: .82em; margin: 0 .07em 0 .06em; vertical-align: baseline; }
 .cabecalho nav { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; }
 .cabecalho nav a { color: var(--cor-primaria); font-size: 14px; font-weight: 700; text-underline-offset: 5px; }
 .cabecalho nav a[aria-current] { text-decoration-thickness: 3px; }
