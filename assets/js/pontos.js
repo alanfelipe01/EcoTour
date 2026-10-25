@@ -25,6 +25,9 @@ function iniciarPontos() {
     return;
   }
 
+  document.querySelector("#total-pontos").textContent =
+    String(pontosDescarte.length).padStart(2, "0");
+
   if (idPonto) {
     const ponto = pontosDescarte.find((item) => item.id === idPonto);
     if (!ponto) {
@@ -119,7 +122,20 @@ function iniciarPontos() {
     const situacao = document.createElement("span");
     situacao.className = "etiqueta-situacao";
     situacao.textContent = rotuloSituacao(ponto);
-    conteudo.append(id, nome, local, situacao);
+    const materiaisPonto = document.createElement("span");
+    materiaisPonto.className = "materiais-ponto";
+    const categorias = typeof materiais !== "undefined" && Array.isArray(materiais)
+      ? [...new Set(materiais.filter((material) =>
+          Array.isArray(ponto.materiaisConfirmados) &&
+          ponto.materiaisConfirmados.includes(material.id)).map((material) => material.categoria))]
+      : [];
+    materiaisPonto.textContent = categorias.length && ponto.situacao === "confirmado"
+      ? `Recebe: ${categorias.join(", ")}`
+      : "Materiais em verificação";
+    const chamada = document.createElement("span");
+    chamada.className = "chamada-ponto";
+    chamada.textContent = "Ver detalhes →";
+    conteudo.append(id, nome, local, materiaisPonto, situacao, chamada);
     link.append(imagem, conteudo);
     item.append(link);
     return item;

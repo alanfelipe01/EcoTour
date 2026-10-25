@@ -25,15 +25,22 @@
   <main id="conteudo" class="container">
     <a class="voltar" href="index.html"><span aria-hidden="true">←</span> Voltar aos materiais</a>
     <section class="apresentacao" aria-labelledby="titulo-pagina">
-      <p class="identificacao-campus">UNINASSAU · Campus Aguanambi</p>
-      <h1 id="titulo-pagina">Pontos de descarte no campus</h1>
-      <p class="introducao">Explore os locais identificados no levantamento de campo. Consulte a situação de cada ponto antes de levar seu material.</p>
+      <div>
+        <p class="identificacao-campus">EXPLORE O CAMPUS · UNINASSAU AGUANAMBI</p>
+        <h1 id="titulo-pagina">Encontre o ponto <em>certo para você.</em></h1>
+        <p class="introducao">Explore os locais por área e confira o que cada ponto recebe antes de sair.</p>
+        <p class="nota-disponibilidade">Confirme a sinalização e a disponibilidade atual no local.</p>
+      </div>
+      <div class="resumo-campus" aria-label="Resumo do levantamento">
+        <strong id="total-pontos">—</strong>
+        <span>pontos registrados<br>no campus</span>
+      </div>
     </section>
 
-    <aside class="aviso-validacao" aria-label="Situação dos pontos">
-      <strong>Confira a sinalização antes de descartar</strong>
+    <details class="aviso-validacao">
+      <summary><span aria-hidden="true">ⓘ</span> Sobre o levantamento e a sinalização</summary>
       <p>O levantamento de 19/10/2026 registrou cinco pontos com rótulos e quatro identificados por cores. No mapeamento confirmado em 24/10/2026: azul recebe papel, vermelho recebe plástico, marrom recebe orgânicos (comida), verde recebe vidro e amarelo recebe metal. O coletor marrom foi observado apenas no P-01. Confira horários, restrições adicionais e disponibilidade atual no local.</p>
-    </aside>
+    </details>
 
     <section id="estado-erro" class="estado-informativo" hidden aria-labelledby="titulo-erro">
       <h2 id="titulo-erro">Não foi possível carregar os pontos</h2>
@@ -48,6 +55,7 @@
       </div>
       <div class="barra-lista">
         <div>
+          <p class="rotulo-secao">PONTOS DE DESCARTE</p>
           <h2 id="titulo-lista">Locais identificados</h2>
           <p id="resumo-lista" role="status"></p>
         </div>

@@ -22,44 +22,51 @@
       </a>
 
       <nav aria-label="Navegação principal">
-        <a class="link-pontos" href="pontos.html">
-          Pontos de descarte <span aria-hidden="true">↗</span>
-        </a>
+        <a href="index.html" aria-current="page">Materiais</a>
+        <a href="pontos.html">Pontos de descarte</a>
       </nav>
     </div>
   </header>
 
   <main id="conteudo" class="container">
     <section class="consulta" aria-labelledby="titulo-consulta">
-      <p class="identificacao-campus">UNINASSAU · Campus Aguanambi</p>
+      <div class="consulta-conteudo">
+        <p class="identificacao-campus">GUIA DE DESCARTE · UNINASSAU AGUANAMBI</p>
+        <h1 id="titulo-consulta">Descarte certo começa por <em>uma boa escolha.</em></h1>
+        <p class="introducao">Descubra como preparar cada material e encontre os pontos identificados no campus.</p>
 
-      <h1 id="titulo-consulta">O que você quer descartar?</h1>
-
-      <p class="introducao">
-        Encontre orientações para preparar e descartar seus resíduos no campus.
-      </p>
-
-      <form id="formulario-busca" class="formulario-busca" role="search">
-        <label for="busca-material">Buscar um material</label>
-
-        <div class="campo-busca">
-          <input
-            type="search"
-            id="busca-material"
-            name="busca"
-            placeholder="Ex.: papel, garrafa ou remédio"
-            autocomplete="off"
-            aria-controls="lista-materiais"
-          >
-
-          <button type="submit" class="botao-buscar">Buscar</button>
+        <form id="formulario-busca" class="formulario-busca" role="search">
+          <label for="busca-material">O que você quer descartar?</label>
+          <div class="campo-busca">
+            <input type="search" id="busca-material" name="busca"
+              placeholder="Busque papel, garrafa, remédio..." autocomplete="off"
+              aria-controls="lista-materiais">
+            <button type="submit" class="botao-buscar">Buscar <span aria-hidden="true">→</span></button>
+          </div>
+        </form>
+        <div class="buscas-rapidas" aria-label="Buscas rápidas">
+          <span>Experimente:</span>
+          <button type="button" data-busca="garrafa">Garrafa</button>
+          <button type="button" data-busca="papel">Papel</button>
+          <button type="button" data-busca="remédio">Remédio</button>
         </div>
-      </form>
+      </div>
+      <div class="consulta-visual" aria-hidden="true">
+        <div class="visual-orbita visual-orbita-um"></div>
+        <div class="visual-orbita visual-orbita-dois"></div>
+        <span class="visual-selo">ECO<br>TOUR</span>
+        <div class="visual-cartao visual-cartao-papel"><span>01</span><strong>Papel</strong><small>separe</small></div>
+        <div class="visual-cartao visual-cartao-plastico"><span>02</span><strong>Plástico</strong><small>prepare</small></div>
+        <div class="visual-cartao visual-cartao-pontos"><span>03</span><strong>Destino</strong><small>encontre</small></div>
+      </div>
     </section>
 
     <section class="materiais" aria-labelledby="titulo-materiais">
       <div class="materiais-cabecalho">
-        <h2 id="titulo-materiais">Escolha um material</h2>
+        <div>
+          <p class="rotulo-secao">CONSULTE O CATÁLOGO</p>
+          <h2 id="titulo-materiais">Escolha um material</h2>
+        </div>
 
         <button id="limpar-busca" class="botao-limpar" type="button" hidden>
           Limpar busca
@@ -81,9 +88,11 @@
     </section>
 
     <aside class="atalho-pontos" aria-labelledby="titulo-pontos">
-      <div>
+      <div class="atalho-pontos-texto">
+        <span class="atalho-icone" aria-hidden="true">↗</span>
+        <p class="rotulo-secao">PELO CAMPUS</p>
         <h2 id="titulo-pontos">Quer encontrar os pontos do campus?</h2>
-        <p>Consulte as localizações e as informações dos pontos levantados.</p>
+        <p>Veja fotos, localizações e materiais identificados em cada local.</p>
       </div>
 
       <a href="pontos.html">Ver pontos de descarte <span aria-hidden="true">→</span></a>

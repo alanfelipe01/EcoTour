@@ -85,3 +85,92 @@ h1 { max-width: 740px; margin: 0; font-size: clamp(32px, 5vw, 50px); line-height
   .lista-pontos, .detalhe-cabecalho, .detalhe-informacoes { grid-template-columns: 1fr; }
   .detalhe-cabecalho { gap: 18px; }
 }
+
+/* Lista redesenhada */
+.pagina-pontos {
+  --cor-fundo: #f8f8f2;
+  --cor-primaria: #164e3b;
+  --cor-primaria-suave: #e8f0df;
+  --cor-texto: #183a30;
+  --cor-texto-suave: #5a6c61;
+  --cor-borda: #dce5d9;
+}
+.pagina-pontos .cabecalho { background: rgba(255, 255, 255, .82); }
+.pagina-pontos .cabecalho-conteudo { min-height: 76px; }
+.pagina-pontos .cabecalho nav { gap: 8px; }
+.pagina-pontos .cabecalho nav a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  padding: 8px 15px; border-radius: 100px; text-decoration: none;
+}
+.pagina-pontos .cabecalho nav a:hover,
+.pagina-pontos .cabecalho nav a[aria-current] { background: var(--cor-primaria-suave); }
+.pagina-pontos .voltar { margin-top: 24px; }
+.pagina-pontos .apresentacao {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 30px;
+  max-width: none; padding-block: 34px 30px;
+}
+.pagina-pontos .apresentacao > div:first-child { max-width: 750px; }
+.pagina-pontos .identificacao-campus {
+  margin-bottom: 18px; padding: 0; background: none; color: #5a8a64;
+  font-size: 12px; letter-spacing: .12em;
+}
+.pagina-pontos h1 { max-width: 650px; font-size: clamp(38px, 5vw, 60px); letter-spacing: -.055em; }
+.pagina-pontos h1 em { color: #45855c; font-style: normal; }
+.pagina-pontos .introducao { margin-top: 16px; font-size: 17px; }
+.pagina-pontos .nota-disponibilidade { margin: 12px 0 0; color: #476552; font-size: 13px; font-weight: 700; }
+.pagina-pontos .resumo-campus {
+  display: flex; flex-direction: column; flex-shrink: 0; align-items: flex-start;
+  min-width: 190px; padding: 20px 24px; border-radius: 18px; background: #e3eee2;
+}
+.pagina-pontos .resumo-campus strong { color: var(--cor-primaria); font-size: 52px; line-height: 1; letter-spacing: -.07em; }
+.pagina-pontos .resumo-campus span { margin-top: 8px; color: #476552; font-size: 13px; line-height: 1.4; }
+.pagina-pontos .aviso-validacao {
+  padding: 0; border: 1px solid var(--cor-borda); border-radius: 12px; background: #fff;
+}
+.pagina-pontos .aviso-validacao summary {
+  display: flex; align-items: center; gap: 10px; min-height: 54px; padding: 12px 18px;
+  color: var(--cor-primaria); font-size: 14px; font-weight: 700; cursor: pointer;
+}
+.pagina-pontos .aviso-validacao summary::marker { content: ""; }
+.pagina-pontos .aviso-validacao summary::-webkit-details-marker { display: none; }
+.pagina-pontos .aviso-validacao summary::after { content: "+"; margin-left: auto; font-size: 22px; font-weight: 400; }
+.pagina-pontos .aviso-validacao[open] summary::after { content: "−"; }
+.pagina-pontos .aviso-validacao summary span { font-size: 19px; }
+.pagina-pontos .aviso-validacao p { max-width: none; margin: 0; padding: 0 20px 20px 48px; color: var(--cor-texto-suave); font-size: 14px; }
+.pagina-pontos .barra-lista { align-items: end; margin-top: 46px; }
+.pagina-pontos .rotulo-secao { margin: 0 0 7px; color: #5a8a64; font-size: 12px; font-weight: 800; letter-spacing: .14em; }
+.pagina-pontos .barra-lista h2 { font-size: clamp(26px, 3vw, 34px); letter-spacing: -.04em; }
+.pagina-pontos .controle-area select { border-color: var(--cor-borda); border-radius: 10px; }
+.pagina-pontos .lista-pontos { gap: 20px; }
+.pagina-pontos .cartao-ponto {
+  border-radius: 18px; box-shadow: 0 8px 30px rgba(29, 61, 42, .04);
+  transition: border-color .18s, transform .18s, box-shadow .18s;
+}
+.pagina-pontos .cartao-ponto:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(29, 61, 42, .11); }
+.pagina-pontos .cartao-ponto img { height: 200px; }
+.pagina-pontos .cartao-conteudo { align-items: stretch; padding: 21px; }
+.pagina-pontos .identificador { color: #598164; font-size: 11px; }
+.pagina-pontos .cartao-conteudo strong { font-size: 20px; }
+.pagina-pontos .cartao-localizacao { margin-top: 5px; }
+.pagina-pontos .materiais-ponto {
+  display: block; margin-top: 15px; color: #365946; font-size: 13px; line-height: 1.5;
+}
+.pagina-pontos .etiqueta-situacao { align-self: flex-start; margin-top: 14px; }
+.pagina-pontos .chamada-ponto {
+  display: block; margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--cor-borda);
+  color: var(--cor-primaria); font-size: 13px; font-weight: 800;
+}
+@media (max-width: 700px) {
+  .pagina-pontos .apresentacao { align-items: stretch; flex-direction: column; gap: 22px; }
+  .pagina-pontos .resumo-campus { flex-direction: row; align-items: center; gap: 14px; min-width: 0; }
+  .pagina-pontos .resumo-campus strong { font-size: 42px; }
+  .pagina-pontos .resumo-campus span { margin: 0; }
+}
+@media (max-width: 600px) {
+  .pagina-pontos .cabecalho nav { gap: 0; }
+  .pagina-pontos .cabecalho nav a { padding-inline: 10px; font-size: 13px; }
+  .pagina-pontos .apresentacao { padding-top: 25px; }
+  .pagina-pontos .barra-lista { margin-top: 35px; }
+  .pagina-pontos .lista-pontos { grid-template-columns: 1fr; }
+  .pagina-pontos .cartao-ponto img { height: 210px; }
+}
