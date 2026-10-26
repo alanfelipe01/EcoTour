@@ -23,8 +23,8 @@ Campus UNINASSAU Aguanambi, Fortaleza. Levantamento de campo de 19/10/2026.
 | P-05 | Cantina | Cantina | papel, vidro, metal, plástico | escrita | confirmado | disponível | 19/10/2026 | [P-05.jpg](../assets/img/P-05.jpg) |
 | P-06 | Em frente à Coordenação | Em frente à Coordenação | papel, plástico, vidro, metal | escrita | confirmado | disponível | 19/10/2026 | [P-06.jpg](../assets/img/P-06.jpg) |
 | P-07 | Descartômetro | Dentro da Coordenação | medicamentos vencidos, caixas e bulas (não aceita agulhas, seringas ou perfurocortantes) | escrita | confirmado | disponível | 19/10/2026 | [P-07.jpg](../assets/img/P-07.jpg) |
-| P-08 | Bloco B | Bloco B | 4 coletores: amarelo, azul, vermelho, verde | só cor; mapeamento confirmado | confirmado | disponível | 19/10/2026 | [P-08.jpg](../assets/img/P-08.jpg) |
-| P-09 | Entrada do estacionamento | Entrada do estacionamento | plástico, papel, vidro, metal | escrita | confirmado | disponível | 19/10/2026 | [P-09.jpg](../assets/img/P-09.jpg) |
+| P-08 | Corredor de acesso | Após entrar pelo estacionamento, no corredor de acesso ao campus | 4 coletores: amarelo, azul, vermelho, verde | só cor; mapeamento confirmado | confirmado | disponível | 19/10/2026 | [P-08.jpg](../assets/img/P-08.jpg) |
+| P-09 | Entrada do estacionamento | Ao lado do portão de acesso | plástico, papel, vidro, metal | escrita | confirmado | disponível | 19/10/2026 | [P-09.jpg](../assets/img/P-09.jpg) |
 
 O mapeamento de cores informado para o campus em 24/10/2026 é: **azul = papel; vermelho = plástico; marrom = orgânicos (comida); verde = vidro; amarelo = metal**. O coletor marrom aparece apenas no P-01. Os pontos P-04, P-05, P-06, P-07 e P-09 têm rótulos fotografados. A disponibilidade foi observada em 19/10/2026, não verificada novamente nesta atualização.
 
