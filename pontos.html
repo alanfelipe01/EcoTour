@@ -35,13 +35,14 @@
       </div>
       <div class="resumo-campus" aria-label="Resumo do levantamento">
         <strong id="total-pontos">—</strong>
-        <span>pontos registrados<br>no campus</span>
+        <span>locais registrados<br>no campus</span>
+        <small id="total-registros"></small>
       </div>
     </section>
 
     <details class="aviso-validacao">
       <summary><span aria-hidden="true">ⓘ</span> Sobre o levantamento e a sinalização</summary>
-      <p>O levantamento de 19/10/2026 registrou cinco pontos com rótulos e quatro identificados por cores. No mapeamento confirmado em 24/10/2026: azul recebe papel, vermelho recebe plástico, marrom recebe orgânicos (comida), verde recebe vidro e amarelo recebe metal. O coletor marrom foi observado apenas no P-01. Confira horários, restrições adicionais e disponibilidade atual no local.</p>
+      <p>O levantamento de 19/10/2026 registrou nove pontos de descarte em oito locais: cinco com rótulos e quatro identificados por cores. Dois conjuntos de coletores ficam na cantina. No mapeamento confirmado em 24/10/2026: azul recebe papel, vermelho recebe plástico, marrom recebe orgânicos (comida), verde recebe vidro e amarelo recebe metal. O coletor marrom foi observado apenas no P-01. Confira horários, restrições adicionais e disponibilidade atual no local.</p>
     </details>
 
     <section id="estado-erro" class="estado-informativo" hidden aria-labelledby="titulo-erro">
@@ -74,7 +75,7 @@
       </div>
       <ul id="lista-pontos" class="lista-pontos"></ul>
       <div id="estado-vazio" class="estado-informativo" hidden>
-        <h3>Nenhum ponto nesta área</h3>
+        <h3>Nenhum local nesta área</h3>
         <p id="texto-estado-vazio">Escolha outra área ou veja todos os locais identificados.</p>
         <button id="limpar-filtro" type="button">Ver todas as áreas</button>
       </div>
@@ -89,10 +90,7 @@
           <p id="localizacao-ponto" class="localizacao-detalhe"></p>
           <p id="situacao-ponto" class="etiqueta-situacao"></p>
         </div>
-        <figure class="foto-detalhe">
-          <img id="foto-ponto" alt="" width="1200" height="1600">
-          <figcaption><a id="link-foto-original" href="">Ver foto original em alta resolução</a></figcaption>
-        </figure>
+        <div id="galeria-ponto" class="galeria-ponto" aria-label="Fotos dos conjuntos de coletores"></div>
       </div>
       <section id="instrucao-material" class="instrucao-material" aria-labelledby="titulo-instrucao-material" hidden>
         <h3 id="titulo-instrucao-material"></h3>

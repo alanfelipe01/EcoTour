@@ -4,7 +4,7 @@
 
 Guia digital de descarte de resíduos para a comunidade da **UNINASSAU Aguanambi (Fortaleza–CE)**, desenvolvido no **Hackathon UNINASSAU 2026 — Desafio Sustentabilidade**. Ele responde três perguntas: **qual material tenho, como preparo e onde descarto dentro do campus?**
 
-> **Em desenvolvimento · atualizado em 24/10/2026.** A consulta de materiais, o guia e a página de pontos estão implementados. Os nove pontos têm materiais identificados por rótulos ou pelo mapeamento de cores confirmado para o campus; horários e disponibilidade atual ainda precisam de conferência.
+> **Em desenvolvimento · atualizado em 25/10/2026.** A consulta de materiais, o guia e a página de pontos estão implementados. Há nove pontos de descarte registrados em oito locais; os dois conjuntos de coletores da cantina aparecem juntos na interface. Horários e disponibilidade atual ainda precisam de conferência.
 
 ## Problema e pesquisa
 
@@ -43,13 +43,13 @@ Site estático em **HTML, CSS e JavaScript**, sem login, com catálogo pesquisá
 
 ## Andamento
 
-| Frente | Situação em 24/10/2026 |
+| Frente | Situação em 25/10/2026 |
 |---|---|
 | Pesquisa (ECO-02) | ✅ 52 respostas analisadas |
-| Inventário de pontos (ECO-03) | ✅ 9 pontos documentados; 5 com sinalização escrita e 4 identificados por cores |
+| Inventário de pontos (ECO-03) | ✅ 9 pontos documentados em 8 locais; 5 com sinalização escrita e 4 identificados por cores |
 | Catálogo (ECO-04) | 🟡 7 materiais em `materiais.js`; 6 vinculados aos pontos identificados |
 | Telas e padrão visual (ECO-05) | ✅ 9 telas e padrão visual definidos |
-| Dados dos pontos | ✅ 9 pontos em `pontos-descarte.js`, organizados por área; materiais identificados por rótulos ou cores confirmadas |
+| Dados dos pontos | ✅ 9 pontos em `pontos-descarte.js`, apresentados em 8 locais; materiais identificados por rótulos ou cores confirmadas |
 | Fotos dos pontos | ✅ 9 JPG originais e 9 WebP de exibição em `assets/img/` |
 | Páginas e interações (ECO-06 a 09) | ✅ Consulta, guia, lista, filtro e detalhe implementados; validação em navegador ainda pendente |
 

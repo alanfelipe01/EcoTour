@@ -124,6 +124,7 @@ h1 { max-width: 740px; margin: 0; font-size: clamp(32px, 5vw, 50px); line-height
 }
 .pagina-pontos .resumo-campus strong { color: var(--cor-primaria); font-size: 52px; line-height: 1; letter-spacing: -.07em; }
 .pagina-pontos .resumo-campus span { margin-top: 8px; color: #476552; font-size: 13px; line-height: 1.4; }
+.pagina-pontos .resumo-campus small { margin-top: 8px; color: #476552; font-size: 12px; line-height: 1.4; }
 .pagina-pontos .aviso-validacao {
   padding: 0; border: 1px solid var(--cor-borda); border-radius: 12px; background: #fff;
 }
@@ -155,6 +156,14 @@ h1 { max-width: 740px; margin: 0; font-size: clamp(32px, 5vw, 50px); line-height
 }
 .pagina-pontos .cartao-ponto:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(29, 61, 42, .11); }
 .pagina-pontos .cartao-ponto img { height: 200px; }
+.pagina-pontos .cartao-fotos { display: grid; grid-template-columns: 1fr; overflow: hidden; }
+.pagina-pontos .cartao-fotos-duplas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px; background: var(--cor-borda); }
+.pagina-pontos .cartao-fotos img { display: block; min-width: 0; width: 100%; }
+.pagina-pontos .detalhe-com-galeria { grid-template-columns: 1fr; align-items: start; }
+.pagina-pontos .galeria-ponto { display: grid; grid-template-columns: 1fr; gap: 16px; min-width: 0; }
+.pagina-pontos .detalhe-com-galeria .galeria-ponto { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.pagina-pontos .galeria-ponto .foto-detalhe { min-width: 0; }
+.pagina-pontos .galeria-ponto img { max-height: 460px; object-fit: cover; }
 .pagina-pontos .cartao-conteudo { align-items: stretch; padding: 21px; }
 .pagina-pontos .identificador { color: #598164; font-size: 11px; }
 .pagina-pontos .cartao-conteudo strong { font-size: 20px; }
@@ -188,4 +197,5 @@ h1 { max-width: 740px; margin: 0; font-size: clamp(32px, 5vw, 50px); line-height
   .pagina-pontos .controle-filtro { flex: 1 1 100%; min-width: 0; }
   .pagina-pontos .lista-pontos { grid-template-columns: 1fr; }
   .pagina-pontos .cartao-ponto img { height: 210px; }
+  .pagina-pontos .detalhe-com-galeria .galeria-ponto { grid-template-columns: 1fr; }
 }

@@ -25,11 +25,25 @@ function iniciarPontos() {
     return;
   }
 
+  // P-04 e P-05 são dois conjuntos no mesmo local. Os registros e as evidências
+  // continuam separados no inventário; a navegação apresenta a cantina uma vez.
+  const conjuntoCantina = pontosDescarte.find((ponto) => ponto.id === "P-05");
+  const locais = pontosDescarte
+    .filter((ponto) => ponto.id !== "P-05" || !pontosDescarte.some((item) => item.id === "P-04"))
+    .map((ponto) => ({
+      ...ponto,
+      registros: ponto.id === "P-04" && conjuntoCantina
+        ? [ponto, conjuntoCantina]
+        : [ponto]
+    }));
+
   document.querySelector("#total-pontos").textContent =
-    String(pontosDescarte.length).padStart(2, "0");
+    String(locais.length).padStart(2, "0");
+  document.querySelector("#total-registros").textContent =
+    `${pontosDescarte.length} pontos de descarte registrados`;
 
   if (idPonto) {
-    const ponto = pontosDescarte.find((item) => item.id === idPonto);
+    const ponto = locais.find((item) => item.registros.some((registro) => registro.id === idPonto));
     if (!ponto) {
       mostrarErro("Ponto não encontrado", "Este ponto não está no inventário. Consulte a lista de locais identificados.");
       const link = document.createElement("a");
@@ -63,7 +77,7 @@ function iniciarPontos() {
   function montarLista(materialInicial) {
     const filtroArea = document.querySelector("#filtro-area");
     const filtroMaterial = document.querySelector("#filtro-material");
-    const areas = [...new Set(pontosDescarte.map((p) => p.area))]
+    const areas = [...new Set(locais.map((p) => p.area))]
       .sort((a, b) => a.localeCompare(b, "pt-BR"));
     areas.forEach((area) => filtroArea.add(new Option(area, area)));
     [...materiais].sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"))
@@ -92,8 +106,8 @@ function iniciarPontos() {
     function renderizar() {
       const material = materiais.find((item) => item.id === filtroMaterial.value);
       const pontosMaterial = material
-        ? pontosDescarte.filter((ponto) => pontoRecebeMaterial(ponto, material))
-        : pontosDescarte;
+        ? locais.filter((ponto) => pontoRecebeMaterial(ponto, material))
+        : locais;
       const visiveis = pontosMaterial.filter((ponto) =>
         !filtroArea.value || ponto.area === filtroArea.value);
       const aviso = document.querySelector("#aviso-material");
@@ -103,15 +117,15 @@ function iniciarPontos() {
         : "EcoTour | Pontos de descarte";
       if (material) {
         document.querySelector("#titulo-aviso-material").textContent = pontosMaterial.length
-          ? `Pontos identificados para ${material.nome}`
-          : `Sem ponto confirmado para ${material.nome}`;
+          ? `Locais identificados para ${material.nome}`
+          : `Sem local confirmado para ${material.nome}`;
         document.querySelector("#texto-aviso-material").textContent = pontosMaterial.length
           ? `${material.coletor} Confira a sinalização e a disponibilidade atual ao chegar.`
           : "Ainda não há um local com recebimento confirmado e disponível para este material no campus. Confirme com o setor responsável antes de levá-lo.";
       }
       const lista = document.querySelector("#lista-pontos");
       lista.replaceChildren(...visiveis.map((ponto) => criarCartao(ponto, material)));
-      document.querySelector("#resumo-lista").textContent = `${visiveis.length} ${visiveis.length === 1 ? "ponto encontrado" : "pontos encontrados"}`;
+      document.querySelector("#resumo-lista").textContent = `${visiveis.length} ${visiveis.length === 1 ? "local encontrado" : "locais encontrados"}`;
       document.querySelector("#estado-vazio").hidden =
         visiveis.length > 0 || !filtroArea.value || pontosMaterial.length === 0;
       document.querySelector("#texto-estado-vazio").textContent = material
@@ -126,22 +140,29 @@ function iniciarPontos() {
     link.className = "cartao-ponto";
     link.href = `pontos.html?ponto=${encodeURIComponent(ponto.id)}` +
       (material ? `&material=${encodeURIComponent(material.id)}` : "");
-    const imagem = document.createElement("img");
-    imagem.src = fotoOtimizada(ponto.foto);
-    imagem.alt = "";
-    imagem.loading = "lazy";
-    imagem.width = 1200;
-    imagem.height = 1600;
+    const fotos = document.createElement("span");
+    fotos.className = ponto.registros.length > 1 ? "cartao-fotos cartao-fotos-duplas" : "cartao-fotos";
+    ponto.registros.forEach((registro) => {
+      const imagem = document.createElement("img");
+      imagem.src = fotoOtimizada(registro.foto);
+      imagem.alt = "";
+      imagem.loading = "lazy";
+      imagem.width = 1200;
+      imagem.height = 1600;
+      fotos.append(imagem);
+    });
     const conteudo = document.createElement("span");
     conteudo.className = "cartao-conteudo";
     const id = document.createElement("span");
     id.className = "identificador";
-    id.textContent = `${ponto.id} · ${ponto.area}`;
+    id.textContent = `${ponto.registros.map((registro) => registro.id).join(" / ")} · ${ponto.area}`;
     const nome = document.createElement("strong");
     nome.textContent = ponto.nome;
     const local = document.createElement("span");
     local.className = "cartao-localizacao";
-    local.textContent = ponto.localizacao;
+    local.textContent = ponto.registros.length > 1
+      ? `${ponto.registros.length} conjuntos de coletores na cantina`
+      : ponto.localizacao;
     const situacao = document.createElement("span");
     situacao.className = "etiqueta-situacao";
     situacao.textContent = rotuloSituacao(ponto);
@@ -149,8 +170,7 @@ function iniciarPontos() {
     materiaisPonto.className = "materiais-ponto";
     const categorias = typeof materiais !== "undefined" && Array.isArray(materiais)
       ? [...new Set(materiais.filter((material) =>
-          Array.isArray(ponto.materiaisConfirmados) &&
-          ponto.materiaisConfirmados.includes(material.id)).map((material) => material.categoria))]
+          pontoRecebeMaterial(ponto, material)).map((material) => material.categoria))]
       : [];
     materiaisPonto.textContent = categorias.length && ponto.situacao === "confirmado"
       ? `Recebe: ${categorias.join(", ")}`
@@ -159,16 +179,20 @@ function iniciarPontos() {
     chamada.className = "chamada-ponto";
     chamada.textContent = "Ver detalhes →";
     conteudo.append(id, nome, local, materiaisPonto, situacao, chamada);
-    link.append(imagem, conteudo);
+    link.append(fotos, conteudo);
     item.append(link);
     return item;
   }
 
   function mostrarDetalhe(ponto, material) {
     document.title = `EcoTour | ${ponto.nome}`;
-    document.querySelector("#id-ponto").textContent = `${ponto.id} · ${ponto.area}`;
+    document.querySelector(".detalhe-cabecalho").classList.toggle(
+      "detalhe-com-galeria", ponto.registros.length > 1);
+    document.querySelector("#id-ponto").textContent = `${ponto.registros.map((registro) => registro.id).join(" / ")} · ${ponto.area}`;
     document.querySelector("#nome-ponto").textContent = ponto.nome;
-    document.querySelector("#localizacao-ponto").textContent = ponto.localizacao;
+    document.querySelector("#localizacao-ponto").textContent = ponto.registros.length > 1
+      ? `${ponto.registros.length} conjuntos de coletores na cantina`
+      : ponto.localizacao;
     document.querySelector("#situacao-ponto").textContent = rotuloSituacao(ponto);
     const instrucao = document.querySelector("#instrucao-material");
     instrucao.hidden = !material;
@@ -179,20 +203,41 @@ function iniciarPontos() {
         `pontos.html?material=${encodeURIComponent(material.id)}`;
       document.querySelector("#voltar-lista").lastChild.textContent = " Ver pontos para este material";
     }
-    document.querySelector("#coletores-ponto").textContent = ponto.coletores;
-    document.querySelector("#identificacao-ponto").textContent = ponto.identificacao;
-    document.querySelector("#restricoes-ponto").textContent = ponto.restricoes;
+    document.querySelector("#coletores-ponto").textContent = ponto.registros.length > 1
+      ? ponto.registros.map((registro) => `${registro.id}: ${registro.coletores}`).join(" ")
+      : ponto.coletores;
+    document.querySelector("#identificacao-ponto").textContent = ponto.registros.length > 1
+      ? ponto.registros.map((registro) => `${registro.id}: ${registro.identificacao}`).join(" ")
+      : ponto.identificacao;
+    document.querySelector("#restricoes-ponto").textContent = ponto.registros.length > 1
+      ? ponto.registros.map((registro) => `${registro.id}: ${registro.restricoes}`).join(" ")
+      : ponto.restricoes;
     document.querySelector("#disponibilidade-ponto").textContent =
-      ponto.disponibilidade === "disponível"
-        ? "Estava acessível na data da observação; a disponibilidade atual não foi verificada."
-        : ponto.disponibilidade === "indisponível"
-          ? "Ponto registrado como indisponível."
-          : "Disponibilidade atual desconhecida.";
-    const imagem = document.querySelector("#foto-ponto");
-    imagem.src = fotoOtimizada(ponto.foto);
-    imagem.alt = `Registro fotográfico de ${ponto.nome}`;
-    imagem.classList.toggle("foto-lixeiras", ponto.id === "P-05");
-    document.querySelector("#link-foto-original").href = ponto.foto;
+      ponto.registros.every((registro) => registro.disponibilidade === "disponível")
+        ? ponto.registros.length > 1
+          ? "Os dois conjuntos estavam acessíveis na data da observação; a disponibilidade atual não foi verificada."
+          : "Estava acessível na data da observação; a disponibilidade atual não foi verificada."
+        : ponto.registros.every((registro) => registro.disponibilidade === "indisponível")
+          ? "Os conjuntos estão registrados como indisponíveis."
+          : "Confira a disponibilidade de cada conjunto no local.";
+    const galeria = document.querySelector("#galeria-ponto");
+    galeria.replaceChildren(...ponto.registros.map((registro) => {
+      const figura = document.createElement("figure");
+      figura.className = "foto-detalhe";
+      const imagem = document.createElement("img");
+      imagem.src = fotoOtimizada(registro.foto);
+      imagem.alt = `Conjunto de coletores ${registro.id} na ${ponto.nome}`;
+      imagem.width = 1200;
+      imagem.height = 1600;
+      imagem.classList.toggle("foto-lixeiras", registro.id === "P-05");
+      const legenda = document.createElement("figcaption");
+      const link = document.createElement("a");
+      link.href = registro.foto;
+      link.textContent = `Ver foto original · ${registro.id}`;
+      legenda.append(link);
+      figura.append(imagem, legenda);
+      return figura;
+    }));
     const data = document.querySelector("#data-ponto");
     data.dateTime = ponto.verificadoEm;
     data.textContent = formatarData(ponto.verificadoEm);
@@ -201,12 +246,13 @@ function iniciarPontos() {
 }
 
 function pontoRecebeMaterial(ponto, material) {
-  return ponto.situacao === "confirmado" &&
-    ponto.disponibilidade === "disponível" &&
-    Array.isArray(ponto.materiaisConfirmados) &&
-    ponto.materiaisConfirmados.includes(material.id) &&
+  return (ponto.registros ?? [ponto]).some((registro) =>
+    registro.situacao === "confirmado" &&
+    registro.disponibilidade === "disponível" &&
+    Array.isArray(registro.materiaisConfirmados) &&
+    registro.materiaisConfirmados.includes(material.id) &&
     Array.isArray(material.pontosConfirmados) &&
-    material.pontosConfirmados.includes(ponto.id);
+    material.pontosConfirmados.includes(registro.id));
 }
 
 function fotoOtimizada(original) {
@@ -214,6 +260,11 @@ function fotoOtimizada(original) {
 }
 
 function rotuloSituacao(ponto) {
+  if (ponto.registros?.length > 1 &&
+      !ponto.registros.every((registro) => registro.situacao === ponto.situacao &&
+        registro.disponibilidade === ponto.disponibilidade)) {
+    return "Confira cada conjunto";
+  }
   if (ponto.disponibilidade === "indisponível") return "Indisponível";
   return ponto.situacao === "confirmado" ? "Recebimento identificado" : "Observado · recebimento a confirmar";
 }

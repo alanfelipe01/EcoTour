@@ -91,13 +91,14 @@ function preencherDestino(material) {
         ponto.materiaisConfirmados.includes(material.id))
     : [];
 
-  const quantidade = pontos.length;
+  const quantidade = new Set(pontos.map((ponto) =>
+    ["P-04", "P-05"].includes(ponto.id) ? "cantina" : ponto.id)).size;
   const possuiDestino = quantidade > 0;
 
   blocoDestino.classList.toggle("sem-destino", !possuiDestino);
   statusDestino.textContent = possuiDestino
-    ? `${quantidade} ${quantidade === 1 ? "ponto identificado" : "pontos identificados"} para este material`
-    : "Ainda não há ponto confirmado no campus";
+    ? `${quantidade} ${quantidade === 1 ? "local identificado" : "locais identificados"} para este material`
+    : "Ainda não há local confirmado no campus";
   destinoConfirmado.hidden = !possuiDestino;
   destinoNaoConfirmado.hidden = possuiDestino;
 
@@ -107,11 +108,11 @@ function preencherDestino(material) {
 
   document.querySelector("#resumo-pontos").textContent =
     quantidade === 1
-      ? "Veja onde fica o ponto. Ao chegar, confira a sinalização e se ele está acessível."
-      : "Escolha um ponto. Ao chegar, confira a sinalização e se ele está acessível.";
+      ? "Veja onde fica o local. Ao chegar, confira a sinalização e se os coletores estão acessíveis."
+      : "Escolha um local. Ao chegar, confira a sinalização e se os coletores estão acessíveis.";
 
   document.querySelector("#link-pontos-material").firstChild.textContent =
-    `Encontrar um ponto para ${material.nome} `;
+    `Encontrar um local para ${material.nome} `;
 
   // A tela de pontos deverá ler esse parâmetro para filtrar a lista.
   document.querySelector("#link-pontos-material").href =
