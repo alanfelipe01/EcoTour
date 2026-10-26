@@ -64,12 +64,40 @@ function iniciarGuia() {
   document.querySelector("#cuidados-material").textContent =
     material.cuidados;
 
+  preencherEtiqueta(material);
   preencherDestino(material);
   preencherFonte(material.fonte);
   preencherData(material.revisadoEm);
 
   estadoErro.hidden = true;
   guia.hidden = false;
+}
+
+function preencherEtiqueta(material) {
+  const visual = document.querySelector("#apresentacao-visual");
+  const etiqueta = document.querySelector("#etiqueta-coletor");
+  const cores = ["azul", "vermelho", "amarelo", "verde", "marrom"];
+  const cor = cores.includes(material.corColetor) ? material.corColetor : null;
+  const nome = material.categoria.toUpperCase();
+
+  visual.dataset.cor = cor ?? "neutro";
+
+  // Reduz a fonte para nomes longos caberem no adesivo da lixeira.
+  etiqueta.textContent = nome;
+  etiqueta.style.fontSize = `${Math.min(10, 70 / nome.length)}px`;
+
+  document.querySelector("#legenda-cor").textContent = cor
+    ? `Coletor ${cor}`
+    : "Fora dos coletores comuns";
+
+  const temPonto = Array.isArray(material.pontosConfirmados) &&
+    material.pontosConfirmados.length > 0;
+
+  document.querySelector("#legenda-detalhe").textContent = cor
+    ? `para ${material.categoria.toLowerCase()}`
+    : temPonto
+      ? "leve ao ponto indicado abaixo"
+      : "ainda sem ponto no campus";
 }
 
 function preencherDestino(material) {

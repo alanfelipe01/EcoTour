@@ -402,37 +402,48 @@
 }
 .pagina-guia .apresentacao-conteudo { align-self: center; padding: clamp(30px, 5vw, 55px); }
 .pagina-guia .identificacao-campus {
-  margin-bottom: 25px; padding: 0; border-radius: 0; background: none;
-  color: #426d53; font-size: 12px; letter-spacing: .12em;
+  margin-bottom: 18px; padding: 0; border-radius: 0; background: none;
+  color: #4a6b57; font-size: 14px;
 }
 .pagina-guia .categoria-material {
-  display: inline-block; margin-bottom: 11px; padding: 6px 11px;
-  border: 1px solid #a8c9ac; border-radius: 100px; background: #f8f9ed;
-  color: var(--cor-primaria); font-size: 11px; letter-spacing: .1em;
+  display: inline; margin: 0; color: inherit; font-size: inherit;
+  letter-spacing: 0; text-transform: none;
 }
 .pagina-guia h1 { max-width: 680px; font-size: clamp(38px, 5vw, 60px); letter-spacing: -.055em; }
 .pagina-guia .introducao { max-width: 560px; margin-top: 17px; font-size: 17px; }
+/* Lixeira do campus: fundo claro no tom do coletor, desenho no tom cheio. */
 .pagina-guia .apresentacao-visual {
-  position: relative; min-height: 310px; overflow: hidden;
-  background: radial-gradient(circle at 50% 45%, #4b8a62, #1a5940 70%);
+  --tom: #b9b5a8; --fundo: #ece7da; --texto: #3b3a33;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+  gap: 18px; min-height: 340px; padding: 34px 28px 30px;
+  background: var(--fundo); color: var(--texto);
 }
-.pagina-guia .visual-circulo {
-  position: absolute; width: 390px; height: 390px; top: -40px; left: 50%;
-  border: 1px solid rgba(255,255,255,.23); border-radius: 50%; transform: translateX(-50%);
+.pagina-guia .apresentacao-visual[data-cor="azul"] { --tom: #2f6db3; --fundo: #dce7f4; --texto: #1d4677; }
+.pagina-guia .apresentacao-visual[data-cor="vermelho"] { --tom: #cf3a2f; --fundo: #f6dfdb; --texto: #84241c; }
+.pagina-guia .apresentacao-visual[data-cor="amarelo"] { --tom: #e8cf55; --fundo: #f6efcf; --texto: #6b5a12; }
+.pagina-guia .apresentacao-visual[data-cor="verde"] { --tom: #24927a; --fundo: #d8ece6; --texto: #145847; }
+.pagina-guia .apresentacao-visual[data-cor="marrom"] { --tom: #8a5a44; --fundo: #efe3dc; --texto: #5a3626; }
+.pagina-guia .base-coletor {
+  display: flex; justify-content: center; width: 100%; padding-bottom: 6px;
+  border-bottom: 2px solid color-mix(in srgb, var(--texto) 35%, transparent);
 }
-.pagina-guia .visual-circulo::before {
-  position: absolute; content: ""; inset: 36px; border: 1px solid rgba(255,255,255,.23); border-radius: 50%;
+.pagina-guia .desenho-coletor { display: block; width: 150px; height: auto; }
+.pagina-guia .coletor-cor { fill: var(--tom); }
+.pagina-guia .coletor-aba { fill: none; stroke: #000; stroke-opacity: .18; stroke-width: 2.5; }
+.pagina-guia .coletor-saco { fill: #1c1c1a; }
+.pagina-guia .coletor-sombra { fill: #000; fill-opacity: .12; }
+.pagina-guia .coletor-etiqueta { fill: #fff; stroke: #1c1c1a; stroke-width: 1.5; }
+.pagina-guia #etiqueta-coletor { fill: #1c1c1a; font-family: Arial, sans-serif; font-weight: 800; }
+/* Sem coletor comum: só o contorno tracejado da lixeira. */
+.pagina-guia [data-cor="neutro"] .coletor-cor,
+.pagina-guia [data-cor="neutro"] .coletor-aba {
+  fill: none; stroke: var(--texto); stroke-opacity: .55; stroke-width: 1.5; stroke-dasharray: 4 3;
 }
-.pagina-guia .visual-selo {
-  position: absolute; top: 50%; left: 50%; display: grid; place-items: center;
-  width: 160px; height: 160px; border-radius: 50%; background: #e8edce;
-  color: #1a593e; box-shadow: 0 25px 60px rgba(6, 38, 24, .3);
-  font-size: 27px; font-weight: 800; line-height: 1.03; letter-spacing: -.06em;
-  text-align: center; transform: translate(-50%, -50%) rotate(-10deg);
-}
-.pagina-guia .visual-folha { position: absolute; color: #cce1b9; font-size: 30px; }
-.pagina-guia .visual-folha-um { top: 14%; right: 18%; }
-.pagina-guia .visual-folha-dois { bottom: 14%; left: 16%; font-size: 20px; }
+.pagina-guia [data-cor="neutro"] .coletor-saco,
+.pagina-guia [data-cor="neutro"] .coletor-sombra { display: none; }
+.pagina-guia .legenda-coletor { margin: 0; text-align: center; line-height: 1.35; }
+.pagina-guia .legenda-coletor strong { display: block; font-size: 22px; letter-spacing: -.02em; }
+.pagina-guia .legenda-coletor span { font-size: 14px; }
 
 .pagina-guia .passos-guia {
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -497,15 +508,13 @@
 
 @media (max-width: 760px) {
   .pagina-guia .apresentacao-material { grid-template-columns: 1fr; }
-  .pagina-guia .apresentacao-visual { min-height: 180px; }
-  .pagina-guia .visual-circulo { top: -105px; }
-  .pagina-guia .visual-selo { width: 115px; height: 115px; font-size: 21px; }
+  .pagina-guia .apresentacao-visual { min-height: 0; padding: 26px 20px 22px; }
+  .pagina-guia .desenho-coletor { width: 104px; }
   .pagina-guia .passos-guia { grid-template-columns: 1fr; grid-template-areas: "preparo" "coletor" "destino"; }
 }
 @media (max-width: 480px) {
   .pagina-guia .apresentacao-material { margin-top: 12px; border-radius: 20px; }
   .pagina-guia .apresentacao-conteudo { padding: 30px 23px; }
-  .pagina-guia .apresentacao-visual { min-height: 145px; }
   .pagina-guia .passos-guia { margin-top: 18px; }
   .pagina-guia .bloco-orientacao,
   .pagina-guia .destino-material { min-height: 0; padding: 23px; }

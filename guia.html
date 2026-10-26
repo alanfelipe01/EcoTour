@@ -61,16 +61,27 @@
     <article id="guia-material" aria-labelledby="nome-material" hidden>
       <header class="apresentacao-material">
         <div class="apresentacao-conteudo">
-          <p class="identificacao-campus">GUIA DE DESCARTE · UNINASSAU AGUANAMBI</p>
-          <p id="categoria-material" class="categoria-material"></p>
+          <p class="identificacao-campus">Guia de descarte · <span id="categoria-material" class="categoria-material"></span></p>
           <h1 id="nome-material"></h1>
           <p class="introducao">Siga os passos para preparar o material, escolher o coletor certo e encontrar um ponto no campus.</p>
         </div>
-        <div class="apresentacao-visual" aria-hidden="true">
-          <span class="visual-circulo"></span>
-          <span class="visual-folha visual-folha-um">✦</span>
-          <span class="visual-folha visual-folha-dois">✦</span>
-          <span class="visual-selo">ECO<br>TOUR</span>
+        <!-- Desenho da lixeira basculante do campus; a cor vem de data-cor. -->
+        <div id="apresentacao-visual" class="apresentacao-visual" aria-hidden="true">
+          <div class="base-coletor">
+            <svg class="desenho-coletor" viewBox="0 0 100 160" focusable="false">
+              <path class="coletor-cor" d="M6 46V30Q6 12 28 12H72Q94 12 94 30V46Z"/>
+              <path class="coletor-aba" d="M22 46V31Q22 22 32 22H68Q78 22 78 31V46"/>
+              <path class="coletor-saco" d="M7 46H93L91 55H9Z"/>
+              <path class="coletor-cor" d="M10 55H90L84 150Q83 156 77 156H23Q17 156 16 150Z"/>
+              <path class="coletor-sombra" d="M72 55H90L84 150Q83 156 77 156H68Z"/>
+              <rect class="coletor-etiqueta" x="21" y="74" width="54" height="20" rx="2"/>
+              <text id="etiqueta-coletor" x="48" y="84" text-anchor="middle" dominant-baseline="central"></text>
+            </svg>
+          </div>
+          <p class="legenda-coletor">
+            <strong id="legenda-cor"></strong>
+            <span id="legenda-detalhe"></span>
+          </p>
         </div>
       </header>
 
