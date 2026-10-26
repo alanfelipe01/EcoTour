@@ -55,7 +55,7 @@ const materiais = [
     termosBusca: ["medicamento", "remédio", "remédio vencido", "comprimido"],
     categoria: "Medicamentos",
     orientacao: "Separe o medicamento vencido para entrega em um ponto que receba esse resíduo.",
-    coletor: "Entregue o medicamento vencido no descartômetro dentro da secretaria. Confira a sinalização antes de depositá-lo.",
+    coletor: "Entregue o medicamento vencido no descartômetro dentro da Coordenação. Confira a sinalização antes de depositá-lo.",
     cuidados: "Não descarte no lixo comum, pia ou vaso sanitário. O descartômetro do campus não aceita agulhas, seringas ou perfurocortantes.",
     pontosConfirmados: ["P-07"],
     fonte: "https://sinir.gov.br/perfis/logistica-reversa/logistica-reversa/medicamentos-seus-residuos-e-embalagens/",

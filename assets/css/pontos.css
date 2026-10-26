@@ -168,6 +168,8 @@ h1 { max-width: 740px; margin: 0; font-size: clamp(32px, 5vw, 50px); line-height
 .pagina-pontos .identificador { color: #598164; font-size: 11px; }
 .pagina-pontos .cartao-conteudo strong { font-size: 20px; }
 .pagina-pontos .cartao-localizacao { margin-top: 5px; }
+.pagina-pontos .cartao-descricao { margin-top: 8px; color: var(--cor-texto-suave); font-size: 14px; line-height: 1.5; }
+.pagina-pontos .descricao-detalhe { margin: 10px 0 0; color: var(--cor-texto-suave); font-size: 16px; }
 .pagina-pontos .materiais-ponto {
   display: block; margin-top: 15px; color: #365946; font-size: 13px; line-height: 1.5;
 }

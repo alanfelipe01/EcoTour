@@ -163,6 +163,11 @@ function iniciarPontos() {
     local.textContent = ponto.registros.length > 1
       ? `${ponto.registros.length} conjuntos de coletores na cantina`
       : ponto.localizacao;
+    local.hidden = local.textContent === ponto.nome;
+    const descricao = document.createElement("span");
+    descricao.className = "cartao-descricao";
+    descricao.textContent = ponto.descricao ?? "";
+    descricao.hidden = !ponto.descricao;
     const situacao = document.createElement("span");
     situacao.className = "etiqueta-situacao";
     situacao.textContent = rotuloSituacao(ponto);
@@ -178,7 +183,7 @@ function iniciarPontos() {
     const chamada = document.createElement("span");
     chamada.className = "chamada-ponto";
     chamada.textContent = "Ver detalhes →";
-    conteudo.append(id, nome, local, materiaisPonto, situacao, chamada);
+    conteudo.append(id, nome, local, descricao, materiaisPonto, situacao, chamada);
     link.append(fotos, conteudo);
     item.append(link);
     return item;
@@ -190,9 +195,14 @@ function iniciarPontos() {
       "detalhe-com-galeria", ponto.registros.length > 1);
     document.querySelector("#id-ponto").textContent = `${ponto.registros.map((registro) => registro.id).join(" / ")} · ${ponto.area}`;
     document.querySelector("#nome-ponto").textContent = ponto.nome;
-    document.querySelector("#localizacao-ponto").textContent = ponto.registros.length > 1
+    const localizacao = document.querySelector("#localizacao-ponto");
+    localizacao.textContent = ponto.registros.length > 1
       ? `${ponto.registros.length} conjuntos de coletores na cantina`
       : ponto.localizacao;
+    localizacao.hidden = localizacao.textContent === ponto.nome;
+    const descricao = document.querySelector("#descricao-ponto");
+    descricao.textContent = ponto.descricao ?? "";
+    descricao.hidden = !ponto.descricao;
     document.querySelector("#situacao-ponto").textContent = rotuloSituacao(ponto);
     const instrucao = document.querySelector("#instrucao-material");
     instrucao.hidden = !material;

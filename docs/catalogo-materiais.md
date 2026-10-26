@@ -65,7 +65,7 @@ Pilhas e baterias foram a dúvida mais marcada (32 de 52, 61,5%), mas ainda não
 - Categoria: Medicamentos
 - Orientação curta: Separe o medicamento vencido para entrega em um ponto que receba esse tipo de resíduo.
 - Cuidados: Não descarte no lixo comum, na pia ou no vaso sanitário. Agulhas, seringas e outros perfurocortantes não são aceitos pelo descartômetro descrito no inventário do campus.
-- Ponto confirmado pela sinalização fotografada: P-07, descartômetro dentro da secretaria. Confirmar o horário de acesso.
+- Ponto confirmado pela sinalização fotografada: P-07, descartômetro dentro da Coordenação. Confirmar o horário de acesso.
 - Fonte: https://sinir.gov.br/perfis/logistica-reversa/logistica-reversa/medicamentos-seus-residuos-e-embalagens/
 - Revisado em: 22/10/2026
 

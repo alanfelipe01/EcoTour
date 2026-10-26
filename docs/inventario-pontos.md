@@ -21,8 +21,8 @@ Campus UNINASSAU Aguanambi, Fortaleza. Levantamento de campo de 19/10/2026.
 | P-03 | Ao lado da cantina | Bloco D, ao lado da cantina | 4 coletores: azul, amarelo, verde, vermelho | só cor; mapeamento confirmado | confirmado | disponível | 19/10/2026 | [P-03.jpg](../assets/img/P-03.jpg) |
 | P-04 | Cantina | Cantina | papel, metal, vidro, plástico | escrita | confirmado | disponível | 19/10/2026 | [P-04.jpg](../assets/img/P-04.jpg) |
 | P-05 | Cantina | Cantina | papel, vidro, metal, plástico | escrita | confirmado | disponível | 19/10/2026 | [P-05.jpg](../assets/img/P-05.jpg) |
-| P-06 | Em frente à secretaria | Em frente à secretaria | papel, plástico, vidro, metal | escrita | confirmado | disponível | 19/10/2026 | [P-06.jpg](../assets/img/P-06.jpg) |
-| P-07 | Descartômetro | Dentro da secretaria | medicamentos vencidos, caixas e bulas (não aceita agulhas, seringas ou perfurocortantes) | escrita | confirmado | disponível | 19/10/2026 | [P-07.jpg](../assets/img/P-07.jpg) |
+| P-06 | Em frente à Coordenação | Em frente à Coordenação | papel, plástico, vidro, metal | escrita | confirmado | disponível | 19/10/2026 | [P-06.jpg](../assets/img/P-06.jpg) |
+| P-07 | Descartômetro | Dentro da Coordenação | medicamentos vencidos, caixas e bulas (não aceita agulhas, seringas ou perfurocortantes) | escrita | confirmado | disponível | 19/10/2026 | [P-07.jpg](../assets/img/P-07.jpg) |
 | P-08 | Bloco B | Bloco B | 4 coletores: amarelo, azul, vermelho, verde | só cor; mapeamento confirmado | confirmado | disponível | 19/10/2026 | [P-08.jpg](../assets/img/P-08.jpg) |
 | P-09 | Entrada do estacionamento | Entrada do estacionamento | plástico, papel, vidro, metal | escrita | confirmado | disponível | 19/10/2026 | [P-09.jpg](../assets/img/P-09.jpg) |
 
@@ -32,6 +32,6 @@ P-04 e P-05 são dois conjuntos de coletores na cantina. Permanecem como registr
 
 ## Pendências
 
-- Horários e restrições de todos os pontos: desconhecidos (o P-07 fica dentro da secretaria e pode ter horário limitado).
+- Horários e restrições de todos os pontos: desconhecidos (o P-07 fica dentro da Coordenação e pode ter horário limitado).
 - Destino final dos materiais: confirmar com o setor responsável do campus.
 - Pilhas e eletrônicos: nenhum ponto interno confirmado.
