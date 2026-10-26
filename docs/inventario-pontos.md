@@ -16,8 +16,8 @@ Campus UNINASSAU Aguanambi, Fortaleza. Levantamento de campo de 19/10/2026.
 
 | ID | Nome | Localização | Coletores observados | Identificação | Validação | Disponibilidade | Data de verificação | Evidência |
 |---|---|---|---|---|---|---|---|---|
-| P-01 | Entrada da universidade | Entrada, perto do elevador | 5 coletores: marrom, verde, amarelo, vermelho, azul | só cor; mapeamento confirmado | confirmado | disponível | 19/10/2026 | [P-01.jpg](../assets/img/P-01.jpg) |
-| P-02 | Entrada do refeitório | Entrada do refeitório | 4 coletores: verde, azul, amarelo, vermelho | só cor; mapeamento confirmado | confirmado | disponível | 19/10/2026 | [P-02.jpg](../assets/img/P-02.jpg) |
+| P-01 | Entrada da universidade | Hall de elevadores, em frente às catracas | 5 coletores: marrom, verde, amarelo, vermelho, azul | só cor; mapeamento confirmado | confirmado | disponível | 19/10/2026 | [P-01.jpg](../assets/img/P-01.jpg) |
+| P-02 | Acesso à cantina | Após o hall de elevadores, na subida da rampa, antes da cantina | 4 coletores: verde, azul, amarelo, vermelho | só cor; mapeamento confirmado | confirmado | disponível | 19/10/2026 | [P-02.jpg](../assets/img/P-02.jpg) |
 | P-03 | Ao lado da cantina | Bloco D, ao lado da cantina | 4 coletores: azul, amarelo, verde, vermelho | só cor; mapeamento confirmado | confirmado | disponível | 19/10/2026 | [P-03.jpg](../assets/img/P-03.jpg) |
 | P-04 | Cantina | Cantina | papel, metal, vidro, plástico | escrita | confirmado | disponível | 19/10/2026 | [P-04.jpg](../assets/img/P-04.jpg) |
 | P-05 | Cantina | Cantina | papel, vidro, metal, plástico | escrita | confirmado | disponível | 19/10/2026 | [P-05.jpg](../assets/img/P-05.jpg) |

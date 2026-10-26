@@ -79,7 +79,7 @@ const materiais = [
     termosBusca: ["comida", "resto de comida", "sobra de alimento", "resíduo orgânico"],
     categoria: "Orgânicos",
     orientacao: "Separe os restos de comida das embalagens e dos materiais recicláveis.",
-    coletor: "Na entrada, perto do elevador (P-01), coloque os restos de comida no coletor marrom para orgânicos.",
+    coletor: "No hall de elevadores, em frente às catracas (P-01), coloque os restos de comida no coletor marrom para orgânicos.",
     cuidados: "Não coloque alimentos nos coletores de recicláveis.",
     pontosConfirmados: ["P-01"],
     fonte: "https://www.gov.br/mma/pt-br/assuntos/educacao-ambiental/glossario-ea/o-que-e-compostagem",
