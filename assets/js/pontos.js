@@ -38,9 +38,9 @@ function iniciarPontos() {
     }));
 
   document.querySelector("#total-pontos").textContent =
-    String(locais.length).padStart(2, "0");
+    String(locais.length);
   document.querySelector("#total-registros").textContent =
-    `${pontosDescarte.length} pontos de descarte registrados`;
+    String(pontosDescarte.length);
 
   if (idPonto) {
     const ponto = locais.find((item) => item.registros.some((registro) => registro.id === idPonto));
@@ -155,7 +155,7 @@ function iniciarPontos() {
     conteudo.className = "cartao-conteudo";
     const id = document.createElement("span");
     id.className = "identificador";
-    id.textContent = `${ponto.registros.map((registro) => registro.id).join(" / ")} · ${ponto.area}`;
+    id.textContent = `${ponto.registros.map((registro) => `Ponto ${Number(registro.id.slice(2))}`).join(" e ")}, ${ponto.area.toLowerCase()}`;
     const nome = document.createElement("strong");
     nome.textContent = ponto.nome;
     const local = document.createElement("span");
@@ -182,7 +182,7 @@ function iniciarPontos() {
       : "Materiais em verificação";
     const chamada = document.createElement("span");
     chamada.className = "chamada-ponto";
-    chamada.textContent = "Ver detalhes →";
+    chamada.textContent = "Ver detalhes";
     conteudo.append(id, nome, local, descricao, materiaisPonto, situacao, chamada);
     link.append(fotos, conteudo);
     item.append(link);
@@ -193,7 +193,7 @@ function iniciarPontos() {
     document.title = `EcoTour | ${ponto.nome}`;
     document.querySelector(".detalhe-cabecalho").classList.toggle(
       "detalhe-com-galeria", ponto.registros.length > 1);
-    document.querySelector("#id-ponto").textContent = `${ponto.registros.map((registro) => registro.id).join(" / ")} · ${ponto.area}`;
+    document.querySelector("#id-ponto").textContent = `${ponto.registros.map((registro) => `Ponto ${Number(registro.id.slice(2))}`).join(" e ")}, ${ponto.area.toLowerCase()}`;
     document.querySelector("#nome-ponto").textContent = ponto.nome;
     const localizacao = document.querySelector("#localizacao-ponto");
     localizacao.textContent = ponto.registros.length > 1
@@ -243,7 +243,7 @@ function iniciarPontos() {
       const legenda = document.createElement("figcaption");
       const link = document.createElement("a");
       link.href = registro.foto;
-      link.textContent = `Ver foto original · ${registro.id}`;
+      link.textContent = `Ver foto original do ponto ${Number(registro.id.slice(2))}`;
       legenda.append(link);
       figura.append(imagem, legenda);
       return figura;
@@ -276,7 +276,7 @@ function rotuloSituacao(ponto) {
     return "Confira cada conjunto";
   }
   if (ponto.disponibilidade === "indisponível") return "Indisponível";
-  return ponto.situacao === "confirmado" ? "Recebimento identificado" : "Observado · recebimento a confirmar";
+  return ponto.situacao === "confirmado" ? "Recebimento identificado" : "Recebimento a confirmar";
 }
 
 function formatarData(valor) {

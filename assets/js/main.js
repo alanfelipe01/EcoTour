@@ -50,9 +50,11 @@ function criarIconeMaterial(id) {
     `,
 
     "lata-aluminio": `
-      <ellipse cx="12" cy="5" rx="6" ry="2"/>
-      <path d="M6 5v14c0 1.1 2.7 2 6 2s6-.9 6-2V5"/>
-      <path d="M10 5h4M9 10v6"/>
+      <ellipse cx="12" cy="4.5" rx="4.5" ry="1.8"/>
+      <ellipse cx="12" cy="4.4" rx="1.4" ry=".65" stroke-width="1.1"/>
+      <path d="M7.5 4.5v2L6 9v10.5C6 21 8.7 22 12 22s6-1 6-2.5V9l-1.5-2.5v-2"/>
+      <path d="M6 18.8c0 1.2 2.7 2.2 6 2.2s6-1 6-2.2"/>
+      <path d="M9 15.5c0-3 6-1 6-4"/>
     `,
 
     "garrafa-vidro": `
@@ -114,7 +116,6 @@ function criarCartao(material) {
   const conteudo = document.createElement("div");
   const categoria = document.createElement("span");
   const nome = document.createElement("strong");
-  const seta = document.createElement("span");
   const chamada = document.createElement("span");
 
   link.className = `cartao-material cartao-${material.id}`;
@@ -123,20 +124,21 @@ function criarCartao(material) {
   conteudo.className = "conteudo-material";
 
   categoria.className = "categoria-material";
-  categoria.textContent = material.categoria;
+  categoria.textContent = material.corColetor
+    ? `${material.categoria}, coletor ${material.corColetor}`
+    : material.pontosConfirmados.length
+      ? "Entrega em ponto específico"
+      : "Sem ponto confirmado no campus";
 
   nome.className = "nome-material";
   nome.textContent = material.nome;
 
-  seta.className = "seta-material";
-  seta.textContent = "→";
-  seta.setAttribute("aria-hidden", "true");
 
   chamada.className = "chamada-material";
   chamada.textContent = "Ver orientação";
 
-  conteudo.append(categoria, nome, chamada);
-  link.append(criarIconeMaterial(material.id), conteudo, seta);
+  conteudo.append(nome, categoria, chamada);
+  link.append(criarIconeMaterial(material.id), conteudo);
   item.append(link);
 
   return item;

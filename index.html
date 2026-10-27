@@ -8,6 +8,7 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
+  <link rel="stylesheet" href="assets/css/comum.css">
   <link rel="stylesheet" href="assets/css/style.css">
 
   <script src="assets/data/materiais.js" defer></script>
@@ -33,9 +34,8 @@
   <main id="conteudo" class="container">
     <section class="consulta" aria-labelledby="titulo-consulta">
       <div class="consulta-conteudo">
-        <p class="identificacao-campus">GUIA DE DESCARTE · UNINASSAU AGUANAMBI</p>
-        <h1 id="titulo-consulta">Descarte certo começa por <em>uma boa escolha.</em></h1>
-        <p class="introducao">Descubra como preparar cada material e encontre os pontos identificados no campus.</p>
+        <h1 id="titulo-consulta">Onde descartar no campus Aguanambi?</h1>
+        <p class="introducao">Da garrafa do intervalo ao papel da aula: veja como separar e onde levar cada material na UNINASSAU Aguanambi.</p>
 
         <form id="formulario-busca" class="formulario-busca" role="search">
           <label for="busca-material">O que você quer descartar?</label>
@@ -43,11 +43,11 @@
             <input type="search" id="busca-material" name="busca"
               placeholder="Busque papel, garrafa, remédio..." autocomplete="off"
               aria-controls="lista-materiais">
-            <button type="submit" class="botao-buscar">Buscar <span aria-hidden="true">→</span></button>
+            <button type="submit" class="botao-buscar">Buscar</button>
           </div>
         </form>
         <div class="buscas-rapidas" aria-label="Buscas rápidas">
-          <span>Experimente:</span>
+          <span>Atalhos:</span>
           <button type="button" data-busca="garrafa">Garrafa</button>
           <button type="button" data-busca="papel">Papel</button>
           <button type="button" data-busca="remédio">Remédio</button>
@@ -57,9 +57,9 @@
         <img src="assets/img/P-01.webp" width="1200" height="1600" fetchpriority="high"
           alt="Cinco coletores coloridos no hall de elevadores, em frente às catracas da entrada do campus">
         <figcaption class="visual-legenda">
-          <span class="visual-codigo">P-01 · ENTRADA</span>
-          <strong>Em frente às catracas</strong>
-          <a href="pontos.html">Ver os 8 locais mapeados <span aria-hidden="true">→</span></a>
+
+          <strong>Na entrada, em frente às catracas</strong>
+          <a href="pontos.html">Conhecer os pontos de descarte</a>
         </figcaption>
       </figure>
     </section>
@@ -67,7 +67,6 @@
     <section class="materiais" aria-labelledby="titulo-materiais">
       <div class="materiais-cabecalho">
         <div>
-          <p class="rotulo-secao">CONSULTE O CATÁLOGO</p>
           <h2 id="titulo-materiais">Escolha um material</h2>
         </div>
 
@@ -90,22 +89,29 @@
       </noscript>
     </section>
 
-    <aside class="atalho-pontos" aria-labelledby="titulo-pontos">
-      <div class="atalho-pontos-texto">
-        <span class="atalho-icone" aria-hidden="true">↗</span>
-        <p class="rotulo-secao">PELO CAMPUS</p>
-        <h2 id="titulo-pontos">Quer encontrar os pontos do campus?</h2>
-        <p>Veja fotos, localizações e materiais identificados em cada local.</p>
+    <section class="campus" aria-labelledby="titulo-pontos">
+      <div>
+        <h2 id="titulo-pontos">Reconheça os pontos pelo caminho</h2>
+        <p>Na cantina, na entrada ou perto da Coordenação: confira as fotos e o que cada local recebe.</p>
+        <a href="pontos.html">Ver todos os locais</a>
       </div>
-
-      <a href="pontos.html">Ver pontos de descarte <span aria-hidden="true">→</span></a>
-    </aside>
+      <div class="fotos-campus">
+        <a href="pontos.html?ponto=P-04">
+          <img src="assets/img/P-04.webp" width="1200" height="1600" loading="lazy" alt="Coletores de recicláveis na cantina">
+          Na cantina
+        </a>
+        <a href="pontos.html?ponto=P-07">
+          <img src="assets/img/P-07.webp" width="1200" height="1600" loading="lazy" alt="Descartômetro para medicamentos dentro da Coordenação">
+          Dentro da Coordenação
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer class="rodape">
     <div class="container">
-      <p>EcoTour · Guia de descarte sustentável</p>
-      <p>Campus UNINASSAU Aguanambi · Fortaleza, CE</p>
+      <p>EcoTour, projeto do Hackathon UNINASSAU 2026</p>
+      <p>Campus Aguanambi, Fortaleza, CE</p>
     </div>
   </footer>
 </body>

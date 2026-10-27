@@ -12,6 +12,7 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
+  <link rel="stylesheet" href="assets/css/comum.css">
   <link rel="stylesheet" href="assets/css/guia.css">
 
   <script src="assets/data/materiais.js" defer></script>
@@ -61,9 +62,9 @@
     <article id="guia-material" aria-labelledby="nome-material" hidden>
       <header class="apresentacao-material">
         <div class="apresentacao-conteudo">
-          <p class="identificacao-campus">Guia de descarte · <span id="categoria-material" class="categoria-material"></span></p>
+          <p id="categoria-material" class="categoria-material"></p>
           <h1 id="nome-material"></h1>
-          <p class="introducao">Siga os passos para preparar o material, escolher o coletor certo e encontrar um ponto no campus.</p>
+          <p class="introducao">Como separar e onde levar este material na UNINASSAU Aguanambi.</p>
         </div>
         <!-- Desenho da lixeira basculante do campus; a cor vem de data-cor. -->
         <div id="apresentacao-visual" class="apresentacao-visual" aria-hidden="true">
@@ -87,43 +88,24 @@
 
       <div class="passos-guia">
         <section class="bloco-orientacao bloco-preparo" aria-labelledby="titulo-preparo">
-          <div class="titulo-bloco">
-            <span class="numero-etapa" aria-hidden="true">01</span>
-            <div>
-              <p class="rotulo-etapa">PRIMEIRO PASSO</p>
-              <h2 id="titulo-preparo">Como preparar</h2>
-            </div>
-          </div>
+          <h2 id="titulo-preparo">1. Como preparar</h2>
           <p id="orientacao-material" class="texto-orientacao"></p>
           <p class="aviso-cuidados"><strong>Atenção:</strong> <span id="cuidados-material"></span></p>
         </section>
 
         <section class="bloco-orientacao bloco-coletor" aria-labelledby="titulo-coletor">
-          <div class="titulo-bloco">
-            <span class="numero-etapa" aria-hidden="true">02</span>
-            <div>
-              <p class="rotulo-etapa">NA HORA DE DESCARTAR</p>
-              <h2 id="titulo-coletor">Qual coletor usar</h2>
-            </div>
-          </div>
+          <h2 id="titulo-coletor">2. Qual coletor usar</h2>
           <p id="coletor-material" class="texto-orientacao"></p>
         </section>
 
         <section class="destino-material" aria-labelledby="titulo-destino">
-          <div class="titulo-bloco">
-            <span class="numero-etapa" aria-hidden="true">03</span>
-            <div>
-              <p class="rotulo-etapa">NO CAMPUS</p>
-              <h2 id="titulo-destino">Encontre um ponto</h2>
-            </div>
-          </div>
+          <h2 id="titulo-destino">3. Onde descartar</h2>
           <p id="status-destino" class="status-destino" role="status"></p>
 
           <div id="destino-confirmado" hidden>
             <p id="resumo-pontos"></p>
             <a id="link-pontos-material" class="botao-primario">
               Encontrar um local para este material
-              <span aria-hidden="true">→</span>
             </a>
           </div>
 
@@ -145,7 +127,6 @@
           hidden
         >
           Consultar fonte da orientação (abre em nova aba)
-          <span aria-hidden="true">↗</span>
         </a>
 
         <p id="fonte-indisponivel" hidden>
@@ -179,8 +160,8 @@
 
   <footer class="rodape">
     <div class="container">
-      <p>EcoTour · Guia de descarte sustentável</p>
-      <p>Campus UNINASSAU Aguanambi · Fortaleza, CE</p>
+      <p>EcoTour, projeto do Hackathon UNINASSAU 2026</p>
+      <p>Campus Aguanambi, Fortaleza, CE</p>
     </div>
   </footer>
 </body>

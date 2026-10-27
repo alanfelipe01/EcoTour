@@ -139,8 +139,8 @@ function preencherDestino(material) {
       ? "Veja onde fica o local. Ao chegar, confira a sinalização e se os coletores estão acessíveis."
       : "Escolha um local. Ao chegar, confira a sinalização e se os coletores estão acessíveis.";
 
-  document.querySelector("#link-pontos-material").firstChild.textContent =
-    `Encontrar um local para ${material.nome} `;
+  document.querySelector("#link-pontos-material").textContent =
+    "Ver os locais para este material";
 
   // A tela de pontos deverá ler esse parâmetro para filtrar a lista.
   document.querySelector("#link-pontos-material").href =

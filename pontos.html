@@ -7,6 +7,7 @@
   <title>EcoTour | Pontos de descarte</title>
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/css/comum.css">
   <link rel="stylesheet" href="assets/css/pontos.css">
   <script src="assets/data/materiais.js" defer></script>
   <script src="assets/data/pontos-descarte.js" defer></script>
@@ -28,22 +29,10 @@
     <a class="voltar" href="index.html"><span aria-hidden="true">←</span> Voltar aos materiais</a>
     <section class="apresentacao" aria-labelledby="titulo-pagina">
       <div>
-        <p class="identificacao-campus">EXPLORE O CAMPUS · UNINASSAU AGUANAMBI</p>
-        <h1 id="titulo-pagina">Encontre o ponto <em>certo para você.</em></h1>
-        <p class="introducao">Explore os locais por área e confira o que cada ponto recebe antes de sair.</p>
-        <p class="nota-disponibilidade">Confirme a sinalização e a disponibilidade atual no local.</p>
-      </div>
-      <div class="resumo-campus" aria-label="Resumo do levantamento">
-        <strong id="total-pontos">—</strong>
-        <span>locais registrados<br>no campus</span>
-        <small id="total-registros"></small>
+        <h1 id="titulo-pagina">Pontos de descarte do campus</h1>
+        <p class="introducao">Veja onde ficam os coletores da UNINASSAU Aguanambi e quais materiais levar a cada local.</p>
       </div>
     </section>
-
-    <details class="aviso-validacao">
-      <summary><span aria-hidden="true">ⓘ</span> Sobre o levantamento e a sinalização</summary>
-      <p>O levantamento de 19/10/2026 registrou nove pontos de descarte em oito locais: cinco com rótulos e quatro identificados por cores. Dois conjuntos de coletores ficam na cantina. No mapeamento confirmado em 24/10/2026: azul recebe papel, vermelho recebe plástico, marrom recebe orgânicos (comida), verde recebe vidro e amarelo recebe metal. O coletor marrom foi observado apenas no P-01. Confira horários, restrições adicionais e disponibilidade atual no local.</p>
-    </details>
 
     <section id="estado-erro" class="estado-informativo" hidden aria-labelledby="titulo-erro">
       <h2 id="titulo-erro">Não foi possível carregar os pontos</h2>
@@ -54,11 +43,10 @@
       <div id="aviso-material" class="estado-informativo" hidden>
         <h2 id="titulo-aviso-material"></h2>
         <p id="texto-aviso-material"></p>
-        <a href="pontos.html">Ver todos os pontos do campus <span aria-hidden="true">→</span></a>
+        <a href="pontos.html">Ver todos os pontos do campus</a>
       </div>
       <div class="barra-lista">
         <div>
-          <p class="rotulo-secao">PONTOS DE DESCARTE</p>
           <h2 id="titulo-lista">Locais identificados</h2>
           <p id="resumo-lista" role="status"></p>
         </div>
@@ -113,8 +101,17 @@
       <p class="data-verificacao">Observado em <time id="data-ponto"></time>.</p>
     </article>
 
+    <aside class="informacoes-levantamento" aria-label="Informações do levantamento">
+      <p class="nota-disponibilidade">Confirme a sinalização e a disponibilidade atual no local.</p>
+      <p class="resumo-campus"><strong id="total-pontos">—</strong> locais com <span id="total-registros">—</span> conjuntos de coletores, registrados em 19/10/2026.</p>
+      <details class="aviso-validacao">
+        <summary>Sobre o levantamento e a sinalização</summary>
+        <p>O levantamento de 19/10/2026 registrou nove pontos de descarte em oito locais: cinco com rótulos e quatro identificados por cores. Dois conjuntos de coletores ficam na cantina. No mapeamento confirmado em 24/10/2026: azul recebe papel, vermelho recebe plástico, marrom recebe orgânicos (comida), verde recebe vidro e amarelo recebe metal. O coletor marrom foi observado apenas no P-01. Confira horários, restrições adicionais e disponibilidade atual no local.</p>
+      </details>
+    </aside>
+
     <noscript><p class="estado-informativo">Ative o JavaScript para consultar os pontos de descarte.</p></noscript>
   </main>
-  <footer class="rodape"><div class="container"><p>EcoTour · Guia de descarte sustentável</p><p>Campus UNINASSAU Aguanambi · Fortaleza, CE</p></div></footer>
+  <footer class="rodape"><div class="container"><p>EcoTour, projeto do Hackathon UNINASSAU 2026</p><p>Campus Aguanambi, Fortaleza, CE</p></div></footer>
 </body>
 </html>

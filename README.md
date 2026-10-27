@@ -46,7 +46,7 @@ Abra `index.html` no navegador, com JavaScript habilitado. Também é possível 
 | Arquivo ou pasta | Responsabilidade |
 |---|---|
 | `index.html`, `guia.html`, `pontos.html` | Consulta, orientações e pontos de descarte |
-| `assets/css/` | Estilos: `style.css`, `guia.css` e `pontos.css` |
+| `assets/css/` | Base compartilhada em `comum.css`; estilos de cada página em `style.css`, `guia.css` e `pontos.css` |
 | `assets/js/` | Interações: `main.js`, `guia.js` e `pontos.js` |
 | `assets/data/materiais.js` | Materiais, orientações, fontes e vínculos com pontos |
 | `assets/data/pontos-descarte.js` | Localização, situação, restrições e materiais recebidos |
