@@ -6,12 +6,24 @@ if (document.body.classList.contains("pagina-inicial")) {
   const mensagem = document.querySelector("#mensagem-busca");
   const estadoVazio = document.querySelector("#estado-vazio");
   const botaoLimpar = document.querySelector("#limpar-busca");
+  const secaoMateriais = document.querySelector(".materiais");
+
+  // Leva a pessoa até os resultados e fecha o teclado no celular.
+  function irParaResultados() {
+    const reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    campoBusca.blur();
+    secaoMateriais.scrollIntoView({
+      behavior: reduzirMovimento ? "auto" : "smooth",
+      block: "start"
+    });
+  }
 
   document.querySelectorAll("[data-busca]").forEach((botao) => {
     botao.addEventListener("click", () => {
       campoBusca.value = botao.dataset.busca;
       atualizarMateriais();
-      document.querySelector("#titulo-materiais").scrollIntoView({ block: "start" });
+      irParaResultados();
     });
   });
 
@@ -163,6 +175,8 @@ function criarCartao(material) {
       mensagem.textContent =
         `${quantidade} ${descricao} para “${termoDigitado}”.`;
     }
+
+    return resultados;
   }
 
   // A busca é atualizada enquanto a pessoa digita.
@@ -170,7 +184,15 @@ function criarCartao(material) {
 
   formulario.addEventListener("submit", (evento) => {
     evento.preventDefault();
-    atualizarMateriais();
+    const resultados = atualizarMateriais();
+
+    // Com um único material encontrado, abre direto a orientação dele.
+    if (campoBusca.value.trim() && resultados.length === 1) {
+      window.location.href = `guia.html?material=${encodeURIComponent(resultados[0].id)}`;
+      return;
+    }
+
+    irParaResultados();
   });
 
   botaoLimpar.addEventListener("click", () => {

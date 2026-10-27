@@ -533,3 +533,21 @@
   .pagina-inicial .icone-material { margin-right: 0; }
   .pagina-inicial .atalho-pontos { padding: 28px 24px; }
 }
+@media (max-width: 480px) {
+  .pagina-inicial .consulta {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pagina-inicial .consulta-conteudo {
+    min-width: 0;
+  }
+
+  .pagina-inicial .campo-busca {
+    flex-direction: column;
+  }
+
+  .pagina-inicial .campo-busca input,
+  .pagina-inicial .botao-buscar {
+    width: 100%;
+  }
+}
