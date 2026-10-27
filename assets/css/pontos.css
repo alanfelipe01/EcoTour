@@ -21,7 +21,7 @@
 .cartao-fotos img { display: block; min-width: 0; width: 100%; height: 220px; object-fit: cover; object-position: center 65%; }
 .cartao-conteudo { display: flex; flex: 1; flex-direction: column; align-items: start; padding: 20px; }
 .identificador { display: block; margin: 0 0 10px; color: var(--cor-texto-suave); font-size: 13px; }
-.cartao-conteudo strong { font-size: 20px; line-height: 1.3; }
+.cartao-conteudo strong { font-family: var(--fonte-titulo); font-size: 21px; font-weight: 400; letter-spacing: -.025em; line-height: 1.25; }
 .cartao-localizacao, .cartao-descricao { margin-top: 8px; color: var(--cor-texto-suave); font-size: 14px; }
 .materiais-ponto { display: block; margin-top: 18px; font-size: 14px; }
 .etiqueta-situacao { margin-top: 12px; color: var(--cor-texto-suave); font-size: 13px; }

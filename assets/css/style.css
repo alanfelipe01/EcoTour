@@ -25,7 +25,7 @@
 .icone-material { display: grid; place-items: center; flex-shrink: 0; width: 38px; height: 48px; color: var(--cor-coletor); border-bottom: 4px solid var(--cor-coletor); }
 .icone-material svg { display: block; }
 .conteudo-material { min-width: 0; }
-.nome-material { display: block; font-size: 18px; line-height: 1.35; }
+.nome-material { display: block; font-family: var(--fonte-titulo); font-size: 21px; font-weight: 400; letter-spacing: -.025em; line-height: 1.25; }
 .categoria-material { display: block; margin-top: 4px; color: var(--cor-texto-suave); font-size: 14px; }
 .chamada-material { display: block; margin-top: 5px; color: var(--cor-primaria); font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
 .cartao-folha-papel { --cor-coletor: #2866ab; }
