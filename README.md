@@ -86,6 +86,31 @@ As páginas usam a mesma versão otimizada `P-xx.webp` na lista e no detalhe. A 
 
 As respostas individuais do formulário não são publicadas. A documentação usa apenas resultados agregados.
 
+## Publicar na Vercel
+
+O projeto é estático: não precisa instalar dependências, executar build nem cadastrar variáveis de ambiente. O arquivo `vercel.json` configura a publicação da pasta atual e mantém as URLs `.html` usadas na navegação e nos filtros.
+
+1. Envie os arquivos atualizados, incluindo `vercel.json`, para o repositório no GitHub.
+2. Na Vercel, crie um projeto e importe o repositório `alanfelipe01/EcoTour`.
+3. Confira as opções abaixo e clique em **Deploy**.
+
+| Opção | Valor |
+|---|---|
+| Framework Preset | `Other` |
+| Root Directory | Raiz do repositório (`./`), onde está `index.html` |
+| Build Command | Vazio |
+| Output Directory | `.` |
+| Install Command | Vazio |
+| Environment Variables | Nenhuma |
+
+**Atenção à pasta:** neste computador, o repositório está em `EcoTour/EcoTour`. No GitHub, os arquivos `index.html` e `vercel.json` já estão na raiz do repositório; não selecione uma subpasta `EcoTour` na Vercel ao importar esse repositório.
+
+Depois da publicação, confira a página inicial, uma busca por `garrafa`, o guia em `/guia.html?material=garrafa-pet`, a lista em `/pontos.html?material=garrafa-pet` e o detalhe em `/pontos.html?ponto=P-01&material=garrafa-pet`. Atualize a página do detalhe para conferir o acesso direto e abra a foto original.
+
+Os arquivos de documentação são excluídos do envio pela `.vercelignore`; as fotos JPG permanecem disponíveis porque são usadas nos detalhes dos pontos. A pasta local `.vercel/` e arquivos `.env` são ignorados pelo Git.
+
+Referências: [configuração do projeto](https://vercel.com/docs/project-configuration/vercel-json) e [arquivos excluídos do envio](https://vercel.com/docs/deployments/vercel-ignore).
+
 ## Próximas etapas
 
 - Conferir horários, restrições adicionais e disponibilidade atual com o setor responsável; atualizar os vínculos quando surgirem novas evidências.

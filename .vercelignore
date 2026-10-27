@@ -1,0 +1,6 @@
+.git/
+.vercel/
+.env
+.env.*
+README.md
+docs/

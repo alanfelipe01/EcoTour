@@ -1,0 +1,7 @@
+# Configuração local criada pela Vercel CLI.
+.vercel/
+
+# Variáveis locais e credenciais não devem entrar no repositório.
+.env
+.env.*
+!.env.example
