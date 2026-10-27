@@ -93,12 +93,12 @@ function criarIconeMaterial(id) {
   icone.innerHTML = `
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
+      width="38"
+      height="38"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="1.7"
+      stroke-width="1.6"
       stroke-linecap="round"
       stroke-linejoin="round"
       focusable="false"

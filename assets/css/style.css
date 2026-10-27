@@ -19,15 +19,18 @@
 .materiais-cabecalho { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .botao-limpar { min-height: 44px; padding: 4px; border: 0; background: none; color: var(--cor-primaria); text-decoration: underline; text-underline-offset: 4px; }
 .mensagem-busca { margin: 10px 0 24px; color: var(--cor-texto-suave); font-size: 14px; }
-.lista-materiais { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; margin: 0; padding: 0; list-style: none; }
-.cartao-material { --cor-coletor: #626b67; display: flex; align-items: center; gap: 18px; height: 100%; min-height: 120px; padding: 20px 12px; border-block: 1px solid var(--cor-borda); margin-top: -1px; text-decoration: none; color: var(--cor-texto); }
-.cartao-material:hover { background: #eef2eb; border-color: var(--cor-primaria); position: relative; }
-.icone-material { display: grid; place-items: center; flex-shrink: 0; width: 38px; height: 48px; color: var(--cor-coletor); border-bottom: 4px solid var(--cor-coletor); }
-.icone-material svg { display: block; }
-.conteudo-material { min-width: 0; }
+.lista-materiais { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin: 0; padding: 0; list-style: none; }
+.lista-materiais > li { border-bottom: 1px solid #e5e7e0; }
+.cartao-material { --cor-coletor: #626b67; display: flex; align-items: center; gap: 22px; height: 100%; min-height: 148px; padding: 26px 10px; text-decoration: none; color: var(--cor-texto); }
+.cartao-material:hover { background: #f0f3ed; }
+.icone-material { display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; width: 52px; color: var(--cor-coletor); }
+.icone-material::after { content: ""; width: 24px; height: 2px; margin-top: 10px; background: currentColor; }
+.icone-material svg { display: block; width: 38px; height: 38px; }
+.conteudo-material { display: grid; gap: 7px; min-width: 0; }
 .nome-material { display: block; font-family: var(--fonte-titulo); font-size: 21px; font-weight: 400; letter-spacing: -.025em; line-height: 1.25; }
-.categoria-material { display: block; margin-top: 4px; color: var(--cor-texto-suave); font-size: 14px; }
-.chamada-material { display: block; margin-top: 5px; color: var(--cor-primaria); font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+.categoria-material { display: block; color: var(--cor-texto-suave); font-size: 14px; line-height: 1.5; }
+.chamada-material { display: block; margin-top: 5px; color: var(--cor-primaria); font-size: 14px; line-height: 1.5; text-decoration: underline; text-decoration-color: #a1b2a3; text-underline-offset: 4px; }
+.cartao-material:hover .chamada-material { text-decoration-color: var(--cor-primaria); }
 .cartao-folha-papel { --cor-coletor: #2866ab; }
 .cartao-garrafa-pet { --cor-coletor: #c3392d; }
 .cartao-lata-aluminio { --cor-coletor: #b89517; }
@@ -54,7 +57,7 @@
   .consulta { grid-template-columns: 1fr; gap: 28px; padding-block: 32px 36px; }
   .consulta-visual img { height: 280px; }
   .lista-materiais { grid-template-columns: 1fr; }
-  .cartao-material { min-height: 108px; padding-inline: 4px; }
+  .cartao-material { min-height: 140px; gap: 18px; padding: 24px 4px; }
   .campus { grid-template-columns: 1fr; gap: 24px; }
   .fotos-campus img { height: 180px; }
 }
