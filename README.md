@@ -69,9 +69,9 @@ Como evolução, o projeto poderá passar por testes com mais pessoas do campus 
 
 Projeto desenvolvido em equipe para o **Hackathon UNINASSAU 2026**.
 
-- **Alan Felipe** — Análise e Desenvolvimento de Sistemas
-- **Andrew Felipe** — Análise e Desenvolvimento de Sistemas
-- **Gustavo Horta** — Análise e Desenvolvimento de Sistemas
+- [Alan Felipe](https://github.com/alanfelipe01) — Análise e Desenvolvimento de Sistemas
+- [Andrew Felipe](https://github.com/andrewfelipao2002-gif) — Análise e Desenvolvimento de Sistemas
+- [Gustavo Horta](https://github.com/hortafront) — Análise e Desenvolvimento de Sistemas
 
 ## Créditos e apoio
 
