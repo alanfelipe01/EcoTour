@@ -2,97 +2,79 @@
 
 **Informação para descartar melhor no campus.**
 
-Guia digital de descarte de resíduos para a comunidade da **UNINASSAU Aguanambi, em Fortaleza–CE**, desenvolvido no **Hackathon UNINASSAU 2026 — Desafio Sustentabilidade**.
+O EcoTour é um guia digital de descarte de resíduos para a comunidade da **UNINASSAU Aguanambi, em Fortaleza–CE**, desenvolvido para o **Hackathon UNINASSAU 2026 — Desafio Sustentabilidade**.
 
-O EcoTour ajuda a descobrir **como preparar um material, qual coletor utilizar e onde encontrá-lo dentro do campus**.
+🔗  [Acessar o EcoTour](https://ecotour-nassau.vercel.app/)
 
-**HTML · CSS · JavaScript** — site estático, sem instalação de dependências ou back-end.
+## Sobre o projeto
 
-[Funcionalidades](#funcionalidades) · [Como executar](#como-executar) · [Documentação](#documentação-e-manutenção) · [Backlog](https://github.com/alanfelipe01/EcoTour/issues)
+Você já ficou em dúvida sobre onde descartar uma garrafa, uma pilha ou um medicamento no campus? O EcoTour foi criado para ajudar a responder a perguntas como essas.
+
+A plataforma reúne orientações sobre a separação e o preparo dos resíduos e apresenta os pontos de descarte identificados dentro da unidade. Ao consultar um material, a pessoa pode verificar os cuidados necessários, o tipo de coletor indicado e os locais compatíveis disponíveis.
+
+O projeto foi desenvolvido a partir de uma pesquisa com a comunidade acadêmica e de um levantamento dos pontos existentes no campus. A pesquisa recebeu **52 respostas**, coletadas em 19 e 20 de outubro de 2026.
 
 ## Funcionalidades
 
-- **Busca de materiais:** consulta por nome, categoria e termos alternativos, sem diferenciar acentos ou maiúsculas.
-- **Orientação por etapas:** preparo, coletor indicado e cuidados, com fonte e data de revisão.
-- **Consulta aos pontos:** filtros por material e área, fotos, referências de localização e restrições.
-- **Destinos compatíveis:** vínculos entre materiais e pontos, com aviso quando não existe destino interno confirmado.
-- **Interface responsiva:** adaptações para celular, navegação por teclado, foco visível e campos identificados.
+- **Busca de materiais:** pesquisa por nome, categoria ou termos alternativos.
+- **Orientações de descarte:** informações sobre preparo, coletor indicado e cuidados necessários.
+- **Pontos de descarte:** consulta aos locais do campus, com fotos, referências de localização e informações sobre os materiais recebidos.
+- **Filtros:** busca de pontos por material e área.
+- **Destinos compatíveis:** indicação dos pontos vinculados a cada material, com aviso quando não há destino interno confirmado.
+- **Interface responsiva:** adaptação para diferentes tamanhos de tela, incluindo celulares.
 
-**Fluxo:** buscar material → consultar orientação → escolher um local compatível → visualizar os detalhes.
+O fluxo principal é: **buscar um material → consultar a orientação → encontrar um ponto compatível → visualizar os detalhes do local**.
 
-| Catálogo | Levantamento | Interface |
-|---|---|---|
-| 7 materiais | 9 pontos registrados em 8 locais | 3 páginas: consulta, guia e pontos |
+Atualmente, o projeto reúne **7 materiais** e **9 registros de pontos de descarte em 8 locais** do campus.
 
-Os dois conjuntos de coletores da cantina aparecem agrupados em um único local, preservando seus registros e fotos.
+## Páginas do site
 
-## Da pesquisa ao sistema
+- **Página inicial:** busca e seleção de materiais.
+- **Guia de descarte:** orientações e cuidados para cada material.
+- **Pontos de descarte:** consulta aos locais, fotos e materiais recebidos.
 
-O projeto reúne pesquisa com a comunidade, levantamento de campo, registro fotográfico e organização das orientações de descarte. A análise de **52 respostas**, coletadas em 19 e 20/10/2026, identificou dúvidas sobre pilhas e baterias em **32 respostas** e eletrônicos em **29**. Os resultados descrevem os participantes, sem representar necessariamente todo o campus.
+## Tecnologias
 
-As páginas, a busca, os filtros e os detalhes estão implementados. A equipe registrou como concluídas as verificações de uso no celular e acessibilidade ([ECO-10](https://github.com/alanfelipe01/EcoTour/issues/10)) e de funcionamento e consistência dos dados ([ECO-11](https://github.com/alanfelipe01/EcoTour/issues/11)).
+- HTML5
+- CSS3
+- JavaScript
 
-## Como executar
+O EcoTour é um site estático e não utiliza back-end nem exige instalação de dependências para funcionar.
 
-```bash
-git clone https://github.com/alanfelipe01/EcoTour.git
-cd EcoTour
+## Estrutura do projeto
+
+```text
+EcoTour/
+├── index.html              # Página inicial e busca de materiais
+├── guia.html               # Orientações de descarte
+├── pontos.html             # Pontos de descarte e seus detalhes
+├── assets/
+│   ├── css/                # Estilos das páginas
+│   ├── js/                 # Interações e funcionalidades
+│   ├── data/               # Dados dos materiais e pontos
+│   └── img/                # Imagens e identidade visual
+├── docs/                   # Catálogo e inventário do projeto
+└── vercel.json             # Configuração de publicação
 ```
 
-Abra `index.html` no navegador, com JavaScript habilitado. Também é possível abrir a pasta no VS Code e iniciar a página com a extensão Live Server.
+## Escopo e próximos passos
 
-## Documentação e manutenção
+Nesta versão, o EcoTour apresenta pontos de descarte **internos da UNINASSAU Aguanambi**. As informações são mantidas pela equipe e não são atualizadas em tempo real.
 
-| Arquivo ou pasta | Responsabilidade |
-|---|---|
-| `index.html`, `guia.html`, `pontos.html` | Consulta, orientações e pontos de descarte |
-| `assets/css/` | Base compartilhada em `comum.css`; estilos de cada página em `style.css`, `guia.css` e `pontos.css` |
-| `assets/js/` | Interações: `main.js`, `guia.js` e `pontos.js` |
-| `assets/data/materiais.js` | Materiais, orientações, fontes e vínculos com pontos |
-| `assets/data/pontos-descarte.js` | Localização, situação, restrições e materiais recebidos |
-| `assets/img/` | Fotografias, versões WebP e identidade visual |
-| `docs/` | [Inventário dos pontos](docs/inventario-pontos.md) e [catálogo de materiais](docs/catalogo-materiais.md) |
+Alguns materiais possuem orientações de descarte, mas ainda não têm um destino interno confirmado — como os eletrônicos. Horários e possíveis restrições dos pontos também dependem de confirmação.
 
-Ao atualizar dados, preserve os IDs e confira os vínculos nos dois arquivos: `pontosConfirmados` e `materiaisConfirmados`. Revise fontes, datas, restrições e imagens; depois percorra o fluxo de consulta. Novas fotos devem ter suas versões JPG e WebP correspondentes.
+Como evolução, o projeto poderá passar por testes com mais pessoas do campus e ampliar suas informações e funcionalidades.
 
-## Publicar na Vercel
+## Equipe
 
-O projeto é estático: não precisa instalar dependências, executar build nem cadastrar variáveis de ambiente. O arquivo `vercel.json` configura a publicação da pasta atual e mantém as URLs `.html` usadas na navegação e nos filtros.
+Projeto desenvolvido em equipe para o **Hackathon UNINASSAU 2026**.
 
-1. Envie os arquivos atualizados, incluindo `vercel.json`, para o repositório no GitHub.
-2. Na Vercel, crie um projeto e importe o repositório `alanfelipe01/EcoTour`.
-3. Confira as opções abaixo e clique em **Deploy**.
+- **Alan Felipe** — Análise e Desenvolvimento de Sistemas
+- **Andrew Felipe** — Análise e Desenvolvimento de Sistemas
+- **Gustavo Horta** — Análise e Desenvolvimento de Sistemas
 
-| Opção | Valor |
-|---|---|
-| Framework Preset | `Other` |
-| Root Directory | Raiz do repositório (`./`), onde está `index.html` |
-| Build Command | Vazio |
-| Output Directory | `.` |
-| Install Command | Vazio |
-| Environment Variables | Nenhuma |
+## Créditos e apoio
 
-**Atenção à pasta:** neste computador, o repositório está em `EcoTour/EcoTour`. No GitHub, os arquivos `index.html` e `vercel.json` já estão na raiz do repositório; não selecione uma subpasta `EcoTour` na Vercel ao importar esse repositório.
+O EcoTour foi desenvolvido a partir de pesquisa com a comunidade acadêmica, levantamento de campo, registro fotográfico e consulta a fontes ambientais.
 
-Depois da publicação, confira a página inicial, uma busca por `garrafa`, o guia em `/guia.html?material=garrafa-pet`, a lista em `/pontos.html?material=garrafa-pet` e o detalhe em `/pontos.html?ponto=P-01&material=garrafa-pet`. Atualize a página do detalhe para conferir o acesso direto e abra a foto original.
-
-Os arquivos de documentação são excluídos do envio pela `.vercelignore`; as fotos JPG permanecem disponíveis porque são usadas nos detalhes dos pontos. A pasta local `.vercel/` e arquivos `.env` são ignorados pelo Git.
-
-Referências: [configuração do projeto](https://vercel.com/docs/project-configuration/vercel-json) e [arquivos excluídos do envio](https://vercel.com/docs/deployments/vercel-ignore).
-
-## Limitações e próximos passos
-
-- A cobertura é interna ao campus, sem mapa, GPS ou rotas.
-- Horários e restrições adicionais ainda dependem de confirmação; a disponibilidade não é atualizada em tempo real.
-- Eletrônicos têm orientação, mas ainda não possuem destino interno confirmado.
-- Próximas entregas: testes com pessoas do campus, consolidação da autoria, resumo, pitch e conferência dos links de apresentação.
-
-Facilitar o descarte e apoiar a educação ambiental são benefícios esperados. Volume reciclado e impacto ambiental ainda não foram medidos.
-
-## Autoria e referências
-
-Projeto acadêmico desenvolvido em equipe, com contribuições registradas nos [commits](https://github.com/alanfelipe01/EcoTour/commits/main/) e nas issues. A relação nominal de integrantes, cursos e responsabilidades será consolidada para a entrega.
-
-**Apoio de IA:** ChatGPT utilizado no planejamento, documentação, análise descritiva da pesquisa e redação deste README. A declaração final deve incluir os demais usos efetivamente realizados pela equipe.
-
-**Referências:** relatório de pesquisa do campus (21/10/2026), levantamento de campo e fontes ambientais indicadas no catálogo. A documentação apresenta resultados agregados, sem respostas individuais do formulário.
+O **ChatGPT** foi utilizado como apoio no planejamento, na documentação, na análise descritiva da pesquisa e na redação do README.
