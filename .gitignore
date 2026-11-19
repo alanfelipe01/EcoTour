@@ -5,3 +5,7 @@
 .env
 .env.*
 !.env.example
+
+# Arquivos temporários gerados pelo Python.
+__pycache__/
+*.py[cod]

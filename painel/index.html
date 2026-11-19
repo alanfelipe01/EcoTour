@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel de materiais | EcoTour</title>
+  <link rel="stylesheet" href="/painel.css">
+</head>
+<body>
+  <header>
+    <div><strong>EcoTour</strong> <span> / Painel local</span></div>
+  </header>
+  <main>
+    <h1>Materiais</h1>
+    <p class="intro">Cadastre e revise as orientações do catálogo. As alterações ficam nos arquivos deste projeto até a próxima publicação.</p>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <div class="layout">
+      <section class="card">
+        <h2>Catálogo</h2>
+        <button class="primario" id="novo" type="button">+ Novo material</button>
+        <ul id="lista"></ul>
+      </section>
+
+      <section class="card">
+        <h2 id="titulo">Selecione um material</h2>
+        <p id="vazio">Escolha um item da lista ou crie um novo.</p>
+        <form id="form" hidden>
+          <label>Identificador
+            <input name="id" required pattern="[a-z0-9]+(-[a-z0-9]+)*" maxlength="100" placeholder="ex: garrafa-pet">
+          </label>
+          <p class="aviso">Usado nos links do site. Após criar, não pode ser alterado.</p>
+
+          <div class="dupla">
+            <label>Nome <input name="nome" required maxlength="200"></label>
+            <label>Categoria <input name="categoria" required maxlength="200"></label>
+          </div>
+          <label>Termos de busca <input name="termosBusca" placeholder="Separe por vírgulas"></label>
+          <label>Cor do coletor
+            <select name="corColetor">
+              <option value="">Sem cor / ponto específico</option>
+              <option>azul</option>
+              <option>vermelho</option>
+              <option>amarelo</option>
+              <option>verde</option>
+              <option>marrom</option>
+            </select>
+          </label>
+          <label>Orientação <textarea name="orientacao" required maxlength="3000"></textarea></label>
+          <label>Como descartar <textarea name="coletor" required maxlength="3000"></textarea></label>
+          <label>Cuidados <textarea name="cuidados" required maxlength="3000"></textarea></label>
+          <div class="dupla">
+            <label>Fonte (URL) <input name="fonte" type="url"></label>
+            <label>Revisado em <input name="revisadoEm" type="date"></label>
+          </div>
+
+          <fieldset>
+            <legend>Pontos que recebem este material</legend>
+            <p class="aviso">Selecione apenas pontos cujo recebimento foi confirmado pela equipe. Desmarque para retirar um vínculo.</p>
+            <div id="lista-vinculos"></div>
+          </fieldset>
+          <div class="acoes">
+            <button class="primario" type="submit">Salvar material</button>
+            <button class="secundario" type="button" id="excluir">Excluir</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+  <script src="/painel.js"></script>
+</body>
+</html>

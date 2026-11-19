@@ -41,6 +41,24 @@ Atualmente, o projeto reúne **7 materiais** e **9 registros de pontos de descar
 
 O EcoTour é um site estático e não utiliza back-end nem exige instalação de dependências para funcionar.
 
+### Painel local de materiais
+
+Para editar o catálogo no computador, instale o Python 3 e execute na pasta do projeto:
+
+```sh
+python painel/servidor.py
+```
+
+Acesse **http://127.0.0.1:3000** e mantenha o terminal aberto enquanto usa o painel. Para encerrar, pressione `Ctrl+C`. Não é necessário instalar pacotes: o servidor usa apenas a biblioteca padrão do Python. O painel só aceita conexões locais e não é publicado na Vercel.
+
+É possível cadastrar, editar e excluir materiais e gerenciar os pontos vinculados. As alterações são gravadas em `assets/data/materiais.js` e, quando os vínculos mudam, também em `assets/data/pontos-descarte.js`; revise-as e publique o projeto normalmente para disponibilizá-las no site. Confirme o recebimento antes de vincular um ponto. O identificador de um material existente não pode ser alterado, pois é usado nos links. Materiais vinculados não podem ser excluídos até que os vínculos sejam removidos pelo painel. A data de revisão deve ser preenchida somente após uma revisão efetiva.
+
+O painel detecta quando outra aba já alterou o material aberto e pede que você recarregue antes de salvá-lo. Copie suas alterações antes de recarregar. Ele preserva os demais registros e comentários ao atualizar o arquivo. Os dados devem continuar como uma lista literal JavaScript (com aspas simples ou duplas), sem expressões ou funções. Reinicie o servidor após alterar o código do painel.
+
+Para executar os testes do painel em cópias temporárias dos dados, rode `python painel/testes.py`.
+
+Os arquivos do painel estão separados por função: `servidor.py` recebe os pedidos do navegador; `catalogo.py` reúne as regras de materiais e vínculos; `arquivos.py` lê e atualiza os arquivos de dados; `index.html`, `painel.css` e `painel.js` formam a interface. O leitor em `arquivos.py` mantém a compatibilidade com as listas JavaScript existentes sem executá-las.
+
 ## Estrutura do projeto
 
 ```text
