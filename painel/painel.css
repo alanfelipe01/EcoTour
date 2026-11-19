@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #faf9f5;
+  color: #26362e;
+  font: 16px/1.5 system-ui,sans-serif;
+}
+header {
+  border-bottom: 1px solid #d8ddd5;
+  background: white;
+}
+header div,main {
+  max-width: 1050px;
+  margin: auto;
+  padding: 20px;
+}
+header strong {
+  color: #23543d;
+  font-size: 24px;
+}
+h1,h2 {
+  font-family: Georgia,serif;
+  font-weight: 400;
+}
+h1 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+h2 {
+  margin-top: 0;
+}
+.intro {
+  color: #59645e;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+.card {
+  background: white;
+  border: 1px solid #d8ddd5;
+  border-radius: 6px;
+  padding: 22px;
+  align-self: start;
+}
+ul {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+li+li {
+  border-top: 1px solid #eee;
+}
+li button {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: none;
+  padding: 12px 4px;
+  color: #23543d;
+}
+button,input,textarea,select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible {
+  outline: 3px solid #a6cdb5;
+  outline-offset: 2px;
+}
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 16px;
+}
+input,textarea,select {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding: 9px;
+  border: 1px solid #aab7ad;
+  border-radius: 4px;
+}
+textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+.dupla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.acoes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+button.primario {
+  background: #23543d;
+  color: white;
+  border: 1px solid #23543d;
+  border-radius: 4px;
+  padding: 10px 16px;
+}
+button.secundario {
+  background: white;
+  color: #23543d;
+  border: 1px solid #23543d;
+  border-radius: 4px;
+  padding: 10px 16px;
+}
+.aviso {
+  color: #59645e;
+  font-size: 14px;
+}
+.status {
+  min-height: 1.5em;
+  color: #23543d;
+}
+.erro {
+  color: #a12525;
+}
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+@media(max-width:700px) {
+  .layout,.dupla {
+    grid-template-columns: 1fr;
+  }
+  main,header div {
+    padding: 18px;
+  }
+}
