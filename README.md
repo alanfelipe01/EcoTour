@@ -38,6 +38,7 @@ Atualmente, o projeto reúne **7 materiais** e **9 registros de pontos de descar
 - HTML5
 - CSS3
 - JavaScript
+- Python
 
 O EcoTour é um site estático e não utiliza back-end nem exige instalação de dependências para funcionar.
 
